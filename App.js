@@ -16,20 +16,25 @@ const HomeScreen = ({navigation}) => {
 }
 
 
-const DetailsScreen = () => {
+const DetailsScreen = ({navigation}) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Details Screen</Text>
       <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        title="Go to the details screen again"
+        onPress={() => navigation.push('Details')}
       /><Button
-      title="Go to Details"
-      onPress={() => navigation.navigate('Details')}
-    /><Button
-    title="Go to Details"
-    onPress={() => navigation.navigate('Details')}
-  />
+        title="Go home"
+        onPress={() => navigation.navigate('Home')}
+      />
+      <Button
+        title="Go back"
+        onPress={() => navigation.goBack()}
+      />
+      <Button
+        title="Go to the first screen"
+        onPress={() => navigation.popToTop()}
+      />
     </View>
   );
 }
