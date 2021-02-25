@@ -1,0 +1,12 @@
+{
+  "name": "hone",
+  "displayName": "hone",
+  "expo": {
+    "name": "hone",
+    "slug": "hone",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
