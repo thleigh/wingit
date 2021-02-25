@@ -1,23 +1,48 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { View, Text, Button, SafeAreaView, StyleSheet, StatusBar, ScrollView } from 'react-native';
 
-function HomeScreen() {
+const HomeScreen = ({navigation}) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Details')}
+      />
     </View>
   );
 }
 
+
+const DetailsScreen = () => {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Details')}
+      /><Button
+      title="Go to Details"
+      onPress={() => navigation.navigate('Details')}
+    /><Button
+    title="Go to Details"
+    onPress={() => navigation.navigate('Details')}
+  />
+    </View>
+  );
+}
+
+
 const Stack = createStackNavigator();
 
-function App() {
+const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
