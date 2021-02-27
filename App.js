@@ -3,6 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import { View, Text, Button, SafeAreaView, StyleSheet, StatusBar, ScrollView } from "react-native";
 
 import HomeScreen from "./components/HomeScreen";
@@ -23,8 +25,11 @@ const HomeStackScreen = ({ navigation }) => (
         }
       }}>
         <HomeStack.Screen name="Home" component={HomeScreen} options={{
-          title: "Overview"
-        }}/>
+          title: "Overview",
+          headerLeft: () => (
+            <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
+          )
+        }} />
       </HomeStack.Navigator>
 );
 
@@ -38,7 +43,11 @@ const DetailsStackScreen = ({ navigation }) => (
           fontWeight: "bold"
         }
       }}>
-        <DetailsStack.Screen name="Details" component={DetailsScreen} />
+        <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
+          headerLeft: () => (
+            <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
+          )
+        }}/>
       </DetailsStack.Navigator>
 );
 
