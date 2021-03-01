@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-const DetailsScreen = ({navigation}) => {
+const ProfileScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
-        <Text>Details Screen</Text>
+        <Text>Profile Screen</Text>
         <Button
             title="Go to details screen...again"
             onPress={() => navigation.push("Details")}
@@ -20,8 +20,7 @@ const DetailsScreen = ({navigation}) => {
       </View>
     );
 };
-
-export default DetailsScreen;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {
