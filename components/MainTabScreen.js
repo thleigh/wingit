@@ -5,13 +5,60 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from "./HomeScreen";
 import DetailsScreen from "./DetailsScreen";
+import ExploreScreen from "./ExploreScreen";
+import ProfileScreen from "./ProfileScreen";
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
 
 const MainTabScreen = () => (
-    
-)
+    <Tab.Navigator
+      initialRouteName="Feed"
+      activeColor="#e91e63"
+      barStyle={{ backgroundColor: 'tomato' }}
+    >
+      <Tab.Screen
+        name="Feed"
+        component={Feed}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={Notifications}
+        options={{
+          tabBarLabel: 'Updates',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="bell" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Explore"
+        component={ExploreScreen}
+        options={{
+          tabBarLabel: 'Explore',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={26} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+);
 
 const HomeStackScreen = ({ navigation }) => (
     <HomeStack.Navigator screenOptions={{
