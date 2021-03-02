@@ -6,6 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 
 import { View, Text, Button, SafeAreaView, StyleSheet, StatusBar, ScrollView } from "react-native";
+import MainTabScreen from "./components/MainTabScreen";
 
 const Drawer = createDrawerNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -15,8 +16,8 @@ const App = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeStackScreen} />
-        <Drawer.Screen name="Details" component={DetailsStackScreen} />
+        <Drawer.Screen name="Home" component={MainTabScreen} />
+        {/* <Drawer.Screen name="Details" component={DetailsStackScreen} /> */}
       </Drawer.Navigator>
     </NavigationContainer>
   );

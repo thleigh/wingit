@@ -60,6 +60,8 @@ const MainTabScreen = () => (
     </Tab.Navigator>
 );
 
+export default MainTabScreen;
+
 const HomeStackScreen = ({ navigation }) => (
     <HomeStack.Navigator screenOptions={{
       headerStyle: { 
