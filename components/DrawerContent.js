@@ -42,6 +42,54 @@ export function DrawerContent(props) {
                             </View>
                         </View>
                     </View>
+
+                    <Drawer.Section style={styles.drawerSection}>
+                        <DrawerItem 
+                            icon={({ color, size }) => (
+                                <Icon  
+                                    name="home-outline" 
+                                    color={color}
+                                    size={size}
+                                    />
+                            )}
+                            label="Home"
+                            onPress={() => {}}
+                        />
+                        <DrawerItem 
+                            icon={({ color, size }) => (
+                                <Icon  
+                                    name="account-outline" 
+                                    color={color}
+                                    size={size}
+                                    />
+                            )}
+                            label="Profile"
+                            onPress={() => {}}
+                        />
+                        <DrawerItem 
+                            icon={({ color, size }) => (
+                                <Icon  
+                                    name="bookmark-outline" 
+                                    color={color}
+                                    size={size}
+                                    />
+                            )}
+                            label="Bookmarks"
+                            onPress={() => {}}
+                        />
+                        <DrawerItem 
+                            icon={({ color, size }) => (
+                                <Icon  
+                                    name="settings-outline" 
+                                    color={color}
+                                    size={size}
+                                    />
+                            )}
+                            label="Settings"
+                            onPress={() => {}}
+                        />
+                    </Drawer.Section>
+
                 </View>
             </DrawerContentScrollView>
             <Drawer.Section style={StyleSheet.bottomDrawerSection}>
@@ -55,7 +103,7 @@ export function DrawerContent(props) {
                     )}
                     label="Sign Out"
                     onPress={() => {}}
-            />
+                />
             </Drawer.Section>
         </View>
     );
