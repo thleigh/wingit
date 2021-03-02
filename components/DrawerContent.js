@@ -19,12 +19,27 @@ export function DrawerContent(props) {
             <DrawerContentScrollView { ...props}>
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
-                        <View>
+                        <View style={{flexDirection: 'row', marginTop: 15}}>
                             <Avatar.Image
-                                source={{
-                                    uri:
-                                }}
+                                source={
+                                    require('../assets/tanner2.png')
+                                }
+                                size={50}
                             />
+                            <View style={{marginLeft: 15, flexDirection: 'column'}}>
+                                <Title style={styles.title}>Tanner Leigh</Title>
+                                <Caption style={styles.caption}>@tnrleigh</Caption>
+                            </View>
+                        </View>
+                        <View styles={styles.row}>
+                                <View styles={styles.section}>
+                                    <Paragraph style={[styles.paragraph, styles.caption]}>109</Paragraph>
+                                    <Caption style={styles.caption}>Followers</Caption>
+                                </View>
+                                <View styles={styles.section}>
+                                    <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
+                                    <Caption style={styles.caption}>Following</Caption>
+                                </View>
                         </View>
                     </View>
                 </View>
