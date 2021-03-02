@@ -1,5 +1,7 @@
 import * as React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -10,16 +12,17 @@ import ProfileScreen from "./ProfileScreen";
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const MainTabScreen = () => (
     <Tab.Navigator
-      initialRouteName="Feed"
+      initialRouteName="Home"
       activeColor="#e91e63"
       barStyle={{ backgroundColor: 'tomato' }}
     >
       <Tab.Screen
-        name="Feed"
-        component={Feed}
+        name="Home"
+        component={HomeStackScreen}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
@@ -28,8 +31,8 @@ const MainTabScreen = () => (
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="Details"
+        component={DetailsStackScreen}
         options={{
           tabBarLabel: 'Updates',
           tabBarIcon: ({ color }) => (
