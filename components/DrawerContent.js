@@ -17,8 +17,16 @@ export function DrawerContent(props) {
     return (
         <View style={{flex:1}}>
             <DrawerContentScrollView { ...props}>
-                <View>
-                    <Text>Main Content</Text>
+                <View style={styles.drawerContent}>
+                    <View style={styles.userInfoSection}>
+                        <View>
+                            <Avatar.Image
+                                source={{
+                                    uri:
+                                }}
+                            />
+                        </View>
+                    </View>
                 </View>
             </DrawerContentScrollView>
             <Drawer.Section style={StyleSheet.bottomDrawerSection}>
