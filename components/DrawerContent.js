@@ -11,11 +11,29 @@ import {
     TouchableRipple,
     Switch
 } from "react-native-paper";
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export function DrawerContent(props) {
     return (
-        <View>
-            <Text>This is a test</Text>
+        <View style={{flex:1}}>
+            <DrawerContentScrollView { ...props}>
+                <View>
+                    <Text>Main Content</Text>
+                </View>
+            </DrawerContentScrollView>
+            <Drawer.Section style={StyleSheet.bottomDrawerSection}>
+                <DrawerItem 
+                    icon={({ color, size }) => (
+                        <Icon  
+                            name="exit-to-app" 
+                            color={color}
+                            size={size}
+                            />
+                    )}
+                    label="Sign Out"
+                    onPress={() => {}}
+            />
+            </Drawer.Section>
         </View>
     );
 }
@@ -64,4 +82,5 @@ const styles = StyleSheet.create({
       paddingVertical: 12,
       paddingHorizontal: 16,
     },
-  });
+  }
+);
