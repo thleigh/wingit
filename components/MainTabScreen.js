@@ -1,7 +1,6 @@
 import * as React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -12,13 +11,14 @@ import ProfileScreen from "./ProfileScreen";
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const MainTabScreen = () => (
     <Tab.Navigator
-      initialRouteName="Home"
-      activeColor="#e91e63"
-      barStyle={{ backgroundColor: 'tomato' }}
+        initialRouteName="Home"
+        tabBarOptions={{
+        activeTintColor: '#e91e63',
+    }}
     >
       <Tab.Screen
         name="Home"
@@ -26,7 +26,7 @@ const MainTabScreen = () => (
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <Icon name="ios-home" color={color} size={26} />
           ),
         }}
       />
@@ -36,7 +36,7 @@ const MainTabScreen = () => (
         options={{
           tabBarLabel: 'Updates',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
+            <Icon name="ios-notifications" color={color} size={26} />
           ),
         }}
       />
@@ -46,7 +46,7 @@ const MainTabScreen = () => (
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={26} />
+            <Icon name="ios-person" color={color} size={26} />
           ),
         }}
       />
@@ -56,7 +56,7 @@ const MainTabScreen = () => (
         options={{
           tabBarLabel: 'Explore',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={26} />
+            <Icon name="ios-aperture" color={color} size={26} />
           ),
         }}
       />
