@@ -15,9 +15,6 @@ const App = () => {
     <NavigationContainer>
       <Drawer.Navigator drawerContent={props => <DrawerContent { ...props} /> } initialRouteName="Home">
         <Drawer.Screen name="Home" component={MainTabScreen} />
-        {/* <Drawer.Screen name="Details" component={DetailsStackScreen} /> */}
-        {/* <Drawer.Screen name="Profile" component={DetailsStackScreen} /> */}
-        {/* <Drawer.Screen name="Explore" component={DetailsStackScreen} /> */}
       </Drawer.Navigator>
     </NavigationContainer>
   );
