@@ -14,16 +14,17 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export function DrawerContent(props) {
-    return (
+
+    // const { signOut, toggleTheme } = React.useContext(AuthContext);
+
+    return(
         <View style={{flex:1}}>
-            <DrawerContentScrollView { ...props}>
+            <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
                         <View style={{flexDirection:'row',marginTop: 15}}>
                             <Avatar.Image 
-                                source={
-                                    require('../assets/tanner2.png')
-                                }
+                                source={require('../assets/tanner2.png')}
                                 size={50}
                             />
                             <View style={{marginLeft:15, flexDirection:'column'}}>
@@ -42,64 +43,62 @@ export function DrawerContent(props) {
                             </View>
                         </View>
                     </View>
-
                     <Drawer.Section style={styles.drawerSection}>
                         <DrawerItem 
-                            icon={({ color, size }) => (
-                                <Icon  
-                                    name="home-outline" 
-                                    color={color}
-                                    size={size}
-                                    />
+                            icon={({color, size}) => (
+                                <Icon 
+                                name="home-outline" 
+                                color={color}
+                                size={size}
+                                />
                             )}
                             label="Home"
-                            onPress={() => {}}
+                            onPress={() => {props.navigation.navigate('Home')}}
                         />
                         <DrawerItem 
-                            icon={({ color, size }) => (
-                                <Icon  
-                                    name="account-outline" 
-                                    color={color}
-                                    size={size}
-                                    />
+                            icon={({color, size}) => (
+                                <Icon 
+                                name="account-outline" 
+                                color={color}
+                                size={size}
+                                />
                             )}
                             label="Profile"
-                            onPress={() => {}}
+                            onPress={() => {props.navigation.navigate('Profile')}}
                         />
                         <DrawerItem 
-                            icon={({ color, size }) => (
-                                <Icon  
-                                    name="bookmark-outline" 
-                                    color={color}
-                                    size={size}
-                                    />
+                            icon={({color, size}) => (
+                                <Icon 
+                                name="bookmark-outline" 
+                                color={color}
+                                size={size}
+                                />
                             )}
                             label="Bookmarks"
-                            onPress={() => {}}
+                            onPress={() => {props.navigation.navigate('BookmarkScreen')}}
                         />
                         <DrawerItem 
-                            icon={({ color, size }) => (
-                                <Icon  
-                                    name="settings-outline" 
-                                    color={color}
-                                    size={size}
-                                    />
+                            icon={({color, size}) => (
+                                <Icon 
+                                name="settings-outline" 
+                                color={color}
+                                size={size}
+                                />
                             )}
                             label="Settings"
-                            onPress={() => {}}
+                            onPress={() => {props.navigation.navigate('SettingsScreen')}}
                         />
                     </Drawer.Section>
-
                 </View>
             </DrawerContentScrollView>
-            <Drawer.Section style={StyleSheet.bottomDrawerSection}>
+            <Drawer.Section style={styles.bottomDrawerSection}>
                 <DrawerItem 
-                    icon={({ color, size }) => (
-                        <Icon  
-                            name="exit-to-app" 
-                            color={color}
-                            size={size}
-                            />
+                    icon={({color, size}) => (
+                        <Icon 
+                        name="exit-to-app" 
+                        color={color}
+                        size={size}
+                        />
                     )}
                     label="Sign Out"
                     onPress={() => {}}
