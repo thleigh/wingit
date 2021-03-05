@@ -6,10 +6,10 @@ import {
     StyleSheet
 } from "react-native";
 
-const SplashScreen = () => {
+const SignInScreen = () => {
     return (
         <View style={styles.container}>
-            <Text>SplashScreen</Text>
+            <Text>SignInScreen</Text>
             <Button 
                 title="Click Here"
                 onPress={() => alert("Button Clicked!")}
@@ -18,7 +18,7 @@ const SplashScreen = () => {
     )
 }
 
-export default SplashScreen;
+export default SignInScreen;
 
 const styles = StyleSheet.create({
     container: {
