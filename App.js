@@ -9,6 +9,7 @@ import MainTabScreen from "./components/MainTabScreen";
 import SettingsScreen from "./components/SettingsScreen";
 import { DrawerContent } from "./components/DrawerContent";
 
+
 const Drawer = createDrawerNavigator();
 
 const App = () => {
