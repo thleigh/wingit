@@ -10,7 +10,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import MainTabScreen from "./components/MainTabScreen";
 import SettingsScreen from "./components/SettingsScreen";
 
-import  RootStackScreen from "./components/RootStackScreen";
+import RootStackScreen from "./components/RootStackScreen";
 
 const Drawer = createDrawerNavigator();
 
