@@ -4,6 +4,7 @@ import {
     Text,
     TouchableOpacity,
     Dimensions,
+    Platform,
     Button,
     StyleSheet
 } from "react-native";
@@ -17,11 +18,19 @@ import Feather from "react-native-vector-icons/Feather";
 const SignInScreen = () => {
     return (
         <View style={styles.container}>
-            <Text>SignInScreen</Text>
-            <Button 
-                title="Click Here"
-                onPress={() => alert("Button Clicked!")}
-            />
+            <View style={styles.header}>
+                <Text style={styles.text_header}>Welcome</Text>
+            </View>
+            <View style={styles.footer}>
+                <Text style={styles.text_footer}>Email</Text>
+                <View style={styles.action}>
+                    <FontAwesome
+                        name="user-o"
+                        color="#05375a"
+                        size={20}
+                    />
+                </View>
+            </View>
         </View>
     )
 }
