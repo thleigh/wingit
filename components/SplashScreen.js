@@ -4,14 +4,15 @@ import {
     Text,
     Button,
     StyleSheet,
-    Dimensions
+    Dimensions,
+    Image
 } from "react-native";
 
 const SplashScreen = () => {
     return (
         <View style={styles.container}>
             <View styles = {styles.header}>
-                <Text>Header</Text>
+                <Image source={require("../assets/tanner2.png")} style={styles.logo} resizeMode="Stretch"/>
             </View>
             <View style={styles.footer}>
                 <Text>Footer</Text>
