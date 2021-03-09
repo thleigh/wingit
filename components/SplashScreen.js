@@ -9,7 +9,7 @@ import {
     Image
 } from "react-native";
 
-import { LinearGradient } from 'expo-linear-gradient';
+import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const SplashScreen = () => {
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 50,
+        borderRadius: 20,
         flexDirection: 'row'
     },
     textSign: {
