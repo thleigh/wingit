@@ -2,11 +2,15 @@ import * as React from "react";
 import {
     View,
     Text,
+    TouchableOpacity,
     Button,
     StyleSheet,
     Dimensions,
     Image
 } from "react-native";
+
+import LinearGradient from "react-native-linear-gradient";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const SplashScreen = () => {
     return (
@@ -15,9 +19,13 @@ const SplashScreen = () => {
                 <Image source={require("../assets/tanner2.png")} style={styles.logo} resizeMode="Stretch"/>
             </View>
             <View style={styles.footer}>
-                <Text>Stay connected with everyone!</Text>
-                <Text>Sign in with account</Text>
-                
+                <Text style={styles.title}>Stay connected with everyone!</Text>
+                <Text style={styles.text}>Sign in with account</Text>
+                <TouchableOpacity onPress={alert("Click")}>
+                    <LinearGradient colors={["#08d4c4", "#01ab9d"]} style={style.signIn}>
+                        <Text style={styles.textSign}>Get Started</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
             </View>
         </View>
     )
