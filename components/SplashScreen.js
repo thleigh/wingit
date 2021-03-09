@@ -15,7 +15,9 @@ const SplashScreen = () => {
                 <Image source={require("../assets/tanner2.png")} style={styles.logo} resizeMode="Stretch"/>
             </View>
             <View style={styles.footer}>
-                <Text>Footer</Text>
+                <Text>Stay connected with everyone!</Text>
+                <Text>Sign in with account</Text>
+                
             </View>
         </View>
     )
