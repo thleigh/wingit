@@ -2,9 +2,17 @@ import * as React from "react";
 import {
     View,
     Text,
+    TouchableOpacity,
+    Dimensions,
     Button,
     StyleSheet
 } from "react-native";
+
+import * as Animatable from 'react-native-animatable';
+import { LinearGradient } from "expo-linear-gradient";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Feather from "react-native-vector-icons/Feather";
 
 const SignInScreen = () => {
     return (
