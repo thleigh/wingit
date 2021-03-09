@@ -4,14 +4,15 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '11.0'
 
-pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
 target 'hone' do
   use_unimodules!
   config = use_native_modules!
-
+  
   use_react_native!(:path => config["reactNativePath"])
-
+  
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+  
   # Uncomment the code below to enable Flipper.
   #
   # You should not install Flipper in CI environments when creating release
