@@ -13,23 +13,23 @@ import * as Animatable from 'react-native-animatable';
 import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-const SplashScreen = () => {
+const SplashScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View styles = {styles.header}>
                 <Animatable.Image 
                 animate="bounceIn"
                 duration="1500"
-                source={require("../assets/tanner2.png")} style={styles.logo} resizeMode="Stretch"/>
+                source={require("../assets/tanner2.png")} style={styles.logo} resizeMode="stretch"/>
             </View>
             <Animatable.View style={styles.footer} animation="fadeInUpBig">
                 <Text style={styles.title}>Stay connected with everyone!</Text>
                 <Text style={styles.text}>Sign in with account</Text>
 
                 <View style={styles.button}>
-                    <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
+                    <TouchableOpacity onPress={()=>navigation.navigate("SignInScreen")}>
                         <LinearGradient
-                            colors={['#08d4c4', '#01ab9d']}
+                            colors={["#08d4c4", "#01ab9d"]}
                             style={styles.signIn}
                             >
                             <Text style={styles.textSign}>Get Started</Text>
@@ -48,7 +48,7 @@ const SplashScreen = () => {
 
 export default SplashScreen;
 
-const { height } = Dimensions.get("screen");
+const {height} = Dimensions.get("screen");
 const height_logo = height * 0.28;
 
 const styles = StyleSheet.create({
