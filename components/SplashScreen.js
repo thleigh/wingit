@@ -9,6 +9,7 @@ import {
     Image
 } from "react-native";
 
+import * as Animatable from 'react-native-animatable';
 import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
@@ -16,9 +17,12 @@ const SplashScreen = () => {
     return (
         <View style={styles.container}>
             <View styles = {styles.header}>
-                <Image source={require("../assets/tanner2.png")} style={styles.logo} resizeMode="Stretch"/>
+                <Animatable.Image 
+                animate="bounceIn"
+                duration="1500"
+                source={require("../assets/tanner2.png")} style={styles.logo} resizeMode="Stretch"/>
             </View>
-            <View style={styles.footer}>
+            <Animatable.View style={styles.footer} animation="fadeInUpBig">
                 <Text style={styles.title}>Stay connected with everyone!</Text>
                 <Text style={styles.text}>Sign in with account</Text>
 
@@ -37,7 +41,7 @@ const SplashScreen = () => {
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </Animatable.View>
         </View>
     )
 }
