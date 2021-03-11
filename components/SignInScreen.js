@@ -23,6 +23,7 @@ const SignInScreen = () => {
                 <Text style={styles.text_header}>Welcome</Text>
             </View>
             <View style={styles.footer}>
+
                 <Text style={styles.text_footer}>Email</Text>
                 <View style={styles.action}>
                     <FontAwesome
@@ -41,20 +42,23 @@ const SignInScreen = () => {
                         size={2}
                     />
                 </View>
+
+                <Text style={[styles.text_footer, { margineTop: 35 }]}>Password</Text>
                 <View style={styles.action}>
-                    <FontAwesome
-                        name="user-o"
+                    <Feather
+                        name="lock"
                         color="#05375a"
                         size={20}
                     />
                     <TextInput
-                        placeholder="Your Email"
+                        placeholder="Your Password"
+                        secureTextEmtry={true}
                         style={styles.textInput}
                         autoCapitalize="none"
                     />
                     <Feather
-                        name="check-circle"
-                        colorr="green"
+                        name="eye-off"
+                        colorr="grey"
                         size={2}
                     />
                 </View>
