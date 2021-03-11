@@ -4,6 +4,7 @@ import {
     Text,
     TouchableOpacity,
     Dimensions,
+    TextInput,
     Platform,
     Button,
     StyleSheet
