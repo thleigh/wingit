@@ -30,6 +30,33 @@ const SignInScreen = () => {
                         color="#05375a"
                         size={20}
                     />
+                    <TextInput
+                        placeholder="Your Email"
+                        style={styles.textInput}
+                        autoCapitalize="none"
+                    />
+                    <Feather
+                        name="check-circle"
+                        colorr="green"
+                        size={2}
+                    />
+                </View>
+                <View style={styles.action}>
+                    <FontAwesome
+                        name="user-o"
+                        color="#05375a"
+                        size={20}
+                    />
+                    <TextInput
+                        placeholder="Your Email"
+                        style={styles.textInput}
+                        autoCapitalize="none"
+                    />
+                    <Feather
+                        name="check-circle"
+                        colorr="green"
+                        size={2}
+                    />
                 </View>
             </View>
         </View>
