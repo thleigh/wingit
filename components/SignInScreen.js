@@ -7,7 +7,8 @@ import {
     TextInput,
     Platform,
     Button,
-    StyleSheet
+    StyleSheet,
+    TouchableOpacityBase
 } from "react-native";
 
 import * as Animatable from 'react-native-animatable';
@@ -39,6 +40,20 @@ const SignInScreen = () => {
                 check_textInputChange: false
             });
         }
+    }
+
+    const handlePasswordChange = (val) => {
+        setData({
+            ...data,
+            password: val
+        })
+    }
+
+    const updateSecureTextEntry = () => {
+        setData({
+            ...data,
+            secureTextEntry: !data.secureTextEntry
+        })
     }
 
     return (
@@ -83,15 +98,37 @@ const SignInScreen = () => {
                     />
                     <TextInput
                         placeholder="Your Password"
-                        secureTextEmtry={true}
+                        secureTextEmtry={data.secureTextEntry ? true : false}
                         style={styles.textInput}
                         autoCapitalize="none"
+                        onChangeText={(val) => handlePasswordChange(val)}
                     />
-                    <Feather
-                        name="eye-off"
-                        colorr="grey"
-                        size={2}
-                    />
+                    <TouchableOpacity
+                        onPress={updateSecureTextEntry}
+                    >
+                        {data.secureTextEntry ?
+                        <Feather
+                            name="eye-off"
+                            colorr="grey"
+                            size={20}
+                        />
+                        :
+                        <Feather
+                            name="eye"
+                            colorr="grey"
+                            size={20}
+                        />
+                        }      
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.button}>
+                    <LinearGradient
+                        colors={["#08d4c4", "#01ab9d"]}
+                        style={styles.signIn}
+                    >
+                        <Text style={styles.signIn}>Sign In</Text>
+                    </LinearGradient>
                 </View>
             </View>
         </View>
