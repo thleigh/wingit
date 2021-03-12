@@ -8,6 +8,7 @@ import {
     Platform,
     Button,
     StyleSheet,
+    StatusBar,
     TouchableOpacityBase
 } from "react-native";
 
@@ -53,16 +54,19 @@ const SignInScreen = ({navigation}) => {
         setData({
             ...data,
             secureTextEntry: !data.secureTextEntry
-        })
+        });
     }
 
     return (
         <View style={styles.container}>
+                <StatusBar backgroundColor="#009387" barStyle="light-content"/>
             <View style={styles.header}>
                 <Text style={styles.text_header}>Welcome</Text>
             </View>
-            <View style={styles.footer}>
-
+            <Animatable.View 
+                animation="fadeInUpBig"
+                style={styles.footer}
+            >
                 <Text style={styles.text_footer}>Email</Text>
                 <View style={styles.action}>
                     <FontAwesome
@@ -141,7 +145,7 @@ const SignInScreen = ({navigation}) => {
                         <Text style={[styles.textSign, {color:"#009387"}]}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </Animatable.View>
         </View>
     )
 }
