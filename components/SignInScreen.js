@@ -62,11 +62,15 @@ const SignInScreen = () => {
                         onChangeText={(val) => textInputChange(val)}
                     />
                     {data.check_textInputChange ? 
-                    <Feather
-                        name="check-circle"
-                        colorr="green"
-                        size={20}
-                    />
+                    <Animatable.View
+                        animation="bounceIn"
+                    >
+                        <Feather
+                            name="check-circle"
+                            colorr="green"
+                            size={20}
+                        />
+                    </Animatable.View>
                     : null}
                 </View>
 
