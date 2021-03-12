@@ -89,7 +89,7 @@ const SignInScreen = ({navigation}) => {
                     : null}
                 </View>
 
-                <Text style={[styles.text_footer, { margineTop: 35 }]}>Password</Text>
+                <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
                 <View style={styles.action}>
                     <Feather
                         name="lock"
@@ -138,7 +138,7 @@ const SignInScreen = ({navigation}) => {
                             borderWidth: 1
                         }]}
                     >
-                        <Text style={[styles.TextSign, {color:"#009387"}]}>Sign Up</Text>
+                        <Text style={[styles.textSign, {color:"#009387"}]}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
             </View>
