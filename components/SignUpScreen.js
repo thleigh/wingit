@@ -23,8 +23,10 @@ const SignUpScreen = ({navigation}) => {
     const [data, setData] = React.useState({
         email: "",
         password: "",
+        confirm_password: "",
         check_textInputChange: false,
-        secureTextEntry: true
+        secureTextEntry: true,
+        confirm_secureTextEntry: true,
     })
 
     const textInputChange = (val) => {
@@ -50,6 +52,13 @@ const SignUpScreen = ({navigation}) => {
         })
     }
 
+    const handleConfirmPasswordChange = (val) => {
+        setData({
+            ...data,
+            confirm_password: val
+        })
+    }
+
     const updateSecureTextEntry = () => {
         setData({
             ...data,
@@ -57,11 +66,18 @@ const SignUpScreen = ({navigation}) => {
         });
     }
 
+    const updateConfirmSecureTextEntry = () => {
+        setData({
+            ...data,
+            confirm_secureTextEntry: !data.confirm_secureTextEntry
+        });
+    }
+
     return (
         <View style={styles.container}>
                 <StatusBar backgroundColor="#009387" barStyle="light-content"/>
             <View style={styles.header}>
-                <Text style={styles.text_header}>Welcome</Text>
+                <Text style={styles.text_header}>Register</Text>
             </View>
             <Animatable.View 
                 animation="fadeInUpBig"
@@ -135,13 +151,13 @@ const SignUpScreen = ({navigation}) => {
                     />
                     <TextInput
                         placeholder="Your Password"
-                        secureTextEmtry={data.secureTextEntry ? true : false}
+                        secureTextEmtry={data.confirm_secureTextEntry ? true : false}
                         style={styles.textInput}
                         autoCapitalize="none"
-                        onChangeText={(val) => handlePasswordChange(val)}
+                        onChangeText={(val) => handleConfirmPasswordChange(val)}
                     />
                     <TouchableOpacity
-                        onPress={updateSecureTextEntry}
+                        onPress={updateConfirmSecureTextEntry}
                     >
                         {data.secureTextEntry ?
                         <Feather
@@ -164,18 +180,18 @@ const SignUpScreen = ({navigation}) => {
                         colors={["#08d4c4", "#01ab9d"]}
                         style={styles.signIn}
                     >
-                        <Text style={[styles.textSign, {color: "#fff"}]}>Sign In</Text>
+                        <Text style={[styles.textSign, {color: "#fff"}]}>Sign Up</Text>
                     </LinearGradient>
 
                     <TouchableOpacity
-                        onPress={() => navigator.navigate('SignUpScreen')}
+                        onPress={() => navigation.goBack()}
                         style={[styles.signIn, {
                             borderColor: "#009387",
                             marginTop:15,
                             borderWidth: 1
                         }]}
                     >
-                        <Text style={[styles.textSign, {color:"#009387"}]}>Sign Up</Text>
+                        <Text style={[styles.textSign, {color:"#009387"}]}>Sign In</Text>
                     </TouchableOpacity>
                 </View>
             </Animatable.View>
