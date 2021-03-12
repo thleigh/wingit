@@ -127,7 +127,7 @@ const SignInScreen = () => {
                         colors={["#08d4c4", "#01ab9d"]}
                         style={styles.signIn}
                     >
-                        <Text style={styles.signIn}>Sign In</Text>
+                        <Text style={[styles.textSign, {color: "#fff"}]}>Sign In</Text>
                     </LinearGradient>
                 </View>
             </View>
