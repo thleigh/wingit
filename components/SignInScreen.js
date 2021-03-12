@@ -17,6 +17,30 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 
 const SignInScreen = () => {
+
+    const [data, setData] = React.useState({
+        email: "",
+        password: "",
+        check_textInputChange: false,
+        secureTextEntry: true
+    })
+
+    const textInputChange = (val) => {
+        if( val.length != 0 ) {
+            setImmediate({
+                ...data,
+                email: val, 
+                check_textInputChange: true
+            });
+        } else {
+            setData({
+                ...data,
+                email: val,
+                check_textInputChange: false
+            });
+        }
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -35,6 +59,7 @@ const SignInScreen = () => {
                         placeholder="Your Email"
                         style={styles.textInput}
                         autoCapitalize="none"
+                        onChangeText={(val) => textInputChange(val)}
                     />
                     <Feather
                         name="check-circle"
