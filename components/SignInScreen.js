@@ -27,7 +27,7 @@ const SignInScreen = () => {
 
     const textInputChange = (val) => {
         if( val.length != 0 ) {
-            setImmediate({
+            setData({
                 ...data,
                 email: val, 
                 check_textInputChange: true
