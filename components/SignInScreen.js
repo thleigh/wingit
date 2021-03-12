@@ -61,11 +61,13 @@ const SignInScreen = () => {
                         autoCapitalize="none"
                         onChangeText={(val) => textInputChange(val)}
                     />
+                    {data.check_textInputChange ? 
                     <Feather
                         name="check-circle"
                         colorr="green"
-                        size={2}
+                        size={20}
                     />
+                    : null}
                 </View>
 
                 <Text style={[styles.text_footer, { margineTop: 35 }]}>Password</Text>
