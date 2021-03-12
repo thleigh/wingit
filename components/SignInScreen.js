@@ -135,7 +135,7 @@ const SignInScreen = ({navigation}) => {
                     </LinearGradient>
 
                     <TouchableOpacity
-                        onPress={() => navigator.navigate('SignUpScreen')}
+                        onPress={() => navigation.navigate('SignUpScreen')}
                         style={[styles.signIn, {
                             borderColor: "#009387",
                             marginTop:15,
