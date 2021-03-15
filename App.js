@@ -2,7 +2,7 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { View, Text, Button, SafeAreaView, StyleSheet, StatusBar, ScrollView } from "react-native";
+import { View, Text, Button, SafeAreaView, StyleSheet, StatusBar, ScrollView, ActivityIndicator } from "react-native";
 
 import { DrawerContent } from "./components/DrawerContent";
 
@@ -15,6 +15,17 @@ import RootStackScreen from "./components/RootStackScreen";
 const Drawer = createDrawerNavigator();
 
 const App = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [userToken, setUserToken] = React.useState(null);
+
+  if( isLoading ) {
+    return(
+      <View style={{flex:1, justifyContent:"center", alignItems:"center"}}>
+        <ActivityIndicator size="large" />
+      </View>
+    )
+  }
+
   return (
     <NavigationContainer>
       <RootStackScreen />
