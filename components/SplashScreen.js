@@ -6,7 +6,8 @@ import {
     Button,
     StyleSheet,
     Dimensions,
-    Image
+    Image,
+    StatusBar
 } from "react-native";
 
 import * as Animatable from 'react-native-animatable';
@@ -14,37 +15,44 @@ import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const SplashScreen = ({navigation}) => {
-    return (
-        <View style={styles.container}>
-            <View styles = {styles.header}>
-                <Animatable.Image 
-                animate="bounceIn"
-                duration="1500"
-                source={require("../assets/tanner2.png")} style={styles.logo} resizeMode="stretch"/>
-            </View>
-            <Animatable.View style={styles.footer} animation="fadeInUpBig">
-                <Text style={styles.title}>Stay connected with everyone!</Text>
-                <Text style={styles.text}>Sign in with account</Text>
 
-                <View style={styles.button}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("SignInScreen")}>
-                        <LinearGradient
-                            colors={["#08d4c4", "#01ab9d"]}
-                            style={styles.signIn}
-                            >
-                            <Text style={styles.textSign}>Get Started</Text>
-                            <MaterialIcons 
-                                name="navigate-next"
-                                color="#fff"
-                                size={20}
-                            />
-                        </LinearGradient>
-                    </TouchableOpacity>
-                </View>
-            </Animatable.View>
+    return (
+      <View style={styles.container}>
+          <StatusBar backgroundColor='#009387' barStyle="light-content"/>
+        <View style={styles.header}>
+            <Animatable.Image 
+                animation="bounceIn"
+                duraton="1500"
+            source={require('../assets/tanner2.png')}
+            style={styles.logo}
+            resizeMode="stretch"
+            />
         </View>
-    )
-}
+        <Animatable.View 
+            style={styles.footer}
+            animation="fadeInUpBig"
+        >
+            <Text style={styles.title}>Stay connected with everyone!</Text>
+            <Text style={styles.text}>Sign in with account</Text>
+            <View style={styles.button}>
+            <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
+                <LinearGradient
+                    colors={['#08d4c4', '#01ab9d']}
+                    style={styles.signIn}
+                >
+                    <Text style={styles.textSign}>Get Started</Text>
+                    <MaterialIcons 
+                        name="navigate-next"
+                        color="#fff"
+                        size={20}
+                    />
+                </LinearGradient>
+            </TouchableOpacity>
+            </View>
+        </Animatable.View>
+      </View>
+    );
+};
 
 export default SplashScreen;
 
