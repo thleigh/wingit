@@ -102,7 +102,7 @@ const SignUpScreen = ({navigation}) => {
                     >
                         <Feather
                             name="check-circle"
-                            colorr="green"
+                            color="green"
                             size={20}
                         />
                     </Animatable.View>
@@ -118,7 +118,7 @@ const SignUpScreen = ({navigation}) => {
                     />
                     <TextInput
                         placeholder="Your Password"
-                        secureTextEmtry={data.confirm_secureTextEntry ? true : false}
+                        secureTextEntry={data.confirm_secureTextEntry ? true : false}
                         style={styles.textInput}
                         autoCapitalize="none"
                         onChangeText={(val) => handleConfirmPasswordChange(val)}
@@ -151,7 +151,7 @@ const SignUpScreen = ({navigation}) => {
                     />
                     <TextInput
                         placeholder="Your Password"
-                        secureTextEmtry={data.confirm_secureTextEntry ? true : false}
+                        secureTextEntry={data.confirm_secureTextEntry ? true : false}
                         style={styles.textInput}
                         autoCapitalize="none"
                         onChangeText={(val) => handleConfirmPasswordChange(val)}
