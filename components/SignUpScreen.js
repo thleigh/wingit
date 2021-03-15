@@ -30,16 +30,16 @@ const SignUpScreen = ({navigation}) => {
     })
 
     const textInputChange = (val) => {
-        if( val.length != 0 ) {
+        if( val.length !== 0 ) {
             setData({
                 ...data,
-                email: val, 
+                username: val,
                 check_textInputChange: true
             });
         } else {
             setData({
                 ...data,
-                email: val,
+                username: val,
                 check_textInputChange: false
             });
         }
@@ -49,14 +49,14 @@ const SignUpScreen = ({navigation}) => {
         setData({
             ...data,
             password: val
-        })
+        });
     }
 
     const handleConfirmPasswordChange = (val) => {
         setData({
             ...data,
             confirm_password: val
-        })
+        });
     }
 
     const updateSecureTextEntry = () => {
@@ -118,13 +118,13 @@ const SignUpScreen = ({navigation}) => {
                     />
                     <TextInput
                         placeholder="Your Password"
-                        secureTextEmtry={data.secureTextEntry ? true : false}
+                        secureTextEmtry={data.confirm_secureTextEntry ? true : false}
                         style={styles.textInput}
                         autoCapitalize="none"
-                        onChangeText={(val) => handlePasswordChange(val)}
+                        onChangeText={(val) => handleConfirmPasswordChange(val)}
                     />
                     <TouchableOpacity
-                        onPress={updateSecureTextEntry}
+                        onPress={updateConfirmSecureTextEntry}
                     >
                         {data.secureTextEntry ?
                         <Feather

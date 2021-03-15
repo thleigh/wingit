@@ -28,7 +28,7 @@ const SignInScreen = ({navigation}) => {
     })
 
     const textInputChange = (val) => {
-        if( val.length != 0 ) {
+        if( val.length !== 0 ) {
             setData({
                 ...data,
                 email: val, 
