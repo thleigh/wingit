@@ -11,12 +11,19 @@ import MainTabScreen from "./components/MainTabScreen";
 import SettingsScreen from "./components/SettingsScreen";
 
 import RootStackScreen from "./components/RootStackScreen";
+import { useEffect } from "react";
 
 const Drawer = createDrawerNavigator();
 
 const App = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [userToken, setUserToken] = React.useState(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
 
   if( isLoading ) {
     return(
