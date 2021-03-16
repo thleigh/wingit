@@ -26,7 +26,9 @@ const SignInScreen = ({navigation}) => {
         email: "",
         password: "",
         check_textInputChange: false,
-        secureTextEntry: true
+        secureTextEntry: true,
+        isValidUser: true,
+        isValidPassword: true,
     })
 
     const { signIn } = React.useContext(AuthContext);
@@ -100,7 +102,13 @@ const SignInScreen = ({navigation}) => {
                     </Animatable.View>
                     : null}
                 </View>
-
+                { data.isValidUser ? null : 
+                <Animatable.View animation="fadeInLeft" duration={500}>
+                    <Text style={styles.errorMsg}>
+                        Username must be 4 characters long.
+                    </Text>
+                </Animatable.View>
+                }
                 <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
                 <View style={styles.action}>
                     <Feather
@@ -133,7 +141,13 @@ const SignInScreen = ({navigation}) => {
                         }      
                     </TouchableOpacity>
                 </View>
-
+                { data.isValidPassword ? null : 
+                <Animatable.View animation="fadeInLeft" duration={500}>
+                    <Text style={styles.errorMsg}>
+                        Password must be 8 characters long.
+                    </Text>
+                </Animatable.View>
+                }
                 <TouchableOpacity>
                     <Text style={{color: "#009387", marginTop:15}}>Forgot password?</Text>
                 </TouchableOpacity>
