@@ -18,8 +18,47 @@ import { useEffect } from "react";
 const Drawer = createDrawerNavigator();
 
 const App = () => {
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [userToken, setUserToken] = React.useState(null);
+  // const [isLoading, setIsLoading] = React.useState(true);
+  // const [userToken, setUserToken] = React.useState(null);
+
+  const initialLoginState = {
+    isLoading: true,
+    userName: null,
+    userToken: null,
+  };
+
+  const loginReducer = (prevState, action) => {
+    switch( action.type ) {
+      case "RETRIEVE_TOKEN":
+        return{
+          ...prevState,
+          userToken: action.token,
+          isLoading: false,
+        };
+      case "LOGIN":
+        return{
+          ...prevState,
+          userName: action.id,
+          userToken: action.token,
+          isLoading: false,
+        };
+      case "LOGOUT":
+        return{
+          ...prevState,
+          userName: null,
+          userToken: null,
+          isLoading: false,
+        };
+      case "REGISTER":
+        return{
+          ...prevState,
+          userName: action.id,
+          userToken: action.taken,
+          isLoading: false,
+        };
+
+    }
+  }
 
   const authContext = React.useMemo(() => ({
     signIn: ()=> {
@@ -34,7 +73,7 @@ const App = () => {
       setUserToken("fgkj");
       setIsLoading(false);
     }
-  }));
+  }), []);
 
   useEffect(() => {
     setTimeout(() => {
