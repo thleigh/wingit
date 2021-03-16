@@ -53,11 +53,15 @@ const App = () => {
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-        <RootStackScreen />
-        {/* <Drawer.Navigator drawerContent={props => <DrawerContent { ...props} /> } initialRouteName="Home">
-          <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
-          <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
-        </Drawer.Navigator> */}
+        { userToken !== null ? (
+          <Drawer.Navigator drawerContent={props => <DrawerContent { ...props} /> } initialRouteName="Home">
+            <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
+            <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
+          </Drawer.Navigator>
+        )
+        :
+          <RootStackScreen />
+        }
       </NavigationContainer>
     </AuthContext.Provider>
   );
