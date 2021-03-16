@@ -15,6 +15,8 @@ import { AuthContext } from "./components/context.js"
 import RootStackScreen from "./screens/RootStackScreen";
 import { useEffect } from "react";
 
+import AsyncStorage from "@react-native-community/async-storage";
+
 const Drawer = createDrawerNavigator();
 
 const App = () => {
@@ -63,20 +65,30 @@ const App = () => {
   const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
 
   const authContext = React.useMemo(() => ({
-    signIn: (userName, password)=> {
+    signIn: async(userName, password)=> {
       // setUserToken("fgkj");
       // setIsLoading(false);
       let userToken;
       userToken = null;
       if(userName == "user" && password == "pass") {
-        userToken= "dfgfg"
+        userToken= "dfgfg";
+        try {
+          await AsyncStorage.setItem("userToken", userToken)
+        } catch(error) {
+          console.log(error);
+        }
       }
       console.log("user token: ", userToken);
       dispatch({type: "LOGIN", id: userName, token: userToken});
     },
-    signOut: ()=> {
+    signOut: async()=> {
       // setUserToken(null);
       // setIsLoading(false);
+      try {
+        await AsyncStorage.removeItem("userToken")
+      } catch(error) {
+        console.log(error);
+      }
       dispatch({type: "LOGOUT"})
     },
     signUp: ()=> {
@@ -86,10 +98,15 @@ const App = () => {
   }), []);
 
   useEffect(() => {
-    setTimeout(() => {
+    setTimeout(async() => {
       // setIsLoading(false);
       let userToken;
-      userToken = "fgg;"
+      userToken = null;
+      try {
+        userToken = await AsyncStorage.getItem("userToken", userToken)
+      } catch(error) {
+        console.log(error);
+      }
       // console.log("user token", userToken);
       dispatch({type: "REGISTER", token: userToken});
 
