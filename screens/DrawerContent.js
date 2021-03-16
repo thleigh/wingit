@@ -12,10 +12,12 @@ import {
     Switch
 } from "react-native-paper";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { AuthContext } from "../components/context.js";
+
 
 export function DrawerContent(props) {
 
-    // const { signOut, toggleTheme } = React.useContext(AuthContext);
+    const { signOut } = React.useContext(AuthContext);
 
     return(
         <View style={{flex:1}}>
@@ -101,7 +103,7 @@ export function DrawerContent(props) {
                         />
                     )}
                     label="Sign Out"
-                    onPress={() => {}}
+                    onPress={() => {signOut()}}
                 />
             </Drawer.Section>
         </View>
