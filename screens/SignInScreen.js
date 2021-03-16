@@ -52,10 +52,19 @@ const SignInScreen = ({navigation}) => {
     }
 
     const handlePasswordChange = (val) => {
-        setData({
-            ...data,
-            password: val
-        })
+        if( val.trim().length > 8 ) {
+            setData({
+                ...data,
+                password: val,
+                isValidPassword: true
+            })
+        } else {
+            setData({
+                ...data,
+                password: val,
+                isValidPassword: false
+            })
+        }
     }
 
     const updateSecureTextEntry = () => {
