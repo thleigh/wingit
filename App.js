@@ -17,6 +17,7 @@ import { useEffect } from "react";
 
 import AsyncStorage from "@react-native-community/async-storage";
 
+
 const Drawer = createDrawerNavigator();
 
 const App = () => {
@@ -68,14 +69,14 @@ const App = () => {
     signIn: async(foundUser)=> {
       // setUserToken("fgkj");
       // setIsLoading(false);
-      let userToken;
-      userToken = null;
-        try {
-          userToken= "dfgfg";
-          await AsyncStorage.setItem("userToken", userToken)
-        } catch(error) {
-          console.log(error);
-        }
+      const userToken = String(founderUser[0].userToken);
+      const userName = foundUser[0].username;
+      try {
+        userToken= "dfgfg";
+        await AsyncStorage.setItem("userToken", userToken);
+      } catch(error) {
+        console.log(error);
+      }
       // console.log("user token: ", userToken);
       dispatch({type: "LOGIN", id: userName, token: userToken});
     },

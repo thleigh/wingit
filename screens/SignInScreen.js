@@ -9,7 +9,8 @@ import {
     Button,
     StyleSheet,
     StatusBar,
-    TouchableOpacityBase
+    TouchableOpacityBase,
+    Alert
 } from "react-native";
 
 import * as Animatable from 'react-native-animatable';
@@ -19,6 +20,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 
 import { AuthContext } from "../components/context.js"
+import Users from "./model/users.js"
 
 const SignInScreen = ({navigation}) => {
 
@@ -88,8 +90,17 @@ const SignInScreen = ({navigation}) => {
         }
     }
 
-    const loginHandle = (username, password) => {
-        signIn(username, password);
+    const loginHandle = (userName, password) => {
+        const foundUser = Users.filter( item => {
+            return userName == item.username && password == item.password
+        });
+        if (foundUser.length == 0 ) {
+            Alert.alert("Invalid User", "Username or password is incorect.", [
+                {text: "Okay"}
+            ]);
+            return;
+        };
+        signIn(foundUser);
     }
 
     return (
