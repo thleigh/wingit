@@ -60,10 +60,18 @@ const App = () => {
     }
   }
 
+  const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
+
   const authContext = React.useMemo(() => ({
-    signIn: ()=> {
-      setUserToken("fgkj");
-      setIsLoading(false);
+    signIn: (userName, password)=> {
+      // setUserToken("fgkj");
+      // setIsLoading(false);
+      let userToken;
+      userName = null;
+      if(userName == "user" && password == "pass") {
+        userToken= "dfgfg"
+      }
+      dispatch({type: "LOGIN", id: userName, token: userToken})
     },
     signOut: ()=> {
       setUserToken(null);
@@ -77,11 +85,13 @@ const App = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setIsLoading(false);
+      // setIsLoading(false);
+      dispatch({type: "REGISTER", token: "dfklj"})
+
     }, 1000);
   }, []);
 
-  if( isLoading ) {
+  if( loginState.isLoading ) {
     return(
       <View style={{flex:1, justifyContent:"center", alignItems:"center"}}>
         <ActivityIndicator size="large" />
@@ -92,7 +102,7 @@ const App = () => {
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-        { userToken !== null ? (
+        { loginState.userToken !== null ? (
           <Drawer.Navigator drawerContent={props => <DrawerContent { ...props} /> } initialRouteName="Home">
             <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
             <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
