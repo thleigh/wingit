@@ -63,6 +63,20 @@ const SignInScreen = ({navigation}) => {
         });
     }
 
+    const handleValidUser = (val) => {
+        if( val.trim().length >= 4 ) {
+            setData({
+                ...data,
+                isValidUser: true
+            });
+        } else {
+            setData({
+                ...data,
+                isValidUser: false
+            });
+        }
+    }
+
     const loginHandle = (username, password) => {
         signIn(username, password);
     }
@@ -89,6 +103,7 @@ const SignInScreen = ({navigation}) => {
                         style={styles.textInput}
                         autoCapitalize="none"
                         onChangeText={(val) => textInputChange(val)}
+                        onEndEditing={(e) => handleValidUser(e.nativeEvent.text)}
                     />
                     {data.check_textInputChange ? 
                     <Animatable.View
