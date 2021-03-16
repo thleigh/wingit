@@ -71,7 +71,8 @@ const App = () => {
       if(userName == "user" && password == "pass") {
         userToken= "dfgfg"
       }
-      dispatch({type: "LOGIN", id: userName, token: userToken})
+      console.log("user token: ", userToken);
+      dispatch({type: "LOGIN", id: userName, token: userToken});
     },
     signOut: ()=> {
       // setUserToken(null);
@@ -87,7 +88,10 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       // setIsLoading(false);
-      dispatch({type: "REGISTER", token: "dfklj"})
+      let userToken;
+      userToken = "fgg;"
+      console.log("user token", userToken);
+      dispatch({type: "REGISTER", token: userToken});
 
     }, 1000);
   }, []);
