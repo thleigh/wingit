@@ -67,7 +67,7 @@ const App = () => {
       // setUserToken("fgkj");
       // setIsLoading(false);
       let userToken;
-      userName = null;
+      userToken = null;
       if(userName == "user" && password == "pass") {
         userToken= "dfgfg"
       }
@@ -90,7 +90,7 @@ const App = () => {
       // setIsLoading(false);
       let userToken;
       userToken = "fgg;"
-      console.log("user token", userToken);
+      // console.log("user token", userToken);
       dispatch({type: "REGISTER", token: userToken});
 
     }, 1000);
