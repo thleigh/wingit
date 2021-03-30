@@ -11,8 +11,6 @@ import {
 } from "react-native";
 
 import * as Animatable from 'react-native-animatable';
-import { LinearGradient } from "expo-linear-gradient";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const SplashScreen = ({navigation}) => {
 
@@ -29,10 +27,7 @@ const SplashScreen = ({navigation}) => {
                 style={styles.wingitlogo}
             />
         </View>
-        <Animatable.View 
-            style={styles.footer}
-            animation="fadeInUpBig"
-        >
+        <View style={styles.footer}>
             <Text style={styles.title}>Meet through mutuals!</Text>
             <Text style={styles.text}>Sign in with account</Text>
             <View style={styles.button}>
@@ -45,7 +40,7 @@ const SplashScreen = ({navigation}) => {
                 />
             </TouchableOpacity>
             </View>
-        </Animatable.View>
+        </View>
       </View>
     );
 };
