@@ -22,13 +22,13 @@ import Users from '../model/users';
 const SignInScreen = ({navigation}) => {
 
     const [data, setData] = React.useState({
-        email: "",
-        password: "",
+        username: '',
+        password: '',
         check_textInputChange: false,
         secureTextEntry: true,
         isValidUser: true,
         isValidPassword: true,
-    })
+    });
 
     const { signIn } = React.useContext(AuthContext);
 
@@ -86,6 +86,7 @@ const SignInScreen = ({navigation}) => {
             });
         }
     }
+
 
     const loginHandle = (userName, password) => {
 

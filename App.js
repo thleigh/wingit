@@ -69,16 +69,24 @@ const App = () => {
     signIn: async(foundUser) => {
       // setUserToken('fgkj');
       // setIsLoading(false);
+      
+      // Async Storage for production
       const userToken = String(foundUser[0].userToken);
       const userName = foundUser[0].username;
-      
       try {
         await AsyncStorage.setItem('userToken', userToken);
       } catch(e) {
         console.log(e);
       }
-      // console.log('user token: ', userToken);
-      dispatch({ type: 'LOGIN', id: userName, token: userToken });
+
+      // Just for testing
+      // let userToken
+      // userName = null;
+      // if( userName == 'user' && password == 'pass' ) {
+      //   userToken = 'dfgdfg'
+      // }
+      // // console.log('user token: ', userToken);
+      // dispatch({ type: 'LOGIN', id: userName, token: userToken });
     },
     signOut: async() => {
       // setUserToken(null);
@@ -96,6 +104,7 @@ const App = () => {
     },
   }), []);
 
+  // For Production
   useEffect(() => {
     setTimeout(async() => {
       // setIsLoading(false);
@@ -108,9 +117,15 @@ const App = () => {
       }
       // console.log("user token", userToken);
       dispatch({type: "REGISTER", token: userToken});
-
     }, 1000);
   }, []);
+
+  // Testing
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     dispatch({ type: 'REGISTER', token: 'dfklj' });
+  //   }, 1000);
+  // }, []);
 
   if( loginState.isLoading ) {
     return(
