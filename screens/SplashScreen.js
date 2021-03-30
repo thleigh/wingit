@@ -25,6 +25,7 @@ const SplashScreen = ({navigation}) => {
                 duraton="1500"
                 source={require('../assets/wingitlogo.png')}
                 style={styles.logo}
+                resizeMode="stretch"
             />
         </View>
         <Animatable.View 
