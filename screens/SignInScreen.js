@@ -10,13 +10,11 @@ import {
     StyleSheet,
     StatusBar,
     TouchableOpacityBase,
-    Alert
+    Alert,
+    Image
 } from "react-native";
 
 import * as Animatable from 'react-native-animatable';
-import { LinearGradient } from "expo-linear-gradient";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 
 import { AuthContext } from "../components/context.js"
@@ -115,16 +113,34 @@ const SignInScreen = ({navigation}) => {
         <View style={styles.container}>
                 <StatusBar backgroundColor="#009387" barStyle="light-content"/>
             <View style={styles.header}>
-                <Text style={styles.text_header}>Welcome</Text>
+                <Image
+                    source={require('../assets/wingitsmall.png')}
+                    style={styles.logo}
+                    resizeMode="stretch"
+                    style={styles.wingitlogo}
+                />
             </View>
             <View style={styles.footer}>
+                <View style={{ flexDirection: "row" }}>
+                    <TouchableOpacity style={styles.button}>
+                        <View >
+                            <Button 
+                                title="Sign In"
+                                onPress={() => {loginHandle( data.username, data.password)}}
+                            />
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button}>
+                        <View>
+                            <Button 
+                                title="Sign Up"
+                                onPress={() => navigation.navigate('SignUpScreen')}
+                            />
+                        </View>
+                    </TouchableOpacity>
+                </View>
                 <Text style={styles.text_footer}>Email</Text>
                 <View style={styles.action}>
-                    <FontAwesome
-                        name="user-o"
-                        color="#05375a"
-                        size={20}
-                    />
                     <TextInput
                         placeholder="Your Email"
                         style={styles.textInput}
@@ -153,11 +169,6 @@ const SignInScreen = ({navigation}) => {
                 }
                 <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
                 <View style={styles.action}>
-                    <Feather
-                        name="lock"
-                        color="#05375a"
-                        size={20}
-                    />
                     <TextInput
                         placeholder="Your Password"
                         secureTextEntry={data.secureTextEntry ? true : false}
@@ -183,6 +194,7 @@ const SignInScreen = ({navigation}) => {
                         }      
                     </TouchableOpacity>
                 </View>
+
                 { data.isValidPassword ? null : 
                 <Animatable.View animation="fadeInLeft" duration={500}>
                     <Text style={styles.errorMsg}>
@@ -193,29 +205,6 @@ const SignInScreen = ({navigation}) => {
                 <TouchableOpacity>
                     <Text style={{color: "#009387", marginTop:15}}>Forgot password?</Text>
                 </TouchableOpacity>
-                <View style={styles.button}>
-                    <TouchableOpacity
-                        style={styles.signIn}
-                    >
-                        <Button 
-                            title="Sign In"
-                            onPress={() => {loginHandle( data.username, data.password)}}
-                        />
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        style={[styles.signIn, {
-                            borderColor: '#009387',
-                            borderWidth: 1,
-                            marginTop: 15
-                        }]}
-                    >
-                    <Button 
-                        title="Sign Up"
-                        onPress={() => navigation.navigate('SignUpScreen')}
-                    />
-                    </TouchableOpacity>
-                </View>
             </View>
         </View>
     )
@@ -232,7 +221,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         paddingHorizontal: 20,
-        paddingBottom: 50
+        paddingBottom: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     footer: {
         flex: 3,
@@ -248,6 +239,7 @@ const styles = StyleSheet.create({
         fontSize: 30
     },
     text_footer: {
+        marginTop: 50,
         color: '#05375a',
         fontSize: 18
     },
@@ -276,8 +268,16 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     button: {
-        alignItems: 'center',
-        marginTop: 50
+        flex: 1,
+        marginHorizontal: 20,
+        marginTop: 5
+    },
+    textSign: {
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    wingitlogo: {
+        marginTop: 100,
     },
     signIn: {
         width: '100%',
@@ -286,8 +286,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 10
     },
-    textSign: {
-        fontSize: 18,
-        fontWeight: 'bold'
-    }
 });
