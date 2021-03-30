@@ -112,17 +112,16 @@ const SignUpScreen = ({navigation}) => {
                         autoCapitalize="none"
                         onChangeText={(val) => textInputChange(val)}
                     />
-                    {data.check_textInputChange ? 
-                    <Animatable.View
-                        animation="bounceIn"
-                    >
-                        <Feather
-                            name="check-circle"
-                            color="green"
-                            size={20}
-                        />
-                    </Animatable.View>
-                    : null}
+                </View>
+
+                <Text style={styles.text_footer}>Username</Text>
+                <View style={styles.action}>
+                    <TextInput
+                        placeholder="Your Username"
+                        style={styles.textInput}
+                        autoCapitalize="none"
+                        onChangeText={(val) => textInputChange(val)}
+                    />
                 </View>
 
                 <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
@@ -156,7 +155,7 @@ const SignUpScreen = ({navigation}) => {
                 <Text style={[styles.text_footer, { marginTop: 35 }]}>Confirm Password</Text>
                 <View style={styles.action}>
                     <TextInput
-                        placeholder="Your Password"
+                        placeholder="Re-type Password"
                         secureTextEntry={data.confirm_secureTextEntry ? true : false}
                         style={styles.textInput}
                         autoCapitalize="none"

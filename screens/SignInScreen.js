@@ -140,7 +140,7 @@ const SignInScreen = ({navigation}) => {
                         </View>
                     </TouchableOpacity>
                 </View>
-                <Text style={styles.text_footer}>Email</Text>
+                <Text style={styles.text_footer}>Username</Text>
                 <View style={styles.action}>
                     <TextInput
                         placeholder="Your Email"
