@@ -9,12 +9,12 @@ import {
     Button,
     StyleSheet,
     StatusBar,
-    TouchableOpacityBase
+    TouchableOpacityBase,
+    Image
 } from "react-native";
 
 import * as Animatable from 'react-native-animatable';
 import { LinearGradient } from "expo-linear-gradient";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 
@@ -77,19 +77,35 @@ const SignUpScreen = ({navigation}) => {
         <View style={styles.container}>
                 <StatusBar backgroundColor="#009387" barStyle="light-content"/>
             <View style={styles.header}>
-                <Text style={styles.text_header}>Register</Text>
+                <Image
+                    source={require('../assets/wingitsmall.png')}
+                    style={styles.logo}
+                    resizeMode="stretch"
+                    style={styles.wingitlogo}
+                />
             </View>
-            <Animatable.View 
-                animation="fadeInUpBig"
-                style={styles.footer}
-            >
+            <View style={styles.footer}>
+                <View style={{ flexDirection: "row" }}>
+                    <TouchableOpacity style={styles.button}>
+                        <View >
+                            <Button 
+                                title="Login"
+                                onPress={() => navigation.goBack()}
+                            />
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button}>
+                        <View>
+                            <Button 
+                                title="Sign Up"
+                                onPress={() => navigation.navigate('SignUpScreen')}
+                            />
+                        </View>
+                    </TouchableOpacity>
+                </View>
+
                 <Text style={styles.text_footer}>Email</Text>
                 <View style={styles.action}>
-                    <FontAwesome
-                        name="user-o"
-                        color="#05375a"
-                        size={20}
-                    />
                     <TextInput
                         placeholder="Your Email"
                         style={styles.textInput}
@@ -111,11 +127,6 @@ const SignUpScreen = ({navigation}) => {
 
                 <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
                 <View style={styles.action}>
-                    <Feather
-                        name="lock"
-                        color="#05375a"
-                        size={20}
-                    />
                     <TextInput
                         placeholder="Your Password"
                         secureTextEntry={data.confirm_secureTextEntry ? true : false}
@@ -144,11 +155,6 @@ const SignUpScreen = ({navigation}) => {
 
                 <Text style={[styles.text_footer, { marginTop: 35 }]}>Confirm Password</Text>
                 <View style={styles.action}>
-                    <Feather
-                        name="lock"
-                        color="#05375a"
-                        size={20}
-                    />
                     <TextInput
                         placeholder="Your Password"
                         secureTextEntry={data.confirm_secureTextEntry ? true : false}
@@ -175,14 +181,7 @@ const SignUpScreen = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
 
-                <View style={styles.button}>
-                    <LinearGradient
-                        colors={["#08d4c4", "#01ab9d"]}
-                        style={styles.signIn}
-                    >
-                        <Text style={[styles.textSign, {color: "#fff"}]}>Sign Up</Text>
-                    </LinearGradient>
-
+                <View style={{marginTop: 20}}>
                     <TouchableOpacity
                         onPress={() => navigation.goBack()}
                         style={[styles.signIn, {
@@ -191,10 +190,10 @@ const SignUpScreen = ({navigation}) => {
                             borderWidth: 1
                         }]}
                     >
-                        <Text style={[styles.textSign, {color:"#009387"}]}>Sign In</Text>
+                        <Text style={[styles.textSign, {color:"#009387"}]}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
-            </Animatable.View>
+            </View>
         </View>
     )
 }
@@ -208,9 +207,10 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 1,
-        justifyContent: 'flex-end',
         paddingHorizontal: 20,
-        paddingBottom: 50
+        paddingBottom: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     footer: {
         flex: 3,
@@ -226,6 +226,7 @@ const styles = StyleSheet.create({
         fontSize: 30
     },
     text_footer: {
+        marginTop: 50,
         color: '#05375a',
         fontSize: 18
     },
@@ -254,8 +255,9 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     button: {
-        alignItems: 'center',
-        marginTop: 50
+        flex: 1,
+        marginHorizontal: 20,
+        marginTop: 5
     },
     signIn: {
         width: '100%',
@@ -267,5 +269,8 @@ const styles = StyleSheet.create({
     textSign: {
         fontSize: 18,
         fontWeight: 'bold'
-    }
+    },
+    wingitlogo: {
+        marginTop: 100,
+    },
 });

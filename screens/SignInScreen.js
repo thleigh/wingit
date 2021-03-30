@@ -127,7 +127,7 @@ const SignInScreen = ({navigation}) => {
                         <View >
                             <Button 
                                 title="Login"
-                                onPress={() => {loginHandle( data.username, data.password)}}
+                                onPress={() => navigation.goBack()}
                             />
                         </View>
                     </TouchableOpacity>
@@ -209,14 +209,14 @@ const SignInScreen = ({navigation}) => {
                 
                 <View style={styles.loginButton}>
                         <TouchableOpacity
-                            onPress={() => navigation.goBack()}
-                            style={[styles.login, {
+                                onPress={() => {loginHandle( data.username, data.password)}}
+                                style={[styles.login, {
                                 borderColor: "#009387",
                                 marginTop:15,
                                 borderWidth: 1
                             }]}
                         >
-                            <Text style={[styles.textSign, {color:"#009387"}]}>Sign In</Text>
+                            <Text style={[styles.textSign, {color:"#009387"}]}>Login</Text>
                         </TouchableOpacity>
                 </View>
             </View>
@@ -233,7 +233,6 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 1,
-        justifyContent: 'flex-end',
         paddingHorizontal: 20,
         paddingBottom: 50,
         justifyContent: 'center',
