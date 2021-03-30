@@ -20,7 +20,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 
 import { AuthContext } from "../components/context.js"
-import Users from "./model/users.js"
+import Users from '../model/users';
 
 const SignInScreen = ({navigation}) => {
 
@@ -96,18 +96,18 @@ const SignInScreen = ({navigation}) => {
         });
 
         if ( data.username.length == 0 || data.password.length == 0 ) {
-            Alert.alert("Wrong Input!", "Username or password cannot be empty.", [
-                {text: "Okay"}
+            Alert.alert('Wrong Input!', 'Username or password field cannot be empty.', [
+                {text: 'Okay'}
             ]);
             return;
-        };
+        }
 
         if ( foundUser.length == 0 ) {
             Alert.alert("Invalid User", "Username or password is incorect.", [
                 {text: "Okay"}
             ]);
             return;
-        };
+        }
         signIn(foundUser);
     }
 
