@@ -66,34 +66,34 @@ const App = () => {
   const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
 
   const authContext = React.useMemo(() => ({
-    signIn: async(foundUser)=> {
-      // setUserToken("fgkj");
+    signIn: async(foundUser) => {
+      // setUserToken('fgkj');
       // setIsLoading(false);
-      const userToken = String(founderUser[0].userToken);
+      const userToken = String(foundUser[0].userToken);
       const userName = foundUser[0].username;
+      
       try {
-        userToken= "dfgfg";
-        await AsyncStorage.setItem("userToken", userToken);
-      } catch(error) {
-        console.log(error);
+        await AsyncStorage.setItem('userToken', userToken);
+      } catch(e) {
+        console.log(e);
       }
-      // console.log("user token: ", userToken);
-      dispatch({type: "LOGIN", id: userName, token: userToken});
+      // console.log('user token: ', userToken);
+      dispatch({ type: 'LOGIN', id: userName, token: userToken });
     },
-    signOut: async()=> {
+    signOut: async() => {
       // setUserToken(null);
       // setIsLoading(false);
       try {
-        await AsyncStorage.removeItem("userToken")
-      } catch(error) {
-        console.log(error);
+        await AsyncStorage.removeItem('userToken');
+      } catch(e) {
+        console.log(e);
       }
-      dispatch({type: "LOGOUT"})
+      dispatch({ type: 'LOGOUT' });
     },
-    signUp: ()=> {
-      setUserToken("fgkj");
-      setIsLoading(false);
-    }
+    signUp: () => {
+      // setUserToken('fgkj');
+      // setIsLoading(false);
+    },
   }), []);
 
   useEffect(() => {

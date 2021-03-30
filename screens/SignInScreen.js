@@ -16,8 +16,6 @@ import {
 
 import * as Animatable from 'react-native-animatable';
 import Feather from "react-native-vector-icons/Feather";
-import { LinearGradient } from "expo-linear-gradient";
-
 import { AuthContext } from "../components/context.js"
 import Users from '../model/users';
 
@@ -35,17 +33,17 @@ const SignInScreen = ({navigation}) => {
     const { signIn } = React.useContext(AuthContext);
 
     const textInputChange = (val) => {
-        if( val.trim().length > 4 ) {
+        if( val.trim().length >= 4 ) {
             setData({
                 ...data,
-                email: val, 
+                username: val,
                 check_textInputChange: true,
                 isValidUser: true
             });
         } else {
             setData({
                 ...data,
-                email: val,
+                username: val,
                 check_textInputChange: false,
                 isValidUser: false
             });
@@ -53,18 +51,18 @@ const SignInScreen = ({navigation}) => {
     }
 
     const handlePasswordChange = (val) => {
-        if( val.trim().length > 8 ) {
+        if( val.trim().length >= 8 ) {
             setData({
                 ...data,
                 password: val,
                 isValidPassword: true
-            })
+            });
         } else {
             setData({
                 ...data,
                 password: val,
                 isValidPassword: false
-            })
+            });
         }
     }
 
@@ -90,9 +88,10 @@ const SignInScreen = ({navigation}) => {
     }
 
     const loginHandle = (userName, password) => {
+
         const foundUser = Users.filter( item => {
-            return userName == item.username && password == item.password
-        });
+            return userName == item.username && password == item.password;
+        } );
 
         if ( data.username.length == 0 || data.password.length == 0 ) {
             Alert.alert('Wrong Input!', 'Username or password field cannot be empty.', [
@@ -102,8 +101,8 @@ const SignInScreen = ({navigation}) => {
         }
 
         if ( foundUser.length == 0 ) {
-            Alert.alert("Invalid User", "Username or password is incorect.", [
-                {text: "Okay"}
+            Alert.alert('Invalid User!', 'Username or password is incorrect.', [
+                {text: 'Okay'}
             ]);
             return;
         }
@@ -162,11 +161,11 @@ const SignInScreen = ({navigation}) => {
                     : null}
                 </View>
                 { data.isValidUser ? null : 
-                <Animatable.View animation="fadeInLeft" duration={500}>
+                <View>
                     <Text style={styles.errorMsg}>
                         Username must be 4 characters long.
                     </Text>
-                </Animatable.View>
+                </View>
                 }
                 <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
                 <View style={styles.action}>
@@ -197,11 +196,11 @@ const SignInScreen = ({navigation}) => {
                 </View>
 
                 { data.isValidPassword ? null : 
-                <Animatable.View animation="fadeInLeft" duration={500}>
+                <View>
                     <Text style={styles.errorMsg}>
                         Password must be 8 characters long.
                     </Text>
-                </Animatable.View>
+                </View>
                 }
                 <TouchableOpacity>
                     <Text style={{color: "#C0C0C0", marginTop:15}}>Forgot password?</Text>
@@ -209,14 +208,15 @@ const SignInScreen = ({navigation}) => {
                 
                 <View style={styles.loginButton}>
                         <TouchableOpacity
-                                onPress={() => {loginHandle( data.username, data.password)}}
+                                onPress={() => {loginHandle( data.username, data.password )}}
+                                // onPress={() => navigation.navigate("HomeScreen")}
                                 style={[styles.login, {
-                                borderColor: "#009387",
+                                borderColor: "#C0C0C0",
                                 marginTop:15,
                                 borderWidth: 1
                             }]}
                         >
-                            <Text style={[styles.textSign, {color:"#009387"}]}>Login</Text>
+                            <Text style={[styles.textSign, {color:"#C0C0C0"}]}>Login</Text>
                         </TouchableOpacity>
                 </View>
             </View>
@@ -229,7 +229,7 @@ export default SignInScreen;
 const styles = StyleSheet.create({
     container: {
       flex: 1, 
-      backgroundColor: '#009387'
+      backgroundColor: '#fff'
     },
     header: {
         flex: 1,
@@ -290,7 +290,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     wingitlogo: {
-        marginTop: 100,
+        marginTop: 150,
     },
     login: {
         width: '100%',

@@ -185,12 +185,12 @@ const SignUpScreen = ({navigation}) => {
                     <TouchableOpacity
                         onPress={() => navigation.goBack()}
                         style={[styles.signIn, {
-                            borderColor: "#009387",
+                            borderColor: "#C0C0C0",
                             marginTop:15,
                             borderWidth: 1
                         }]}
                     >
-                        <Text style={[styles.textSign, {color:"#009387"}]}>Sign Up</Text>
+                        <Text style={[styles.textSign, {color:"#C0C0C0"}]}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -203,7 +203,7 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
     container: {
       flex: 1, 
-      backgroundColor: '#009387'
+      backgroundColor: '#fff'
     },
     header: {
         flex: 1,
@@ -271,6 +271,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     wingitlogo: {
-        marginTop: 100,
+        marginTop: 150,
     },
 });
