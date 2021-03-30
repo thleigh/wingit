@@ -6,7 +6,6 @@ import { View, Text, Button, SafeAreaView, StyleSheet, StatusBar, ScrollView, Ac
 
 import { DrawerContent } from "./screens/DrawerContent";
 
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import MainTabScreen from "./screens/MainTabScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 
@@ -32,36 +31,35 @@ const App = () => {
 
   const loginReducer = (prevState, action) => {
     switch( action.type ) {
-      case "RETRIEVE_TOKEN":
-        return{
+      case 'RETRIEVE_TOKEN': 
+        return {
           ...prevState,
           userToken: action.token,
           isLoading: false,
         };
-      case "LOGIN":
-        return{
+      case 'LOGIN': 
+        return {
           ...prevState,
           userName: action.id,
           userToken: action.token,
           isLoading: false,
         };
-      case "LOGOUT":
-        return{
+      case 'LOGOUT': 
+        return {
           ...prevState,
           userName: null,
           userToken: null,
           isLoading: false,
         };
-      case "REGISTER":
-        return{
+      case 'REGISTER': 
+        return {
           ...prevState,
           userName: action.id,
-          userToken: action.taken,
+          userToken: action.token,
           isLoading: false,
         };
-
     }
-  }
+  };
 
   const [loginState, dispatch] = React.useReducer(loginReducer, initialLoginState);
 
@@ -69,24 +67,16 @@ const App = () => {
     signIn: async(foundUser) => {
       // setUserToken('fgkj');
       // setIsLoading(false);
-      
-      // Async Storage for production
       const userToken = String(foundUser[0].userToken);
       const userName = foundUser[0].username;
+      
       try {
         await AsyncStorage.setItem('userToken', userToken);
       } catch(e) {
         console.log(e);
       }
-
-      // Just for testing
-      // let userToken
-      // userName = null;
-      // if( userName == 'user' && password == 'pass' ) {
-      //   userToken = 'dfgdfg'
-      // }
-      // // console.log('user token: ', userToken);
-      // dispatch({ type: 'LOGIN', id: userName, token: userToken });
+      // console.log('user token: ', userToken);
+      dispatch({ type: 'LOGIN', id: userName, token: userToken });
     },
     signOut: async() => {
       // setUserToken(null);
@@ -111,12 +101,12 @@ const App = () => {
       let userToken;
       userToken = null;
       try {
-        userToken = await AsyncStorage.getItem("userToken", userToken)
-      } catch(error) {
-        console.log(error);
+        userToken = await AsyncStorage.getItem('userToken');
+      } catch(e) {
+        console.log(e);
       }
-      // console.log("user token", userToken);
-      dispatch({type: "REGISTER", token: userToken});
+      // console.log('user token: ', userToken);
+      dispatch({ type: 'RETRIEVE_TOKEN', token: userToken });
     }, 1000);
   }, []);
 
@@ -129,11 +119,11 @@ const App = () => {
 
   if( loginState.isLoading ) {
     return(
-      <View style={{flex:1, justifyContent:"center", alignItems:"center"}}>
-        <ActivityIndicator size="large" />
+      <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+        <ActivityIndicator size="large"/>
       </View>
-    )
-  }
+    );
+  };
 
   return (
     <AuthContext.Provider value={authContext}>
