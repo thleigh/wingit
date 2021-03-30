@@ -17,7 +17,7 @@ import {
 import * as Animatable from 'react-native-animatable';
 import Feather from "react-native-vector-icons/Feather";
 import { AuthContext } from "../components/context.js"
-import Users from '../model/users';
+import Users from '../model/users.js';
 
 const SignInScreen = ({navigation}) => {
 
@@ -147,19 +147,8 @@ const SignInScreen = ({navigation}) => {
                         style={styles.textInput}
                         autoCapitalize="none"
                         onChangeText={(val) => textInputChange(val)}
-                        onEndEditing={(e) => handleValidUser(e.nativeEvent.text)}
+                        onEndEditing={(e)=>handleValidUser(e.nativeEvent.text)}
                     />
-                    {data.check_textInputChange ? 
-                    <Animatable.View
-                        animation="bounceIn"
-                    >
-                        <Feather
-                            name="check-circle"
-                            color="green"
-                            size={20}
-                        />
-                    </Animatable.View>
-                    : null}
                 </View>
                 { data.isValidUser ? null : 
                 <View>
