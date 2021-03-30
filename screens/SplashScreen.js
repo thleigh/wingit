@@ -23,30 +23,26 @@ const SplashScreen = ({navigation}) => {
             <Animatable.Image 
                 animation="bounceIn"
                 duraton="1500"
-                source={require('../assets/wingitlogo.png')}
+                source={require('../assets/wingitsmall.png')}
                 style={styles.logo}
                 resizeMode="stretch"
+                style={styles.wingitlogo}
             />
         </View>
         <Animatable.View 
             style={styles.footer}
             animation="fadeInUpBig"
         >
-            <Text style={styles.title}>Stay connected with everyone!</Text>
+            <Text style={styles.title}>Meet through mutuals!</Text>
             <Text style={styles.text}>Sign in with account</Text>
             <View style={styles.button}>
-            <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
-                <LinearGradient
+            <TouchableOpacity >
+                <Button
+                    title="Get Started "
                     colors={['#08d4c4', '#01ab9d']}
                     style={styles.signIn}
-                >
-                    <Text style={styles.textSign}>Get Started</Text>
-                    <MaterialIcons 
-                        name="navigate-next"
-                        color="#fff"
-                        size={20}
-                    />
-                </LinearGradient>
+                    onPress={()=>navigation.navigate('SignInScreen')}
+                />
             </TouchableOpacity>
             </View>
         </Animatable.View>
@@ -60,22 +56,27 @@ const {height} = Dimensions.get("screen");
 const height_logo = height * 0.28;
 
 const styles = StyleSheet.create({
+    wingitlogo: {
+        marginTop: 150,
+    },
     container: {
       flex: 1, 
-      backgroundColor: '#009387'
+      backgroundColor: '#fff'
     },
     header: {
         flex: 2,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: -150
     },
     footer: {
         flex: 1,
         backgroundColor: '#fff',
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
         paddingVertical: 50,
-        paddingHorizontal: 30
+        paddingHorizontal: 30,
+        marginBottom: 150,
+        textAlign: 'center',
+        alignItems: 'center',
     },
     logo: {
         width: height_logo,
