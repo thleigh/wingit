@@ -16,6 +16,7 @@ import {
 
 import * as Animatable from 'react-native-animatable';
 import Feather from "react-native-vector-icons/Feather";
+import { LinearGradient } from "expo-linear-gradient";
 
 import { AuthContext } from "../components/context.js"
 import Users from '../model/users';
@@ -125,7 +126,7 @@ const SignInScreen = ({navigation}) => {
                     <TouchableOpacity style={styles.button}>
                         <View >
                             <Button 
-                                title="Sign In"
+                                title="Login"
                                 onPress={() => {loginHandle( data.username, data.password)}}
                             />
                         </View>
@@ -203,8 +204,21 @@ const SignInScreen = ({navigation}) => {
                 </Animatable.View>
                 }
                 <TouchableOpacity>
-                    <Text style={{color: "#009387", marginTop:15}}>Forgot password?</Text>
+                    <Text style={{color: "#C0C0C0", marginTop:15}}>Forgot password?</Text>
                 </TouchableOpacity>
+                
+                <View style={styles.loginButton}>
+                        <TouchableOpacity
+                            onPress={() => navigation.goBack()}
+                            style={[styles.login, {
+                                borderColor: "#009387",
+                                marginTop:15,
+                                borderWidth: 1
+                            }]}
+                        >
+                            <Text style={[styles.textSign, {color:"#009387"}]}>Sign In</Text>
+                        </TouchableOpacity>
+                </View>
             </View>
         </View>
     )
@@ -279,11 +293,14 @@ const styles = StyleSheet.create({
     wingitlogo: {
         marginTop: 100,
     },
-    signIn: {
+    login: {
         width: '100%',
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10
     },
+    loginButton: {
+        marginTop: 20,
+    }
 });
