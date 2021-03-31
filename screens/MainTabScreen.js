@@ -6,8 +6,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import ActivitiesScreen from "./ActivitiesScreen";
 import ConnectScreen from "./ConnectScreen";
-import ExploreScreen from "./ProfileScreen";
-import ProfileScreen from "./NotificationScreen";
+import ProfileScreen from "./ProfileScreen";
+import NotificationScreen from "./NotificationScreen";
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
@@ -42,7 +42,7 @@ const MainTabScreen = () => (
       />
       <Tab.Screen
         name="Notifications"
-        component={ProfileScreen}
+        component={NotificationScreen}
         options={{
           tabBarLabel: 'Notifications',
           tabBarIcon: ({ color }) => (
@@ -52,7 +52,7 @@ const MainTabScreen = () => (
       />
       <Tab.Screen
         name="Profile"
-        component={ExploreScreen}
+        component={ProfileScreen}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
