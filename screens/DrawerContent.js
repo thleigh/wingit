@@ -11,7 +11,7 @@ import {
     TouchableRipple,
     Switch
 } from "react-native-paper";
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { AuthContext } from "../components/context.js";
 
 
@@ -49,35 +49,46 @@ export function DrawerContent(props) {
                         <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
-                                name="home-outline" 
+                                name="umbrella-outline" 
                                 color={color}
                                 size={size}
                                 />
                             )}
-                            label="Home"
-                            onPress={() => {props.navigation.navigate('Home')}}
+                            label="Activities"
+                            onPress={() => {props.navigation.navigate('Activities')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
-                                name="account-outline" 
+                                name="people-outline" 
+                                color={color}
+                                size={size}
+                                />
+                            )}
+                            label="Connect"
+                            onPress={() => {props.navigation.navigate('Connect')}}
+                        />
+                        <DrawerItem 
+                            icon={({color, size}) => (
+                                <Icon 
+                                name="notifications-outline" 
+                                color={color}
+                                size={size}
+                                />
+                            )}
+                            label="Notifications"
+                            onPress={() => {props.navigation.navigate('Notifications')}}
+                        />
+                        <DrawerItem 
+                            icon={({color, size}) => (
+                                <Icon 
+                                name="person-outline" 
                                 color={color}
                                 size={size}
                                 />
                             )}
                             label="Profile"
                             onPress={() => {props.navigation.navigate('Profile')}}
-                        />
-                        <DrawerItem 
-                            icon={({color, size}) => (
-                                <Icon 
-                                name="bookmark-outline" 
-                                color={color}
-                                size={size}
-                                />
-                            )}
-                            label="Bookmarks"
-                            onPress={() => {props.navigation.navigate('BookmarkScreen')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (

@@ -143,7 +143,7 @@ const SignInScreen = ({navigation}) => {
                 <Text style={styles.text_footer}>Username</Text>
                 <View style={styles.action}>
                     <TextInput
-                        placeholder="Your Email"
+                        placeholder="Your Username"
                         style={styles.textInput}
                         autoCapitalize="none"
                         onChangeText={(val) => textInputChange(val)}

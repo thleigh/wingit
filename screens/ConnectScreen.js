@@ -1,14 +1,15 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-const ProfileScreen = ({navigation}) => {
+const ConnectScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
-        <Text>Profile Screen</Text>
+        <Text>Connect Screen</Text>
       </View>
     );
 };
-export default ProfileScreen;
+
+export default ConnectScreen;
 
 const styles = StyleSheet.create({
   container: {
