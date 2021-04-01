@@ -68,17 +68,19 @@ export default MainTabScreen;
 const HomeStackScreen = ({ navigation }) => (
     <HomeStack.Navigator screenOptions={{
       headerStyle: { 
-        backgroundColor: "#009387"
+        backgroundColor: "#fff"
       },
-      headerTintColor: "#fff",
+      headerTintColor: "#000",
       headerTitleStyle: {
         fontWeight: "bold"
       },
-    }}>
+    }} 
+    style={{borderColor: "#000", borderBottomWidth: 2}}
+    >
       <HomeStack.Screen name="Activities" component={ActivitiesScreen} options={{
         title: "Activities",
         headerLeft: () => (
-          <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
+          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
       }} />
     </HomeStack.Navigator>
@@ -87,16 +89,18 @@ const HomeStackScreen = ({ navigation }) => (
 const DetailsStackScreen = ({ navigation }) => (
     <DetailsStack.Navigator screenOptions={{
       headerStyle: { 
-        backgroundColor: "#009387"
+        backgroundColor: "#fff"
       },
-      headerTintColor: "#fff",
+      headerTintColor: "##000",
       headerTitleStyle: {
         fontWeight: "bold"
-      }
-    }}>
+      },
+    }}
+    style={{borderColor: "#000", borderBottomWidth: 2}}
+    >
       <DetailsStack.Screen name="Connect" component={ConnectScreen} options={{
         headerLeft: () => (
-          <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
+          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
       }}/>
     </DetailsStack.Navigator>
