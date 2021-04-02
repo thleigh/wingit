@@ -108,7 +108,7 @@ const ConnectStackScreen = ({ navigation }) => (
 );
 
 const NotificationStackScreen = ({ navigation }) => (
-    <NotificationScreen.Navigator screenOptions={{
+    <NotificationStack.Navigator screenOptions={{
       headerStyle: { 
         backgroundColor: "#fff"
       },
@@ -119,12 +119,12 @@ const NotificationStackScreen = ({ navigation }) => (
     }}
     style={{borderColor: "#000", borderBottomWidth: 2}}
     >
-      <NotificationScreen.Screen name="Notification" component={NotificationScreen} options={{
+      <NotificationStack.Screen name="Notification" component={NotificationScreen} options={{
         headerLeft: () => (
           <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
       }}/>
-    </NotificationScreen.Navigator>
+    </NotificationStack.Navigator>
 );
 
 const ProfileStackScreen = ({ navigation }) => (
