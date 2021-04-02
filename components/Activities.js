@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Flex = () => {
+const ActivitiesFlex = () => {
   return (
     <View style={[styles.container, {
       // Try setting `flexDirection` to `"row"`.
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Flex;
+export default ActivitiesFlex;
