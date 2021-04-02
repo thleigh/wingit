@@ -22,19 +22,19 @@ const styles = StyleSheet.create({
   },
   boxOne: {
     backgroundColor: "violet",
-    padding: 10,
+    padding: 20,
   },
   boxTwo: {
     backgroundColor: "gold",
-    padding: 10,
+    padding: 20,
   },
   boxThree: {
     backgroundColor: "coral",
-    padding: 10,
+    padding: 20,
   },
   boxFour: {
     backgroundColor: "skyblue",
-    padding: 10,
+    padding: 20,
   },
 });
 
