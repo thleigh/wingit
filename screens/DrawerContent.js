@@ -7,9 +7,6 @@ import {
     Caption,
     Paragraph,
     Drawer,
-    Text,
-    TouchableRipple,
-    Switch
 } from "react-native-paper";
 import Icon from 'react-native-vector-icons/Ionicons';
 import { AuthContext } from "../components/context.js";
