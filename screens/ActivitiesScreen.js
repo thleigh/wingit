@@ -8,11 +8,11 @@ const ActivitesScreen = ({navigation}) => {
   const { colors } = useTheme();
     return (
       <View style={styles.container}>
+          <ActivitesFlex />
         {/* <View style={styles.container}>
           <StatusBar />
           <Text style={{color: colors.text}}>Activities Screen</Text>
         </View> */}
-          <ActivitesFlex />
       </View>
     );
 };
@@ -23,9 +23,5 @@ const styles = StyleSheet.create({
     flex: 1, 
     alignItems: 'center', 
     justifyContent: 'center',
-  },
-  flexBox: {
-    flex: 1,
-    padding: 20,
   },
 });
