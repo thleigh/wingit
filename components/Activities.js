@@ -1,18 +1,21 @@
 import * as React from "react";
 import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { white } from "react-native-paper/lib/typescript/styles/colors";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const ActivitiesFlex = () => {
   return (
     <View style={styles.container}>
       <View style={styles.rowOne}>
-        <TouchableOpacity style={{backgroundColor: "violet", width: 150, height: 150}}>
-          <Button 
-            style={styles.boxOne} 
-            title="Hiking"
-            color="white"
-            onPress={()=> Alert.alert("Button Pressed")}
-            />
+        <TouchableOpacity 
+          style={{backgroundColor: "violet", width: 150, height: 150}}
+          onPress={()=> {}}
+        >
+          <View style={styles.boxOne}>
+            <Icon name="people-outline" size={26} />
+            <Text>Hiking</Text>
+          </View>
         </TouchableOpacity>
         <TouchableOpacity style={{backgroundColor: "lightgreen", width: 150, height: 150}}>
           <Button
@@ -70,35 +73,37 @@ const styles = StyleSheet.create({
   },
   rowOne: {
     flexDirection: "row",
-    justifyContent:"space-around",
-    alignItems: "center",
+    // justifyContent:"space-around",
+    // alignItems: "center",
   },
   rowTwo: {
     flexDirection: "row",
-    justifyContent:"space-around",
-    alignItems: "center",
+    // justifyContent:"space-around",
+    // alignItems: "center",
   },
   rowThree: {
     flexDirection: "row",
-    justifyContent:"space-around",
-    alignItems: "center",
+    // justifyContent:"space-around",
+    // alignItems: "center",
   },
   boxOne: {
-    flex: 1,
+    // flex: 1,
     justifyContent:"center",
     alignItems:"center",
+    textAlignVertical: "center",
     padding: 20,
+    color: "white",
   },
   boxTwo: {
-    flex: 1,
+    // flex: 1,
     padding: 20,
   },
   boxThree: {
-    flex: 1,
+    // flex: 1,
     padding: 20,
   },
   boxFour: {
-    flex: 1,
+    // flex: 1,
     padding: 20,
   },
 });
