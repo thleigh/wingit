@@ -1,13 +1,33 @@
 import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 
 const ActivitiesFlex = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.boxOne}>One</Text>
-      <Text style={styles.boxTwo}>Two</Text>
-      <Text style={styles.boxThree}>Three</Text>
-      <Text style={styles.boxFour}>Four</Text>
+      <Button 
+        style={styles.boxOne} 
+        title="One"
+        color="violet"
+        onPress={()=> Alert.alert("Button Pressed")}
+      />
+      <Button 
+        style={styles.boxTwo} 
+        title="Two"
+        color="violet"
+        onPress={()=> Alert.alert("Button Pressed")}
+      />
+      <Button 
+        style={styles.boxThree} 
+        title="Three"
+        color="violet"
+        onPress={()=> Alert.alert("Button Pressed")}
+      />
+      <Button 
+        style={styles.boxFour} 
+        title="Four"
+        color="violet"
+        onPress={()=> Alert.alert("Button Pressed")}
+      />
     </View>
   );
 };
@@ -22,6 +42,8 @@ const styles = StyleSheet.create({
   },
   boxOne: {
     backgroundColor: "violet",
+    borderRadius: 10,
+    borderWidth: 1,
     padding: 20,
   },
   boxTwo: {
