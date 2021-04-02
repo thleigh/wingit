@@ -1,33 +1,42 @@
 import * as React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, Alert } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ActivitiesFlex = () => {
   return (
     <View style={styles.container}>
-      <Button 
-        style={styles.boxOne} 
-        title="One"
-        color="violet"
-        onPress={()=> Alert.alert("Button Pressed")}
-      />
-      <Button 
-        style={styles.boxTwo} 
-        title="Two"
-        color="violet"
-        onPress={()=> Alert.alert("Button Pressed")}
-      />
-      <Button 
-        style={styles.boxThree} 
-        title="Three"
-        color="violet"
-        onPress={()=> Alert.alert("Button Pressed")}
-      />
-      <Button 
-        style={styles.boxFour} 
-        title="Four"
-        color="violet"
-        onPress={()=> Alert.alert("Button Pressed")}
-      />
+      <TouchableOpacity style={{backgroundColor: 'violet'}}>
+        <Button 
+          style={styles.boxOne} 
+          title="One"
+          color="white"
+          onPress={()=> Alert.alert("Button Pressed")}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={{backgroundColor: 'coral'}}>
+        <Button
+          style={styles.boxTwo} 
+          title="Two"
+          color="white"
+          onPress={()=> Alert.alert("Button Pressed")}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={{backgroundColor: 'gold'}}>
+        <Button 
+          style={styles.boxThree} 
+          title="Three"
+          color="white"
+          onPress={()=> Alert.alert("Button Pressed")}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={{backgroundColor: 'skyblue'}}>
+        <Button 
+          style={styles.boxFour} 
+          title="Four"
+          color="white"
+          onPress={()=> Alert.alert("Button Pressed")}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -38,24 +47,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    paddingTop: 100,
   },
   boxOne: {
-    backgroundColor: "violet",
-    borderRadius: 10,
-    borderWidth: 1,
+    flex: 1,
     padding: 20,
   },
   boxTwo: {
-    backgroundColor: "gold",
+    flex: 1,
     padding: 20,
   },
   boxThree: {
-    backgroundColor: "coral",
+    flex: 1,
     padding: 20,
   },
   boxFour: {
-    backgroundColor: "skyblue",
+    flex: 1,
     padding: 20,
   },
 });

@@ -7,7 +7,7 @@ import ActivitesFlex from '../components/Activities'
 const ActivitesScreen = ({navigation}) => {
   const { colors } = useTheme();
     return (
-      <View>
+      <View style={styles.container}>
         {/* <View style={styles.container}>
           <StatusBar />
           <Text style={{color: colors.text}}>Activities Screen</Text>
