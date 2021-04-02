@@ -6,7 +6,7 @@ const ActivitiesFlex = () => {
   return (
     <View style={styles.container}>
       <View style={styles.rowOne}>
-        <TouchableOpacity style={{backgroundColor: "violet"}}>
+        <TouchableOpacity style={{backgroundColor: "violet", width: 150, height: 150}}>
           <Button 
             style={styles.boxOne} 
             title="Hiking"
@@ -14,7 +14,7 @@ const ActivitiesFlex = () => {
             onPress={()=> Alert.alert("Button Pressed")}
             />
         </TouchableOpacity>
-        <TouchableOpacity style={{backgroundColor: "lightgreen"}}>
+        <TouchableOpacity style={{backgroundColor: "lightgreen", width: 150, height: 150}}>
           <Button
             style={styles.boxTwo} 
             title="Swimming"
@@ -25,7 +25,7 @@ const ActivitiesFlex = () => {
       </View>
 
       <View style={styles.rowTwo}>
-        <TouchableOpacity style={{backgroundColor: "skyblue"}}>
+        <TouchableOpacity style={{backgroundColor: "skyblue", width: 150, height: 150}}>
           <Button 
             style={styles.boxThree} 
             title="Dining"
@@ -33,7 +33,7 @@ const ActivitiesFlex = () => {
             onPress={()=> Alert.alert("Button Pressed")}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={{backgroundColor: "gold"}}>
+        <TouchableOpacity style={{backgroundColor: "gold", width: 150, height: 150}}>
           <Button 
             style={styles.boxFour} 
             title="Art"
@@ -44,7 +44,7 @@ const ActivitiesFlex = () => {
       </View>
 
       <View style={styles.rowThree}>
-        <TouchableOpacity style={{backgroundColor: "coral"}}>
+        <TouchableOpacity style={{backgroundColor: "coral", width: 150, height: 150}}>
           <Button 
             style={styles.boxThree} 
             title="Shopping"
@@ -52,7 +52,7 @@ const ActivitiesFlex = () => {
             onPress={()=> Alert.alert("Button Pressed")}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={{backgroundColor: "red"}}>
+        <TouchableOpacity style={{backgroundColor: "red", width: 150, height: 150}}>
           <Button 
             style={styles.boxFour} 
             title="Golf"
@@ -85,6 +85,8 @@ const styles = StyleSheet.create({
   },
   boxOne: {
     flex: 1,
+    justifyContent:"center",
+    alignItems:"center",
     padding: 20,
   },
   boxTwo: {
