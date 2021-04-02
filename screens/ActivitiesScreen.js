@@ -6,16 +6,13 @@ import ActivitesFlex from '../components/Activities'
 
 const ActivitesScreen = ({navigation}) => {
   const { colors } = useTheme();
-  const theme = useTheme();
     return (
       <View>
-        <View style={styles.container}>
-          <StatusBar barStyle= { theme.dark ? "light-content" : "dark-content" }/>
+        {/* <View style={styles.container}>
+          <StatusBar />
           <Text style={{color: colors.text}}>Activities Screen</Text>
-        </View>
-      </View>
-      <View>
-        <ActivitesFlex/>
+        </View> */}
+          <ActivitesFlex />
       </View>
     );
 };

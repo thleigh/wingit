@@ -3,21 +3,38 @@ import { StyleSheet, Text, View } from "react-native";
 
 const ActivitiesFlex = () => {
   return (
-    <View style={[styles.container, {
-      // Try setting `flexDirection` to `"row"`.
-      flexDirection: "column"
-    }]}>
-      <View style={{ flex: 1, backgroundColor: "red" }} />
-      <View style={{ flex: 2, backgroundColor: "darkorange" }} />
-      <View style={{ flex: 3, backgroundColor: "green" }} />
+    <View style={styles.container}>
+      <Text style={styles.boxOne}>One</Text>
+      <Text style={styles.boxTwo}>Two</Text>
+      <Text style={styles.boxThree}>Three</Text>
+      <Text style={styles.boxFour}>Four</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
+    // flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingTop: 100,
+  },
+  boxOne: {
+    backgroundColor: "violet",
+    padding: 10,
+  },
+  boxTwo: {
+    backgroundColor: "gold",
+    padding: 10,
+  },
+  boxThree: {
+    backgroundColor: "coral",
+    padding: 10,
+  },
+  boxFour: {
+    backgroundColor: "skyblue",
+    padding: 10,
   },
 });
 

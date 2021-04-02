@@ -17,6 +17,8 @@ import { useEffect } from "react";
 import AsyncStorage from "@react-native-community/async-storage";
 
 
+import ActivitesFlex from "./components/Activities"
+
 const Drawer = createDrawerNavigator();
 
 const App = () => {
@@ -126,19 +128,20 @@ const App = () => {
   };
 
   return (
-    <AuthContext.Provider value={authContext}>
-      <NavigationContainer>
-        { loginState.userToken !== null ? (
-          <Drawer.Navigator drawerContent={props => <DrawerContent { ...props} /> } initialRouteName="Home">
-            <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
-            <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
-          </Drawer.Navigator>
-        )
-        :
-          <RootStackScreen />
-        }
-      </NavigationContainer>
-    </AuthContext.Provider>
+    <ActivitesFlex />
+    // <AuthContext.Provider value={authContext}>
+    //   <NavigationContainer>
+    //     { loginState.userToken !== null ? (
+    //       <Drawer.Navigator drawerContent={props => <DrawerContent { ...props} /> } initialRouteName="Home">
+    //         <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
+    //         <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
+    //       </Drawer.Navigator>
+    //     )
+    //     :
+    //       <RootStackScreen />
+    //     }
+    //   </NavigationContainer>
+    // </AuthContext.Provider>
   );
 };
 
