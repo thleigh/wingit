@@ -105,7 +105,7 @@ export function DrawerContent(props) {
                 <DrawerItem 
                     icon={({color, size}) => (
                         <Icon 
-                        name="exit-to-app" 
+                        name="exit-outline" 
                         color={color}
                         size={size}
                         />

@@ -1,7 +1,6 @@
 import * as React from "react";
 import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { white } from "react-native-paper/lib/typescript/styles/colors";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const ActivitiesFlex = () => {
