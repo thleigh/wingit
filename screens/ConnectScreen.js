@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 const ConnectScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
-        <Text>Connect Screen</Text>
+        <Image 
+          source={require('../assets/tanner2.png')}
+          style={{width : 100, height : 100}}
+        />
+        <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
       </View>
     );
 };
@@ -17,4 +21,7 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'center'
   },
+  welcomeText: {
+    fontSize: 25
+  },  
 });

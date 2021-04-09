@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import {  DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 import {
     Avatar,
@@ -22,9 +22,9 @@ export function DrawerContent(props) {
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
                         <View style={{flexDirection:'row',marginTop: 15}}>
-                            <Avatar.Image 
+                            <Image 
                                 source={require('../assets/tanner2.png')}
-                                size={50}
+                                style={{width : 65, height : 65}}
                             />
                             <View style={{marginLeft:15, flexDirection:'column'}}>
                                 <Title style={styles.title}>Tanner Leigh</Title>
