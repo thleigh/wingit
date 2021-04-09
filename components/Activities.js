@@ -6,60 +6,61 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const ActivitiesFlex = () => {
   return (
     <View style={styles.container}>
+      <Text style={styles.headerText}>You can pick more than one!</Text>
       <View style={styles.rowOne}>
         <TouchableOpacity 
-          style={[{backgroundColor: "violet", width: 150, height: 150}, styles.gridBox]}
+          style={[{backgroundColor: "violet"}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
-            <Icon name="image-outline" size={26} color="white"/>
-            <Text style={{color:"white"}}>Moving</Text>
+            <Icon name="image-outline" size={70} color="white"/>
+            <Text style={styles.boxText}>Moving</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={[{backgroundColor: "lightgreen", width: 150, height: 150}, styles.gridBox]}
+        <TouchableOpacity style={[{backgroundColor: "lightgreen"}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
-            <Icon name="bicycle-outline" size={26} color="white"/>
-            <Text style={{color:"white"}}>Activity</Text>
+            <Icon name="bicycle-outline" size={70} color="white"/>
+            <Text style={styles.boxText}>Activity</Text>
           </View>
         </TouchableOpacity>
       </View>
 
       <View style={styles.rowTwo}>
-        <TouchableOpacity style={[{backgroundColor: "skyblue", width: 150, height: 150}, styles.gridBox]}
+        <TouchableOpacity style={[{backgroundColor: "skyblue"}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
-            <Icon name="fast-food-outline" size={26} color="white"/>
-            <Text style={{color:"white"}}>Dining</Text>
+            <Icon name="fast-food-outline" size={70} color="white"/>
+            <Text style={styles.boxText}>Dining</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={[{backgroundColor: "gold", width: 150, height: 150}, styles.gridBox]}
+        <TouchableOpacity style={[{backgroundColor: "gold"}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
-            <Icon name="color-palette-outline" size={26} color="white"/>
-            <Text style={{color:"white"}}>Art</Text>
+            <Icon name="color-palette-outline" size={70} color="white"/>
+            <Text style={styles.boxText}>Art</Text>
           </View>
         </TouchableOpacity>
       </View>
 
       <View style={styles.rowThree}>
-        <TouchableOpacity style={[{backgroundColor: "coral", width: 150, height: 150}, styles.gridBox]}
+        <TouchableOpacity style={[{backgroundColor: "coral"}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
-            <Icon name="pricetag-outline" size={26} color="white"/>
-            <Text style={{color:"white"}}>Selling</Text>
+            <Icon name="pricetag-outline" size={70} color="white"/>
+            <Text style={styles.boxText}>Selling</Text>
           </View> 
         </TouchableOpacity>
-        <TouchableOpacity style={[{backgroundColor: "red", width: 150, height: 150}, styles.gridBox]}
+        <TouchableOpacity style={[{backgroundColor: "red"}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
-            <Icon name="golf-outline" size={26} color="white"/>
-            <Text style={{color:"white"}}>Golf</Text>
+            <Icon name="golf-outline" size={70} color="white"/>
+            <Text style={styles.boxText}>Golf</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -69,6 +70,15 @@ const ActivitiesFlex = () => {
 
 const styles = StyleSheet.create({
   container: {
+  },
+  headerText: {
+    textAlign: "center",
+    marginTop: -50,
+    marginBottom: 10
+  },
+  boxText: {
+    color: "white",
+    fontSize: 25,
   },
   rowOne: {
     flexDirection: "row",
@@ -94,8 +104,9 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   gridBox: {
-    margin: 25,
+    margin: 15,
     borderRadius: 8,
+    width: 180, height: 180
   }
 });
 
