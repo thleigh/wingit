@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { block } from 'react-native-reanimated';
 
 const ConnectScreen = ({navigation}) => {
@@ -13,6 +14,21 @@ const ConnectScreen = ({navigation}) => {
           <View style={{marginLeft:30}}>
             <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
             <Text>I need to find a new housemate @ Berkeley</Text>
+          </View>
+          <View>
+
+           <TouchableOpacity>
+              <View>
+                <Text>For You</Text>
+              </View>
+           </TouchableOpacity>
+
+           <TouchableOpacity>
+              <View>
+                <Text>Others</Text>
+              </View>
+           </TouchableOpacity>
+
           </View>
         </View>
       </View>
@@ -31,10 +47,10 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     width: 300,
     height: 200,
-    alignItems: 'stretch', 
+    alignItems: 'center', 
     justifyContent: 'center',
     position: 'absolute',
-    marginTop: 50,
+    marginTop: 0,
     top: 0,
   },
   welcomeText: {
