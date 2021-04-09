@@ -12,55 +12,55 @@ const ActivitiesFlex = () => {
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
-            <Icon name="people-outline" size={26} />
-            <Text>Hiking</Text>
+            <Icon name="image-outline" size={26} color="white"/>
+            <Text style={{color:"white"}}>Moving</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={{backgroundColor: "lightgreen", width: 150, height: 150}}>
-          <Button
-            style={styles.boxTwo} 
-            title="Swimming"
-            color="white"
-            onPress={()=> Alert.alert("Button Pressed")}
-            />
+        <TouchableOpacity style={{backgroundColor: "lightgreen", width: 150, height: 150}}
+          onPress={()=> {}}
+        >
+          <View style={styles.boxOne}>
+            <Icon name="bicycle-outline" size={26} color="white"/>
+            <Text style={{color:"white"}}>Activity</Text>
+          </View>
         </TouchableOpacity>
       </View>
 
       <View style={styles.rowTwo}>
-        <TouchableOpacity style={{backgroundColor: "skyblue", width: 150, height: 150}}>
-          <Button 
-            style={styles.boxThree} 
-            title="Dining"
-            color="white"
-            onPress={()=> Alert.alert("Button Pressed")}
-          />
+        <TouchableOpacity style={{backgroundColor: "skyblue", width: 150, height: 150}}
+          onPress={()=> {}}
+        >
+          <View style={styles.boxOne}>
+            <Icon name="fast-food-outline" size={26} color="white"/>
+            <Text style={{color:"white"}}>Dining</Text>
+          </View>
         </TouchableOpacity>
-        <TouchableOpacity style={{backgroundColor: "gold", width: 150, height: 150}}>
-          <Button 
-            style={styles.boxFour} 
-            title="Art"
-            color="white"
-            onPress={()=> Alert.alert("Button Pressed")}
-          />
+        <TouchableOpacity style={{backgroundColor: "gold", width: 150, height: 150}}
+          onPress={()=> {}}
+        >
+          <View style={styles.boxOne}>
+            <Icon name="color-palette-outline" size={26} color="white"/>
+            <Text style={{color:"white"}}>Art</Text>
+          </View>
         </TouchableOpacity>
       </View>
 
       <View style={styles.rowThree}>
-        <TouchableOpacity style={{backgroundColor: "coral", width: 150, height: 150}}>
-          <Button 
-            style={styles.boxThree} 
-            title="Shopping"
-            color="white"
-            onPress={()=> Alert.alert("Button Pressed")}
-          />
+        <TouchableOpacity style={{backgroundColor: "coral", width: 150, height: 150}}
+          onPress={()=> {}}
+        >
+          <View style={styles.boxOne}>
+            <Icon name="pricetag-outline" size={26} color="white"/>
+            <Text style={{color:"white"}}>Selling</Text>
+          </View> 
         </TouchableOpacity>
-        <TouchableOpacity style={{backgroundColor: "red", width: 150, height: 150}}>
-          <Button 
-            style={styles.boxFour} 
-            title="Golf"
-            color="white"
-            onPress={()=> Alert.alert("Button Pressed")}
-          />
+        <TouchableOpacity style={{backgroundColor: "red", width: 150, height: 150}}
+          onPress={()=> {}}
+        >
+          <View style={styles.boxOne}>
+            <Icon name="golf-outline" size={26} color="white"/>
+            <Text style={{color:"white"}}>Golf</Text>
+          </View>
         </TouchableOpacity>
       </View>
     </View>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     alignItems:"center",
     textAlignVertical: "center",
     padding: 20,
-    color: "white",
+    color: "#fff",
   },
   boxTwo: {
     // flex: 1,
