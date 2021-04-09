@@ -73,27 +73,28 @@ const styles = StyleSheet.create({
   },
   headerText: {
     textAlign: "center",
-    marginTop: -50,
+    marginTop: -20,
     marginBottom: 10
   },
   boxText: {
     color: "white",
     fontSize: 25,
   },
+  gridBox: {
+    margin: 20,
+    borderRadius: 8,
+    width: 160, 
+    height: 180,
+    justifyContent: "center",
+  },
   rowOne: {
     flexDirection: "row",
-    // justifyContent:"space-around",
-    // alignItems: "center",
   },
   rowTwo: {
     flexDirection: "row",
-    // justifyContent:"space-around",
-    // alignItems: "center",
   },
   rowThree: {
     flexDirection: "row",
-    // justifyContent:"space-around",
-    // alignItems: "center",
   },
   boxOne: {
     // flex: 1,
@@ -103,11 +104,6 @@ const styles = StyleSheet.create({
     padding: 20,
     color: "#fff",
   },
-  gridBox: {
-    margin: 15,
-    borderRadius: 8,
-    width: 180, height: 180
-  }
 });
 
 export default ActivitiesFlex;
