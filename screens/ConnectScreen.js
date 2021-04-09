@@ -1,14 +1,14 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { block } from 'react-native-reanimated';
+import React from "react";
+import { View, Text, StyleSheet, Image } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs"
 
 const ConnectScreen = ({navigation}) => {
     return (
       <View style={styles.screen}>
         <View style={styles.containerTop}>
               <Image 
-                source={require('../assets/tanner2.png')}
+                source={require("../assets/tanner2.png")}
                 style={{width : 100, height : 100}}
               />
                 <View style={{marginLeft:30}}>
@@ -17,7 +17,18 @@ const ConnectScreen = ({navigation}) => {
                 </View>
         </View>
         <View style={styles.buttonTop}>      
-          <TouchableOpacity>
+
+
+
+
+
+
+
+
+
+
+
+          {/* <TouchableOpacity>
             <View>
               <Text style={{fontSize: 20}}>For You</Text>
             </View>
@@ -27,7 +38,7 @@ const ConnectScreen = ({navigation}) => {
             <View>
               <Text style={{fontSize: 20}}>Others</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     );
