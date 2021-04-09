@@ -33,7 +33,9 @@ const styles = StyleSheet.create({
     height: 200,
     alignItems: 'stretch', 
     justifyContent: 'center',
-    marginTop: 0,
+    position: 'absolute',
+    marginTop: 50,
+    top: 0,
   },
   welcomeText: {
     fontSize: 25
