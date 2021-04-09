@@ -7,29 +7,27 @@ const ConnectScreen = ({navigation}) => {
     return (
       <View style={styles.screen}>
         <View style={styles.containerTop}>
-          <Image 
-            source={require('../assets/tanner2.png')}
-            style={{width : 100, height : 100}}
-          />
-          <View style={{marginLeft:30}}>
-            <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
-            <Text>I need to find a new housemate @ Berkeley</Text>
-          </View>
-          <View>
-
-           <TouchableOpacity>
-              <View>
-                <Text>For You</Text>
-              </View>
-           </TouchableOpacity>
-
-           <TouchableOpacity>
-              <View>
-                <Text>Others</Text>
-              </View>
-           </TouchableOpacity>
-
-          </View>
+              <Image 
+                source={require('../assets/tanner2.png')}
+                style={{width : 100, height : 100}}
+              />
+                <View style={{marginLeft:30}}>
+                  <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
+                  <Text>I need to find a new housemate @ Berkeley</Text>
+                </View>
+        </View>
+        <View style={styles.buttonTop}>      
+          <TouchableOpacity>
+            <View>
+              <Text style={{fontSize: 20}}>For You</Text>
+            </View>
+          </TouchableOpacity>
+          <Text style={{fontSize: 20}}>    |    </Text>
+          <TouchableOpacity>
+            <View>
+              <Text style={{fontSize: 20}}>Others</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -56,4 +54,9 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 25
   },  
+  buttonTop: {
+    flexDirection: 'row',
+    position: 'absolute',
+    top: 170,
+  },
 });
