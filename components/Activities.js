@@ -8,7 +8,7 @@ const ActivitiesFlex = () => {
     <View style={styles.container}>
       <View style={styles.rowOne}>
         <TouchableOpacity 
-          style={{backgroundColor: "violet", width: 150, height: 150}}
+          style={[{backgroundColor: "violet", width: 150, height: 150}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
@@ -16,7 +16,7 @@ const ActivitiesFlex = () => {
             <Text style={{color:"white"}}>Moving</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={{backgroundColor: "lightgreen", width: 150, height: 150}}
+        <TouchableOpacity style={[{backgroundColor: "lightgreen", width: 150, height: 150}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
@@ -27,7 +27,7 @@ const ActivitiesFlex = () => {
       </View>
 
       <View style={styles.rowTwo}>
-        <TouchableOpacity style={{backgroundColor: "skyblue", width: 150, height: 150}}
+        <TouchableOpacity style={[{backgroundColor: "skyblue", width: 150, height: 150}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
@@ -35,7 +35,7 @@ const ActivitiesFlex = () => {
             <Text style={{color:"white"}}>Dining</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={{backgroundColor: "gold", width: 150, height: 150}}
+        <TouchableOpacity style={[{backgroundColor: "gold", width: 150, height: 150}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
@@ -46,7 +46,7 @@ const ActivitiesFlex = () => {
       </View>
 
       <View style={styles.rowThree}>
-        <TouchableOpacity style={{backgroundColor: "coral", width: 150, height: 150}}
+        <TouchableOpacity style={[{backgroundColor: "coral", width: 150, height: 150}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
@@ -54,7 +54,7 @@ const ActivitiesFlex = () => {
             <Text style={{color:"white"}}>Selling</Text>
           </View> 
         </TouchableOpacity>
-        <TouchableOpacity style={{backgroundColor: "red", width: 150, height: 150}}
+        <TouchableOpacity style={[{backgroundColor: "red", width: 150, height: 150}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
@@ -93,18 +93,10 @@ const styles = StyleSheet.create({
     padding: 20,
     color: "#fff",
   },
-  boxTwo: {
-    // flex: 1,
-    padding: 20,
-  },
-  boxThree: {
-    // flex: 1,
-    padding: 20,
-  },
-  boxFour: {
-    // flex: 1,
-    padding: 20,
-  },
+  gridBox: {
+    margin: 25,
+    borderRadius: 8,
+  }
 });
 
 export default ActivitiesFlex;
