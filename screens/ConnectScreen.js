@@ -1,7 +1,12 @@
-import React from "react";
+import * as React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs"
+import Icon from 'react-native-vector-icons/Ionicons';
+
+import ConnectForYou from "../components/ConnectForYou";
+import ConnectOthers from "../components/ConnectOthers";
+
+const Tab = createMaterialTopTabNavigator();
 
 const ConnectScreen = ({navigation}) => {
     return (
@@ -18,27 +23,21 @@ const ConnectScreen = ({navigation}) => {
         </View>
         <View style={styles.buttonTop}>      
 
-
-
-
-
-
-
-
-
-
-
-          {/* <TouchableOpacity>
-            <View>
-              <Text style={{fontSize: 20}}>For You</Text>
-            </View>
-          </TouchableOpacity>
-          <Text style={{fontSize: 20}}>    |    </Text>
-          <TouchableOpacity>
-            <View>
-              <Text style={{fontSize: 20}}>Others</Text>
-            </View>
-          </TouchableOpacity> */}
+        <Tab.Navigator
+        initialRouteName="ForYou"
+        tabBarOptions={{
+        activeTintColor: '#e91e63',
+        }}
+        >
+          <Tab.Screen
+            name="For You"
+            component={ConnectForYou}
+          />
+          <Tab.Screen
+            name="Others"
+            component={ConnectOthers}
+          />
+        </Tab.Navigator>
         </View>
       </View>
     );

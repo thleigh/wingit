@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from "react";
 import { View, Text, Button, StyleSheet } from 'react-native';
 
 const ConnectForYouScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
-        <Text>ConnectForYou Screen</Text>
+        <Text>Connect For You Screen</Text>
       </View>
     );
 };
