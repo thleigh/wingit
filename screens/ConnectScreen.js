@@ -24,10 +24,12 @@ const ConnectScreen = ({navigation}) => {
         <View style={styles.buttonTop}>      
 
         <Tab.Navigator
-        initialRouteName="ForYou"
-        tabBarOptions={{
-        activeTintColor: '#e91e63',
-        }}
+          scrollEnabled="true"
+          initialRouteName="ForYou"
+          tabBarOptions={{
+            activeTintColor: "#000000",
+            style: { backgroundColor: "#fff" },
+          }}
         >
           <Tab.Screen
             name="For You"
@@ -48,16 +50,16 @@ export default ConnectScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   containerTop: {
-    flexDirection:'row',
+    flexDirection:"row",
     width: 300,
     height: 200,
-    alignItems: 'center', 
-    justifyContent: 'center',
-    position: 'absolute',
+    alignItems: "center", 
+    justifyContent: "center",
+    position: "absolute",
     marginTop: 0,
     top: 0,
   },
@@ -65,8 +67,8 @@ const styles = StyleSheet.create({
     fontSize: 25
   },  
   buttonTop: {
-    flexDirection: 'row',
-    position: 'absolute',
+    flexDirection: "row",
+    position: "absolute",
     top: 170,
   },
 });
