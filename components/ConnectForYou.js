@@ -8,7 +8,7 @@ const ConnectForYouScreen = ({navigation}) => {
         <View>
           <Image 
             source={require("../assets/tanner2.png")}
-            style={{width : 100, height : 100}}
+            style={[{width : 100, height : 100}]}
           />
         </View>
       </View>
@@ -22,4 +22,5 @@ const styles = StyleSheet.create({
     alignItems: 'center', 
     justifyContent: 'center'
   },
+  
 });
