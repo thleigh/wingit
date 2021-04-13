@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
     top: 0,
   },
   welcomeText: {
-    fontSize: 25
+    fontSize: 25,
   },  
 });
