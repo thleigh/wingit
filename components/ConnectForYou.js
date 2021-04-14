@@ -28,7 +28,7 @@ const ConnectForYouScreen = ({navigation}) => {
 
           <View style={styles.recommendModal}>
             <Modal
-              // animationType="slide"
+              animationType="fade"
               transparent={true}
               visible={modalVisible}
               onRequestClose={() => {
@@ -36,16 +36,39 @@ const ConnectForYouScreen = ({navigation}) => {
                 setModalVisible(!modalVisible);
               }}
             >
-              <View style={styles.modalView}>
-                <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => setModalVisible(!modalVisible)}
-                >
-                  <Text style={styles.textStyle}>Hide Modal</Text>
-                </Pressable>
-                <Text>
-                  Hey
-                </Text>
+              <View style={styles.recommendModal}>
+                <View style={[styles.modalView, {width: 350, height: 300}]}>
+                  <Pressable
+                    onPress={() => setModalVisible(!modalVisible)}
+                    style={{position: "absolute", left: 15, top: 15}}
+                  >
+                    <Icon name="close-outline" size={40} color="black"/>
+                  </Pressable>
+                  <View style={{alignItems:"center", justifyContent:"center", flex: 1}}>
+                    <Image 
+                      source={element.pp}
+                      style={{width : 60, height : 60}}
+                    />   
+                    <Text>
+                      {element.body}
+                    </Text>     
+                    <TouchableOpacity           
+                      style={{ 
+                        backgroundColor: "lightgreen",
+                        borderRadius: 8,
+                        width: 100,
+                        height: 30, 
+                      }}
+                      onPress={() => {}}
+                    >
+                      <View style={{justifyContent: "center", alignItems:"center"}}>
+                        <Text style={{top: 5}}>
+                          Recommend
+                        </Text>
+                      </View>
+                    </TouchableOpacity>  
+                  </View>
+                </View>
               </View>
             </Modal>
           </View>
@@ -91,7 +114,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 22
   },
   modalView: {
     margin: 20,
@@ -107,17 +129,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2
-  },
-  buttonOpen: {
-    backgroundColor: "#F194FF",
-  },
-  buttonClose: {
-    backgroundColor: "#2196F3",
   },
   textStyle: {
     color: "white",
