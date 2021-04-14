@@ -2,33 +2,18 @@ let data
 
 export default data = [
     {
-        id: 1,
-        username: "Tnrleigh",
-        user_avatar: "./assets/tanner2.png",
-        info: "Car Socials",
+        key: '1',
+        title: 'example title 1',
+        body: 'example body 1',
     },
     {
-        id: 2,
-        username: "Tnrleigh",
-        user_avatar: "./assets/tanner2.png",
-        info: "Car Socials",
+        key: '2',
+        title: 'example title 2',
+        body: 'example body 2',
     },
     {
-        id: 3,
-        username: "Tnrleigh",
-        user_avatar: "./assets/tanner2.png",
-        info: "Car Socials",
-    },
-    {
-        id: 4,
-        username: "Tnrleigh",
-        user_avatar: "./assets/tanner2.png",
-        info: "Car Socials",
-    },
-    {
-        id: 5,
-        username: "Tnrleigh",
-        user_avatar: "./assets/tanner2.png",
-        info: "Car Socials",
+        key: '3',
+        title: 'example title 3',
+        body: 'example body 3',
     },
 ]
