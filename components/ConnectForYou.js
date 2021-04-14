@@ -26,28 +26,29 @@ const ConnectForYouScreen = ({navigation}) => {
             </View>
           </TouchableOpacity>
 
-          <Modal
-            // animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
-              setModalVisible(!modalVisible);
-            }}
-          >
-            <View style={[styles.recommendModal, styles.modalView]}>
-              <Text>
-                Hey
-              </Text>
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}
-              >
-              <Text style={styles.textStyle}>Hide Modal</Text>
-            </Pressable>
-            </View>
-          </Modal>
-
+          <View style={styles.recommendModal}>
+            <Modal
+              // animationType="slide"
+              transparent={true}
+              visible={modalVisible}
+              onRequestClose={() => {
+                Alert.alert("Modal has been closed.");
+                setModalVisible(!modalVisible);
+              }}
+            >
+              <View style={styles.modalView}>
+                <Pressable
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Text style={styles.textStyle}>Hide Modal</Text>
+                </Pressable>
+                <Text>
+                  Hey
+                </Text>
+              </View>
+            </Modal>
+          </View>
 
           <TouchableOpacity 
             style={{marginLeft: 10}}
@@ -78,7 +79,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center", 
     top: 10,
-    // justifyContent: "center",
   },
   recommend: {
     backgroundColor: "lightgreen",
@@ -88,8 +88,10 @@ const styles = StyleSheet.create({
     marginLeft: 75,
   },
   recommendModal: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 22
   },
   modalView: {
     margin: 20,
@@ -106,4 +108,24 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5
   },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  }
 });
