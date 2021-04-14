@@ -24,6 +24,15 @@ const ConnectForYouScreen = ({navigation}) => {
               </Text>
             </View>
           </TouchableOpacity>
+
+          <TouchableOpacity style={{marginLeft: 10}}>
+            <Icon name="chatbox-outline" size={30} color="black"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{marginLeft: 5}}>
+            <Icon name="bookmark-outline" size={28} color="black"/>
+          </TouchableOpacity>
+
         </View>
       );
     });
@@ -47,6 +56,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 100,
     height: 30,
-    marginLeft: 100,
+    marginLeft: 95,
   }
 });
