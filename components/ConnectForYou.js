@@ -27,7 +27,7 @@ const ConnectForYouScreen = ({navigation}) => {
           </TouchableOpacity>
 
           <Modal
-            animationType="slide"
+            // animationType="slide"
             transparent={true}
             visible={modalVisible}
             onRequestClose={() => {
@@ -35,10 +35,16 @@ const ConnectForYouScreen = ({navigation}) => {
               setModalVisible(!modalVisible);
             }}
           >
-            <View style={styles.recommendModal}>
+            <View style={[styles.recommendModal, styles.modalView]}>
               <Text>
                 Hey
               </Text>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+              <Text style={styles.textStyle}>Hide Modal</Text>
+            </Pressable>
             </View>
           </Modal>
 
@@ -84,5 +90,20 @@ const styles = StyleSheet.create({
   recommendModal: {
     justifyContent: "center",
     alignItems: "center",
-  }
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
 });
