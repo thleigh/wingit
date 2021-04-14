@@ -1,6 +1,7 @@
 import * as React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import datas from "../data.js";  
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const ConnectForYouScreen = ({navigation}) => {
   const list = () => {
@@ -13,14 +14,16 @@ const ConnectForYouScreen = ({navigation}) => {
           />          
           <Text style={{marginLeft: 10}}>{element.body}</Text>
 
-          <TouchableOpacity>
-            <View>
-              <Text>
-                
+          <TouchableOpacity           
+            style={styles.recommend}
+            onPress={()=> {}}
+          >
+            <View style={{justifyContent: "center", alignItems:"center"}}>
+              <Text style={{top: 5}}>
+                Recommend
               </Text>
             </View>
           </TouchableOpacity>
-
         </View>
       );
     });
@@ -36,7 +39,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center", 
     marginLeft: 45,
+    top: 10,
     // justifyContent: "center",
   },
-  
+  recommend: {
+    backgroundColor: "lightgreen",
+    borderRadius: 8,
+    width: 100,
+    height: 30,
+    marginLeft: 100,
+  }
 });
