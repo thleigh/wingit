@@ -21,17 +21,18 @@ const ConnectForYouScreen = ({navigation}) => {
     },
   ];
   const list = () => {
-    return Array.map((element) => {
+    return array.map((element) => {
       return (
-        <View key={element.key} style={styles.container}>
+        <View key={element.key} style={{margin: 10}}>
           <Text>{element.title}</Text>
           <Text>{element.subtitle}</Text>
         </View>
       );
     });
   };
-  return <View>{list()}</View>
-}
+  return <View>{list()}</View>;
+};
+
 export default ConnectForYouScreen;
 
 const styles = StyleSheet.create({
