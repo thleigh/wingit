@@ -25,11 +25,17 @@ const ConnectForYouScreen = ({navigation}) => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={{marginLeft: 10}}>
+          <TouchableOpacity 
+            style={{marginLeft: 10}}
+            onPress={()=> {}}
+          >
             <Icon name="chatbox-outline" size={30} color="black"/>
           </TouchableOpacity>
 
-          <TouchableOpacity style={{marginLeft: 5}}>
+          <TouchableOpacity 
+            style={{marginLeft: 5}}
+            onPress={()=> {}}
+          >
             <Icon name="bookmark-outline" size={28} color="black"/>
           </TouchableOpacity>
 
