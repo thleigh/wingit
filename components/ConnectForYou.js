@@ -1,16 +1,16 @@
 import * as React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
-import datas from "../data.js";  
+import connectForYouData from "../connectForYouData.js";  
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const ConnectForYouScreen = ({navigation}) => {
   const list = () => {
-    return datas.map((element) => {
+    return connectForYouData.map((element) => {
       return (
-        <View key={element.key} style={[styles.container, {margin: 10}]}>
+        <View key={element.key} style={[styles.container, {margin: 20}]}>
           <Image 
             source={element.pp}
-            style={{width : 50, height : 50}}
+            style={{width : 60, height : 60}}
           />          
           <Text style={{marginLeft: 10}}>{element.body}</Text>
 
@@ -62,6 +62,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 100,
     height: 30,
-    marginLeft: 95,
+    marginLeft: 85,
   }
 });
