@@ -1,18 +1,26 @@
 import * as React from "react";
-import { View, Text, Button, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import datas from "../data.js";  
 
 const ConnectForYouScreen = ({navigation}) => {
   const list = () => {
     return datas.map((element) => {
       return (
-        <View key={element.key} style={{margin: 10}}>
-              <Image 
-                source={element.pp}
-                style={{width : 50, height : 50}}
-              />          
-          <Text>{element.title}</Text>
-          <Text>{element.body}</Text>
+        <View key={element.key} style={[styles.container, {margin: 10}]}>
+          <Image 
+            source={element.pp}
+            style={{width : 50, height : 50}}
+          />          
+          <Text style={{marginLeft: 10}}>{element.body}</Text>
+
+          <TouchableOpacity>
+            <View>
+              <Text>
+                
+              </Text>
+            </View>
+          </TouchableOpacity>
+
         </View>
       );
     });
@@ -25,8 +33,10 @@ export default ConnectForYouScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    alignItems: 'center', 
-    justifyContent: 'center'
+    flexDirection: "row",
+    alignItems: "center", 
+    marginLeft: 45,
+    // justifyContent: "center",
   },
   
 });
