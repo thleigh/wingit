@@ -1,10 +1,11 @@
-import * as React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Modal, Pressable, Alert } from "react-native";
 import connectForYouData from "../connectForYouData.js";  
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const ConnectForYouScreen = ({navigation}) => {
   const list = () => {
+    const [modalVisible, setModalVisible] = useState(false);
     return connectForYouData.map((element) => {
       return (
         <View key={element.key} style={[styles.container, {margin: 20}]}>
@@ -16,7 +17,7 @@ const ConnectForYouScreen = ({navigation}) => {
 
           <TouchableOpacity           
             style={styles.recommend}
-            onPress={()=> {}}
+            onPress={() => setModalVisible(true)}
           >
             <View style={{justifyContent: "center", alignItems:"center"}}>
               <Text style={{top: 5}}>
@@ -24,6 +25,23 @@ const ConnectForYouScreen = ({navigation}) => {
               </Text>
             </View>
           </TouchableOpacity>
+
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert("Modal has been closed.");
+              setModalVisible(!modalVisible);
+            }}
+          >
+            <View style={styles.recommendModal}>
+              <Text>
+                Hey
+              </Text>
+            </View>
+          </Modal>
+
 
           <TouchableOpacity 
             style={{marginLeft: 10}}
@@ -61,6 +79,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 100,
     height: 30,
-    marginLeft: 80,
+    marginLeft: 75,
+  },
+  recommendModal: {
+    justifyContent: "center",
+    alignItems: "center",
   }
 });
