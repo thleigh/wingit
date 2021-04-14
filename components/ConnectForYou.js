@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from "react-native";
 import connectForYouData from "../connectForYouData.js";  
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -10,7 +10,7 @@ const ConnectForYouScreen = ({navigation}) => {
         <View key={element.key} style={[styles.container, {margin: 20}]}>
           <Image 
             source={element.pp}
-            style={{width : 60, height : 60}}
+            style={{width : 60, height : 60, marginLeft: 20}}
           />          
           <Text style={{marginLeft: 10}}>{element.body}</Text>
 
@@ -43,7 +43,7 @@ const ConnectForYouScreen = ({navigation}) => {
       );
     });
   };
-  return <View>{list()}</View>;
+  return <ScrollView>{list()}</ScrollView>;
 };
 
 export default ConnectForYouScreen;
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     flex: 1, 
     flexDirection: "row",
     alignItems: "center", 
-    marginLeft: 45,
     top: 10,
     // justifyContent: "center",
   },
@@ -62,6 +61,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 100,
     height: 30,
-    marginLeft: 85,
+    marginLeft: 80,
   }
 });
