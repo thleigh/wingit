@@ -49,7 +49,7 @@ const ConnectForYouScreen = ({navigation}) => {
                       source={element.pp}
                       style={{width : 60, height : 60}}
                     />   
-                    <Text>
+                    <Text style={{margin: 15}}>
                       {element.body}
                     </Text>     
                     <TouchableOpacity           
