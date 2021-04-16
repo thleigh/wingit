@@ -9,9 +9,8 @@ const ProfileScreen = () => {
             source={require("../assets/tanner2.png")}
             style={{width : 100, height : 100}}
           />
-          <View style={{marginLeft:30}}>
+          <View style={{marginLeft:30, marginRight: 50}}>
             <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
-            <Text>I need to find a new housemate @ Berkeley</Text>
           </View>
         </View>
       </View>
