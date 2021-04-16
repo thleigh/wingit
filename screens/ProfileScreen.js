@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dimensions } from "react-native";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 
 const ProfileScreen = () => {
@@ -28,15 +29,49 @@ const ProfileScreen = () => {
         </View>
 
         <View style={styles.accomplishmentsContainer}>
-          <View>
-            <Text style={[styles.header2Text, {marginLeft: "auto"}]}>Accomplishments</Text>
-          </View>
+            <Text style={styles.header2Text}>Accomplishments</Text>
+            <View style={styles.accomplishmentsBox}>
+              <ScrollView>
+                <Text style={{marginBottom: 10, fontSize: 20}}>
+                  Bungee Jumping
+                </Text>
+                <View
+                  style={{
+                    borderBottomColor: 'black',
+                    borderBottomWidth: 1,
+                    marginBottom: 10,
+                  }}
+                />
+                <Text style={{marginBottom: 10, fontSize: 20}}>
+                  Moving to LA
+                </Text>
+                <View
+                  style={{
+                    borderBottomColor: 'black',
+                    borderBottomWidth: 1,
+                    marginBottom: 10,
+                  }}
+                />
+                <Text style={{marginBottom: 10, fontSize: 20}}>
+                  Rock Climbing
+                </Text>
+                <View
+                  style={{
+                    borderBottomColor: 'black',
+                    borderBottomWidth: 1,
+                    marginBottom: 10,
+                  }}
+                />
+              </ScrollView>
+            </View>
         </View>
 
       </View>
     );
 };
 export default ProfileScreen;
+
+const width = Dimensions.get('window').width; //full width
 
 const styles = StyleSheet.create({
   screen: {
@@ -89,7 +124,13 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 20,
     marginTop: 70,
-    flexDirection: "row",
     alignSelf: "flex-start",
+    width: 390,
   },  
+  accomplishmentsBox: {
+    backgroundColor: "lightgrey",
+    alignSelf: 'stretch',
+    height: 270,
+    padding: 10,
+  }
 });
