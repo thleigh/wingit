@@ -13,6 +13,15 @@ const ProfileScreen = () => {
             <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
           </View>
         </View>
+
+        <View style={styles.helpContainer}>
+          <Text style={styles.header2Text}>I need help with</Text>
+        </View>
+
+        <View style={styles.accomplishmentsContainer}>
+          <Text style={styles.header2Text}>Accomplishments</Text>
+        </View>
+
       </View>
     );
 };
@@ -37,4 +46,12 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 25,
   },  
+  helpContainer: {
+
+  },
+  header2Text: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "grey",
+  }
 });
