@@ -16,6 +16,11 @@ const ProfileScreen = () => {
 
         <View style={styles.helpContainer}>
           <Text style={styles.header2Text}>I need help with</Text>
+          <Text style={styles.bodyText}>Finding a new roomate and finding good coffee shops in LA!</Text>
+          <View><Text>Box1</Text></View>
+          <View><Text>Box2</Text></View>
+          <View><Text>Box3</Text></View>
+
         </View>
 
         <View style={styles.accomplishmentsContainer}>
@@ -47,11 +52,18 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },  
   helpContainer: {
-
+    flex: 1,
+    margin: 20,
+    justifyContent: "flex-start",
+    top: 150
   },
   header2Text: {
     fontSize: 30,
     fontWeight: "bold",
     color: "grey",
-  }
+  },
+  bodyText: {
+    fontWeight: "bold",
+    fontSize: 15,
+  },
 });
