@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 
 const ProfileScreen = () => {
     return (
@@ -17,9 +17,13 @@ const ProfileScreen = () => {
         <View style={styles.helpContainer}>
           <Text style={styles.header2Text}>I need help with</Text>
           <Text style={styles.bodyText}>Finding a new roomate and finding good coffee shops in LA!</Text>
-          <View><Text>Box1</Text></View>
-          <View><Text>Box2</Text></View>
-          <View><Text>Box3</Text></View>
+          <View style={styles.helpPhotos}> 
+            <ScrollView horizontal={true}>
+              <View style={styles.photoBox}><Text>Box1</Text></View>
+              <View style={styles.photoBox}><Text>Box2</Text></View>
+              <View style={styles.photoBox}><Text>Box3</Text></View>
+            </ScrollView>
+          </View>
 
         </View>
 
@@ -56,6 +60,19 @@ const styles = StyleSheet.create({
     margin: 20,
     justifyContent: "flex-start",
     top: 150
+  },
+  helpPhotos: {
+    flexDirection: "row",
+  },
+  photoBox: {
+    backgroundColor: "lightgrey",
+    justifyContent: "center",
+    alignItems: "center",
+    width: 200,
+    height: 150,
+    marginTop: 20,
+    marginRight: 15,
+    borderRadius: 8,
   },
   header2Text: {
     fontSize: 30,
