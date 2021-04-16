@@ -28,7 +28,9 @@ const ProfileScreen = () => {
         </View>
 
         <View style={styles.accomplishmentsContainer}>
-          <Text style={styles.header2Text}>Accomplishments</Text>
+          <View>
+            <Text style={[styles.header2Text, {marginLeft: "auto"}]}>Accomplishments</Text>
+          </View>
         </View>
 
       </View>
@@ -83,4 +85,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 15,
   },
+  accomplishmentsContainer: {
+    flex: 1,
+    marginLeft: 20,
+    marginTop: 70,
+    flexDirection: "row",
+    alignSelf: "flex-start",
+  },  
 });
