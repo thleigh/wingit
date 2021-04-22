@@ -1,12 +1,17 @@
 {
-  "name": "hone",
-  "displayName": "hone",
+  "name": "wingit",
+  "displayName": "wingit",
   "expo": {
-    "name": "hone",
-    "slug": "hone",
+    "name": "wingit",
+    "slug": "wingit",
+    "privacy": "unlisted",
     "version": "1.0.0",
+    "icon": "./assets/wingitsmall.png",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.app.wingit"
+    }
   }
 }
