@@ -2,15 +2,12 @@ import * as React from "react";
 import { View, StyleSheet, Image } from "react-native";
 import {  DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 import {
-    Avatar,
     Title,
     Caption,
-    Paragraph,
     Drawer,
 } from "react-native-paper";
 import Icon from 'react-native-vector-icons/Ionicons';
 import { AuthContext } from "../components/context.js";
-
 
 export function DrawerContent(props) {
 
@@ -21,7 +18,7 @@ export function DrawerContent(props) {
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
-                        <View style={{flexDirection:'row',marginTop: 15}}>
+                        <View style={{flexDirection:'row', marginTop: 15}}>
                             <Image 
                                 source={require('../assets/tanner2.png')}
                                 style={{width : 65, height : 65}}
@@ -31,7 +28,7 @@ export function DrawerContent(props) {
                                 <Caption style={styles.caption}>@tnrleigh</Caption>
                             </View>
                         </View>
-                        <View style={styles.row}>
+                        {/* <View style={styles.row}>
                             <View style={styles.section}>
                                 <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
                                 <Caption style={styles.caption}>Followers</Caption>
@@ -40,10 +37,10 @@ export function DrawerContent(props) {
                                 <Paragraph style={[styles.paragraph, styles.caption]}>100</Paragraph>
                                 <Caption style={styles.caption}>Following</Caption>
                             </View>
-                        </View>
+                        </View> */}
                     </View>
                     <Drawer.Section style={styles.drawerSection}>
-                        <DrawerItem 
+                        {/* <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
                                 name="umbrella-outline" 
@@ -53,8 +50,8 @@ export function DrawerContent(props) {
                             )}
                             label="Activities"
                             onPress={() => {props.navigation.navigate('Activities')}}
-                        />
-                        <DrawerItem 
+                        /> */}
+                        {/* <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
                                 name="people-outline" 
@@ -64,19 +61,47 @@ export function DrawerContent(props) {
                             )}
                             label="Connect"
                             onPress={() => {props.navigation.navigate('Connect')}}
-                        />
-                        <DrawerItem 
+                        /> */}
+                        <DrawerItem
+                            style={{marginLeft: 20}}
+                            labelStyle={{color: "black", marginLeft: -10}}
                             icon={({color, size}) => (
                                 <Icon 
-                                name="notifications-outline" 
-                                color={color}
-                                size={size}
+                                    name="car-outline" 
+                                    color="black"
+                                    size={size}
+                                />
+                            )}
+                            label="Reserve a driveway"
+                            onPress={() => {props.navigation.navigate("Notifications")}}
+                        />
+                        <DrawerItem
+                            style={{marginLeft: 20}}
+                            labelStyle={{color: "black", marginLeft: -10}}
+                            icon={({color, size}) => (
+                                <Icon 
+                                    name="notifications-outline" 
+                                    color="black"
+                                    size={size}
                                 />
                             )}
                             label="Notifications"
-                            onPress={() => {props.navigation.navigate('Notifications')}}
+                            onPress={() => {props.navigation.navigate("Notifications")}}
                         />
-                        <DrawerItem 
+                        <DrawerItem
+                            style={{marginLeft: 20}}
+                            labelStyle={{color: "black", marginLeft: -10}}
+                            icon={({color, size}) => (
+                                <Icon 
+                                    name="gift-outline" 
+                                    color="black"
+                                    size={size}
+                                />
+                            )}
+                            label="Get $5 free"
+                            onPress={() => {props.navigation.navigate("Notifications")}}
+                        />
+                        {/* <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
                                 name="person-outline" 
@@ -86,8 +111,8 @@ export function DrawerContent(props) {
                             )}
                             label="Profile"
                             onPress={() => {props.navigation.navigate('Profile')}}
-                        />
-                        <DrawerItem 
+                        /> */}
+                        {/* <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
                                 name="settings-outline" 
@@ -97,7 +122,7 @@ export function DrawerContent(props) {
                             )}
                             label="Settings"
                             onPress={() => {props.navigation.navigate('SettingsScreen')}}
-                        />
+                        /> */}
                     </Drawer.Section>
                 </View>
             </DrawerContentScrollView>

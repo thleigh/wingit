@@ -19,7 +19,7 @@ const MainTabScreen = () => (
     <Tab.Navigator
         initialRouteName="Home"
         tabBarOptions={{
-          tabStyle: { width: 40 },
+          tabStyle: { width: 40, marginTop: 12 },
           activeTintColor: '#e91e63',
         }}
     >
@@ -27,7 +27,7 @@ const MainTabScreen = () => (
         name="Activities"
         component={HomeStackScreen}
         options={{
-          tabBarLabel: 'Activities',
+          tabBarLabel: ' ',
           tabBarIcon: ({ color }) => (
             <Icon name="umbrella-outline" color={color} size={26} />
           ),
@@ -37,7 +37,7 @@ const MainTabScreen = () => (
         name="Connect"
         component={ConnectStackScreen}
         options={{
-          tabBarLabel: 'Connect',
+          tabBarLabel: ' ',
           tabBarIcon: ({ color }) => (
             <Icon name="people-outline" color={color} size={26} />
           ),
@@ -47,7 +47,7 @@ const MainTabScreen = () => (
         name="Notifications"
         component={NotificationStackScreen}
         options={{
-          tabBarLabel: 'Notifications',
+          tabBarLabel: ' ',
           tabBarIcon: ({ color }) => (
             <Icon name="notifications-outline" color={color} size={26} />
           ),
@@ -57,7 +57,7 @@ const MainTabScreen = () => (
         name="Profile"
         component={ProfileStackScreen}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: ' ',
           tabBarIcon: ({ color }) => (
             <Icon name="person-outline" color={color} size={26} />
           ),
