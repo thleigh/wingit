@@ -7,12 +7,20 @@ const ProfileScreen = () => {
   const [kapitalVisible, setkapitalVisible] = useState(false);
   const [pizzaVisible, setpizzaVisible] = useState(false);
   const [coffeeVisible, setcoffeeVisible] = useState(false);
+
+  const [accomplshmentExpand, setAccomplishmentExpand] = useState(false);
+
+  const handleExpand = () => {
+    setAccomplishmentExpand = + 50
+  }
+
     return (
       <View style={styles.screen}>
+        <ScrollView>
         <View style={styles.containerTop}>
           <Image 
             source={require("../assets/tanner2.png")}
-            style={{width : 100, height : 100}}
+            style={{width : 100, height : 100, marginLeft: 100}}
           />
           <View style={{marginLeft:30, marginRight: 50}}>
             <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
@@ -98,28 +106,40 @@ const ProfileScreen = () => {
 
         <View style={styles.accomplishmentsContainer}>
           <Text style={[styles.header2Text, {marginLeft: 15}]}>Accomplishments</Text>
-          <View style={styles.accomplishmentsBox1}>
-            <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-              Bungee Jumping
-            </Text>
-          </View>
-          <View style={[styles.accomplishmentsBox2, {marginTop: 50}]}>
-            <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-              Moving to Berkeley
-            </Text>
-          </View>
-          <View style={[styles.accomplishmentsBox3, {marginTop: 100}]}>
-            <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-              Buying my first car
-            </Text>
-          </View>
-          <View style={[styles.accomplishmentsBox4, {marginTop: 150}]}>
-            <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-              Getting a cat
-            </Text>
-          </View>
-        </View>
 
+          <Pressable onPress={() => {}}>
+            <View style={[styles.accomplishmentsBox1, {marginTop: -30}]}>
+              <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
+                Bungee Jumping
+              </Text>
+            </View>
+          </Pressable>
+
+          <Pressable>
+            <View style={[styles.accomplishmentsBox2, {marginTop: 20}]}>
+              <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
+                Moving to Berkeley
+              </Text>
+            </View>
+          </Pressable>
+
+          <Pressable>
+            <View style={[styles.accomplishmentsBox3, {marginTop: 70}]}>
+              <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
+                Buying my first car
+              </Text>
+            </View>
+          </Pressable>
+
+          <Pressable>
+            <View style={[styles.accomplishmentsBox4, {marginTop: 120}]}>
+              <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
+                Getting a cat
+              </Text>
+            </View>
+          </Pressable>
+        </View>
+        </ScrollView>
       </View>
     );
 };
