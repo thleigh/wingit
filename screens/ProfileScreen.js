@@ -29,7 +29,7 @@ const ProfileScreen = () => {
         </View>
 
         <View style={styles.accomplishmentsContainer}>
-            <Text style={[styles.header2Text, {marginLeft: 20}]}>Accomplishments</Text>
+            <Text style={[styles.header2Text, {marginLeft: 15}]}>Accomplishments</Text>
             <View style={styles.accomplishmentsBox}>
               <ScrollView>
                 <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
@@ -41,7 +41,7 @@ const ProfileScreen = () => {
                     borderBottomWidth: 1,
                     marginBottom: 10,
                   }}
-                />
+                  />
                 <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
                   Moving to LA
                 </Text>
@@ -51,7 +51,7 @@ const ProfileScreen = () => {
                     borderBottomWidth: 1,
                     marginBottom: 10,
                   }}
-                />
+                  />
                 <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
                   Rock Climbing
                 </Text>
@@ -61,7 +61,7 @@ const ProfileScreen = () => {
                     borderBottomWidth: 1,
                     marginBottom: 10,
                   }}
-                />
+                  />
               </ScrollView>
             </View>
         </View>
@@ -71,7 +71,7 @@ const ProfileScreen = () => {
 };
 export default ProfileScreen;
 
-const width = Dimensions.get('window').width; //full width
+const width = Dimensions.get('window').width - 10; //full width
 
 const styles = StyleSheet.create({
   screen: {
@@ -125,13 +125,15 @@ const styles = StyleSheet.create({
   accomplishmentsContainer: {
     flex: 1,
     marginTop: 200,
-    alignSelf: "flex-start",
     width: width,
   },  
   accomplishmentsBox: {
-    backgroundColor: "lightgrey",
-    alignSelf: 'stretch',
+    backgroundColor: "#EEEEEE",
     height: 270,
     padding: 10,
+    borderRadius:20,
+    borderWidth: 3,
+    borderColor: "#58BDFF",
+    justifyContent: "center",
   }
 });
