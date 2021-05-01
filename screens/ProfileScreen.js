@@ -29,10 +29,10 @@ const ProfileScreen = () => {
         </View>
 
         <View style={styles.accomplishmentsContainer}>
-            <Text style={styles.header2Text}>Accomplishments</Text>
+            <Text style={[styles.header2Text, {marginLeft: 20}]}>Accomplishments</Text>
             <View style={styles.accomplishmentsBox}>
               <ScrollView>
-                <Text style={{marginBottom: 10, fontSize: 20}}>
+                <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
                   Bungee Jumping
                 </Text>
                 <View
@@ -42,7 +42,7 @@ const ProfileScreen = () => {
                     marginBottom: 10,
                   }}
                 />
-                <Text style={{marginBottom: 10, fontSize: 20}}>
+                <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
                   Moving to LA
                 </Text>
                 <View
@@ -52,7 +52,7 @@ const ProfileScreen = () => {
                     marginBottom: 10,
                   }}
                 />
-                <Text style={{marginBottom: 10, fontSize: 20}}>
+                <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
                   Rock Climbing
                 </Text>
                 <View
@@ -115,17 +115,18 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     color: "grey",
+    
   },
   bodyText: {
     fontWeight: "bold",
     fontSize: 15,
+    marginTop: 15,
   },
   accomplishmentsContainer: {
     flex: 1,
-    marginLeft: 20,
-    marginTop: 70,
+    marginTop: 200,
     alignSelf: "flex-start",
-    width: 390,
+    width: width,
   },  
   accomplishmentsBox: {
     backgroundColor: "lightgrey",
