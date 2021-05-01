@@ -19,11 +19,11 @@ const ProfileScreen = () => {
         <ScrollView>
         <View style={styles.containerTop}>
           <Image 
-            source={require("../assets/tanner2.png")}
+            source={require("../assets/amy.png")}
             style={{width : 100, height : 100, marginLeft: 112}}
           />
-          <View style={{marginLeft:30, marginRight: 50}}>
-            <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
+          <View style={{marginLeft:30, marginRight: 76}}>
+            <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Amy.</Text></Text>
           </View>
         </View>
 

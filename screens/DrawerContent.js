@@ -20,12 +20,12 @@ export function DrawerContent(props) {
                     <View style={styles.userInfoSection}>
                         <View style={{flexDirection:'row', marginTop: 15}}>
                             <Image 
-                                source={require('../assets/tanner2.png')}
+                                source={require('../assets/amy.png')}
                                 style={{width : 65, height : 65}}
                             />
                             <View style={{marginLeft:15, flexDirection:'column'}}>
-                                <Title style={styles.title}>Tanner Leigh</Title>
-                                <Caption style={styles.caption}>@tnrleigh</Caption>
+                                <Title style={styles.title}>Amy Chun</Title>
+                                <Caption style={styles.caption}>@acyrimc</Caption>
                             </View>
                         </View>
                         {/* <View style={styles.row}>
@@ -73,7 +73,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Reserve a driveway"
-                            onPress={() => {props.navigation.navigate("Notifications")}}
+                            onPress={() => {}}
                         />
                         <DrawerItem
                             style={{marginLeft: 20}}
@@ -99,7 +99,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Get $5 free"
-                            onPress={() => {props.navigation.navigate("Notifications")}}
+                            onPress={() => {}}
                         />
                         {/* <DrawerItem 
                             icon={({color, size}) => (

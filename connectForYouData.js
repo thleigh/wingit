@@ -18,7 +18,7 @@ export default connectForYouData = [
     },
     {
         key: "4",
-        pp: require("./assets/amy.png"),
+        pp: require("./assets/tanner2.png"),
         body: "Startups",
     },
     {

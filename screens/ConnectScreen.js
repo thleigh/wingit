@@ -12,11 +12,11 @@ const ConnectScreen = ({navigation}) => {
       <View style={styles.screen}>
         <View style={styles.containerTop}>
               <Image 
-                source={require("../assets/tanner2.png")}
+                source={require("../assets/amy.png")}
                 style={{width : 100, height : 100}}
               />
                 <View style={{marginLeft:30}}>
-                  <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
+                  <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Amy.</Text></Text>
                   <Text>I need to find a new housemate @ Berkeley</Text>
                 </View>
         </View>
@@ -34,7 +34,7 @@ const ConnectScreen = ({navigation}) => {
               indicatorStyle: {
                 opacity: 0
               },
-              borderRightWidth: 1,
+              // borderRightWidth: 1,
             }
           }}
         >
