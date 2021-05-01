@@ -25,9 +25,17 @@ const ConnectScreen = ({navigation}) => {
         <Tab.Navigator
           scrollEnabled="true"
           initialRouteName="ForYou"
+          shifting={true}
           tabBarOptions={{
-            activeTintColor: "#000000",
-            style: { backgroundColor: "#fff" },
+            renderIndicator: () => null,
+            activeTintColor: "#000",
+            style: {
+              backgroundColor: "transparent",
+              indicatorStyle: {
+                opacity: 0
+              },
+              borderRightWidth: 1,
+            }
           }}
         >
           <Tab.Screen
@@ -37,7 +45,8 @@ const ConnectScreen = ({navigation}) => {
           <Tab.Screen
             name="Others"
             component={ConnectOthers}
-          />
+            style={{borderLeftWidth: 1}}
+            />
         </Tab.Navigator>
         </View>
       </View>

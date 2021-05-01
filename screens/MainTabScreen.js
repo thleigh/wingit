@@ -20,7 +20,7 @@ const MainTabScreen = () => (
         initialRouteName="Home"
         tabBarOptions={{
           tabStyle: { width: 40, marginTop: 12 },
-          activeTintColor: '#f4f4f4',
+          activeTintColor: '#000',
         }}
     >
       <Tab.Screen

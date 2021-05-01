@@ -15,16 +15,32 @@ const ConnectForYouScreen = ({navigation}) => {
           />          
           <Text style={{marginLeft: 10}}>{element.body}</Text>
 
-          <TouchableOpacity           
-            style={styles.recommend}
-            onPress={() => setModalVisible(true)}
-          >
-            <View style={{justifyContent: "center", alignItems:"center"}}>
-              <Text style={{top: 5}}>
-                Recommend
-              </Text>
-            </View>
-          </TouchableOpacity>
+          <View style={styles.recommendContainer}>
+            <TouchableOpacity           
+              style={styles.recommend}
+              onPress={() => setModalVisible(true)}
+            >
+              <View style={{justifyContent: "center", alignItems:"center"}}>
+                <Text style={{top: 5}}>
+                  Recommend
+                </Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={{marginLeft: 10}}
+              onPress={()=> {}}
+            >
+              <Icon name="chatbox-outline" size={30} color="black"/>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={{marginLeft: 5}}
+              onPress={()=> {}}
+            >
+              <Icon name="bookmark-outline" size={28} color="black"/>
+            </TouchableOpacity>
+          </View>
 
           <View style={styles.recommendModal}>
             <Modal
@@ -72,21 +88,6 @@ const ConnectForYouScreen = ({navigation}) => {
               </View>
             </Modal>
           </View>
-
-          <TouchableOpacity 
-            style={{marginLeft: 10}}
-            onPress={()=> {}}
-          >
-            <Icon name="chatbox-outline" size={30} color="black"/>
-          </TouchableOpacity>
-
-          <TouchableOpacity 
-            style={{marginLeft: 5}}
-            onPress={()=> {}}
-          >
-            <Icon name="bookmark-outline" size={28} color="black"/>
-          </TouchableOpacity>
-
         </View>
       );
     });
@@ -137,5 +138,10 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center"
-  }
+  },
+  recommendContainer: {
+    position: "absolute",
+    flexDirection: "row",
+    right: -5,
+  },
 });
