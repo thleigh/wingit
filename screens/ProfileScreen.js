@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from "react";
 import { Dimensions } from "react-native";
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView, Modal, Pressable } from "react-native";
+import { TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 const ProfileScreen = () => {
+  const [kapitalVisible, setkapitalVisible] = useState(false);
+  const [pizzaVisible, setpizzaVisible] = useState(false);
+  const [coffeeVisible, setcoffeeVisible] = useState(false);
     return (
       <View style={styles.screen}>
         <View style={styles.containerTop}>
@@ -20,9 +24,73 @@ const ProfileScreen = () => {
           <Text style={styles.bodyText}>Finding a new roomate and finding good coffee shops in LA!</Text>
           <View style={styles.helpPhotos}> 
             <ScrollView horizontal={true}>
-              <View style={styles.photoBox}><Text>Box1</Text></View>
-              <View style={styles.photoBox}><Text>Box2</Text></View>
-              <View style={styles.photoBox}><Text>Box3</Text></View>
+              <Pressable onPress={() => setkapitalVisible(true)}>
+                <View style={styles.photoBox} >
+                  <Image style={styles.photoBoxPhoto} source={require("../assets/kapital.png")}/>
+                </View>
+              </Pressable>
+              <Pressable onPress={() => setpizzaVisible(true)}>
+                <View style={styles.photoBox} >
+                  <Image style={styles.photoBoxPhoto} source={require("../assets/pizza.png")}/>
+                </View>
+              </Pressable>
+              <Pressable onPress={() => setcoffeeVisible(true)}>
+                <View style={styles.photoBox} >
+                  <Image style={styles.photoBoxPhoto} source={require("../assets/coffee.png")}/>
+                </View>
+              </Pressable>
+
+                <Modal
+                  animationType="fade"
+                  transparent={true}
+                  visible={kapitalVisible}
+                  onRequestClose={() => {
+                    setkapitalVisible(!modalVisible);
+                  }}
+                  >
+                  <Pressable onPress={() => setkapitalVisible(!kapitalVisible)} style={styles.modalContainer}>
+                      <Pressable onPress={() => {}}>
+                      <View style={styles.modalView}>
+                        <Image style={styles.imageModal} source={require("../assets/kapital.png")}/>
+                      </View>  
+                      </Pressable>
+                  </Pressable>
+                </Modal>
+
+                <Modal
+                  animationType="fade"
+                  transparent={true}
+                  visible={pizzaVisible}
+                  onRequestClose={() => {
+                    setpizzaVisible(!pizzaVisible);
+                  }}
+                  >
+                  <Pressable onPress={() => setpizzaVisible(!pizzaVisible)} style={styles.modalContainer}>
+                      <Pressable onPress={() => {}}>
+                      <View style={styles.modalView}>
+                        <Image style={styles.imageModal} source={require("../assets/pizza.png")}/>
+                      </View>  
+                      </Pressable>
+                  </Pressable>
+                </Modal>
+
+                <Modal
+                  animationType="fade"
+                  transparent={true}
+                  visible={coffeeVisible}
+                  onRequestClose={() => {
+                    setcoffeeVisible(!coffeeVisible);
+                  }}
+                  >
+                  <Pressable onPress={() => setcoffeeVisible(!coffeeVisible)} style={styles.modalContainer}>
+                      <Pressable onPress={() => {}}>
+                      <View style={styles.modalView}>
+                        <Image style={styles.imageModal} source={require("../assets/coffee.png")}/>
+                      </View>  
+                      </Pressable>
+                  </Pressable>
+                </Modal>
+
             </ScrollView>
           </View>
 
@@ -31,7 +99,6 @@ const ProfileScreen = () => {
         <View style={styles.accomplishmentsContainer}>
             <Text style={[styles.header2Text, {marginLeft: 15}]}>Accomplishments</Text>
             <View style={styles.accomplishmentsBox}>
-              <ScrollView>
                 <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
                   Bungee Jumping
                 </Text>
@@ -62,7 +129,6 @@ const ProfileScreen = () => {
                     marginBottom: 10,
                   }}
                   />
-              </ScrollView>
             </View>
         </View>
 
@@ -71,9 +137,16 @@ const ProfileScreen = () => {
 };
 export default ProfileScreen;
 
-const width = Dimensions.get('window').width - 10; //full width
+const width = Dimensions.get("window").width - 10; //full width
+const height = Dimensions.get("window").heigth - 100; //full height
+
 
 const styles = StyleSheet.create({
+  modalContainer: {
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center',
+  },
   screen: {
     flex: 1,
     alignItems: "center",
@@ -102,14 +175,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   photoBox: {
-    backgroundColor: "lightgrey",
     justifyContent: "center",
     alignItems: "center",
-    width: 200,
-    height: 150,
     marginTop: 20,
     marginRight: 15,
+  },
+  photoBoxPhoto: {
     borderRadius: 8,
+    width: 200,
+    height: 150,
   },
   header2Text: {
     fontSize: 30,
@@ -134,6 +208,17 @@ const styles = StyleSheet.create({
     borderRadius:20,
     borderWidth: 3,
     borderColor: "#58BDFF",
+  },
+  modalView: {
+    height: "50%",
+    width: width,
+    alignItems: "center",
     justifyContent: "center",
-  }
+    borderRadius: 20,
+    backgroundColor: "red"
+  },
+  imageModal: {
+    flex: 1,
+    resizeMode: "contain",
+  },
 });
