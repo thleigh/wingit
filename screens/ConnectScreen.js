@@ -48,6 +48,7 @@ export default ConnectScreen;
 
 const styles = StyleSheet.create({
   screen: {
+    marginTop: 50,
     flex: 1,
     alignItems: "center",
     justifyContent: "center",

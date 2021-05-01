@@ -126,6 +126,7 @@ const SignInScreen = ({navigation}) => {
                     <TouchableOpacity style={styles.button}>
                         <View >
                             <Button 
+                                color= "#000"
                                 title="Login"
                                 onPress={() => navigation.goBack()}
                             />
@@ -134,6 +135,7 @@ const SignInScreen = ({navigation}) => {
                     <TouchableOpacity style={styles.button}>
                         <View>
                             <Button 
+                                color= "#a6a6a6"
                                 title="Sign Up"
                                 onPress={() => navigation.navigate('SignUpScreen')}
                             />
@@ -199,12 +201,11 @@ const SignInScreen = ({navigation}) => {
                     onPress={() => {loginHandle( data.username, data.password)}}
                     // onPress={() => navigation.navigate("HomeScreen")}
                                 style={[styles.login, {
-                                borderColor: "#C0C0C0",
-                                marginTop:15,
-                                borderWidth: 1
+                                backgroundColor: "#D1F8FF",
+                                marginTop:15,                             
                             }]}
                         >
-                            <Text style={[styles.textSign, {color:"#C0C0C0"}]}>Login</Text>
+                            <Text style={[styles.textSign, {color:"#000"}]}>Login</Text>
                         </TouchableOpacity>
                 </View>
             </View>

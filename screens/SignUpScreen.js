@@ -89,6 +89,7 @@ const SignUpScreen = ({navigation}) => {
                     <TouchableOpacity style={styles.button}>
                         <View >
                             <Button 
+                                color= "#a6a6a6"
                                 title="Login"
                                 onPress={() => navigation.goBack()}
                             />
@@ -97,6 +98,7 @@ const SignUpScreen = ({navigation}) => {
                     <TouchableOpacity style={styles.button}>
                         <View>
                             <Button 
+                                color= "#000"
                                 title="Sign Up"
                                 onPress={() => navigation.navigate('SignUpScreen')}
                             />
@@ -184,12 +186,11 @@ const SignUpScreen = ({navigation}) => {
                     <TouchableOpacity
                         onPress={() => navigation.goBack()}
                         style={[styles.signIn, {
-                            borderColor: "#C0C0C0",
+                            backgroundColor: "#D1F8FF",
                             marginTop:15,
-                            borderWidth: 1
                         }]}
                     >
-                        <Text style={[styles.textSign, {color:"#C0C0C0"}]}>Sign Up</Text>
+                        <Text style={[styles.textSign, {color:"#000"}]}>Sign Up</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -256,7 +257,8 @@ const styles = StyleSheet.create({
     button: {
         flex: 1,
         marginHorizontal: 20,
-        marginTop: 5
+        marginTop: 5,
+        color: "#000"
     },
     signIn: {
         width: '100%',

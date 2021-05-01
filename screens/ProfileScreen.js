@@ -20,7 +20,7 @@ const ProfileScreen = () => {
         <View style={styles.containerTop}>
           <Image 
             source={require("../assets/tanner2.png")}
-            style={{width : 100, height : 100, marginLeft: 100}}
+            style={{width : 100, height : 100, marginLeft: 112}}
           />
           <View style={{marginLeft:30, marginRight: 50}}>
             <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Tanner.</Text></Text>
@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   screen: {
+    marginTop: 50,
     flex: 1,
     alignItems: "center",
     justifyContent: "center",

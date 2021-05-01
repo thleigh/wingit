@@ -20,7 +20,7 @@ const MainTabScreen = () => (
         initialRouteName="Home"
         tabBarOptions={{
           tabStyle: { width: 40, marginTop: 12 },
-          activeTintColor: '#e91e63',
+          activeTintColor: '#f4f4f4',
         }}
     >
       <Tab.Screen
@@ -70,8 +70,8 @@ export default MainTabScreen;
 
 const HomeStackScreen = ({ navigation }) => (
     <HomeStack.Navigator screenOptions={{
+      headerTransparent: true,
       headerStyle: { 
-        backgroundColor: "#fff"
       },
       headerTintColor: "#000",
       headerTitleStyle: {
@@ -82,7 +82,7 @@ const HomeStackScreen = ({ navigation }) => (
       <HomeStack.Screen name="Activities" component={ActivitiesScreen} options={{
         title: "Activities",
         headerLeft: () => (
-          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
+          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="transparent" onPress={() => navigation.openDrawer()}></Icon.Button>
           )
         }} />
     </HomeStack.Navigator>
@@ -90,19 +90,15 @@ const HomeStackScreen = ({ navigation }) => (
 
 const ConnectStackScreen = ({ navigation }) => (
     <ConnectStack.Navigator screenOptions={{
+      headerTransparent: true,
       headerStyle: { 
-        backgroundColor: "#fff"
-      },
-      headerTintColor: "#000",
-      headerTitleStyle: {
-        fontWeight: "bold"
+        // backgroundColor: "transparent",
       },
     }}
-    style={{borderColor: "#000", borderBottomWidth: 2}}
     >
-      <ConnectStack.Screen name="Connect" component={ConnectScreen} options={{
+      <ConnectStack.Screen name=" " component={ConnectScreen} options={{
         headerLeft: () => (
-          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
+          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="transparent" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
       }}/>
     </ConnectStack.Navigator>
@@ -110,19 +106,14 @@ const ConnectStackScreen = ({ navigation }) => (
 
 const NotificationStackScreen = ({ navigation }) => (
     <NotificationStack.Navigator screenOptions={{
+      headerTransparent: true,
       headerStyle: { 
-        backgroundColor: "#fff"
-      },
-      headerTintColor: "#000",
-      headerTitleStyle: {
-        fontWeight: "bold"
       },
     }}
-    style={{borderColor: "#000", borderBottomWidth: 2}}
     >
       <NotificationStack.Screen name="Notification" component={NotificationScreen} options={{
         headerLeft: () => (
-          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
+          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="transparent" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
       }}/>
     </NotificationStack.Navigator>
@@ -130,19 +121,18 @@ const NotificationStackScreen = ({ navigation }) => (
 
 const ProfileStackScreen = ({ navigation }) => (
     <ProfileStack.Navigator screenOptions={{
+      headerTransparent: true,
       headerStyle: { 
-        backgroundColor: "#fff"
       },
       headerTintColor: "#000",
       headerTitleStyle: {
         fontWeight: "bold"
       },
     }}
-    style={{borderColor: "#000", borderBottomWidth: 2}}
     >
-      <ProfileStack.Screen name="Profile" component={ProfileScreen} options={{
+      <ProfileStack.Screen name=" " component={ProfileScreen} options={{
         headerLeft: () => (
-          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
+          <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="transparent" onPress={() => navigation.openDrawer()}></Icon.Button>
         )
       }}/>
     </ProfileStack.Navigator>

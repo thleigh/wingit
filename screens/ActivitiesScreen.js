@@ -20,6 +20,7 @@ export default ActivitesScreen;
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 80,
     flex: 1, 
     alignItems: 'center', 
     justifyContent: 'center',
