@@ -138,7 +138,7 @@ const ProfileScreen = () => {
 export default ProfileScreen;
 
 const width = Dimensions.get("window").width - 10; //full width
-const height = Dimensions.get("window").heigth - 100; //full height
+const height = Dimensions.get("window").height - 100; //full height
 
 
 const styles = StyleSheet.create({
@@ -210,12 +210,12 @@ const styles = StyleSheet.create({
     borderColor: "#58BDFF",
   },
   modalView: {
-    height: "50%",
+    marginTop: -20,
+    height: height - 300,
     width: width,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 20,
-    backgroundColor: "red"
   },
   imageModal: {
     flex: 1,
