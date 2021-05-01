@@ -97,39 +97,27 @@ const ProfileScreen = () => {
         </View>
 
         <View style={styles.accomplishmentsContainer}>
-            <Text style={[styles.header2Text, {marginLeft: 15}]}>Accomplishments</Text>
-            <View style={styles.accomplishmentsBox}>
-                <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-                  Bungee Jumping
-                </Text>
-                <View
-                  style={{
-                    borderBottomColor: 'black',
-                    borderBottomWidth: 1,
-                    marginBottom: 10,
-                  }}
-                  />
-                <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-                  Moving to LA
-                </Text>
-                <View
-                  style={{
-                    borderBottomColor: 'black',
-                    borderBottomWidth: 1,
-                    marginBottom: 10,
-                  }}
-                  />
-                <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-                  Rock Climbing
-                </Text>
-                <View
-                  style={{
-                    borderBottomColor: 'black',
-                    borderBottomWidth: 1,
-                    marginBottom: 10,
-                  }}
-                  />
-            </View>
+          <Text style={[styles.header2Text, {marginLeft: 15}]}>Accomplishments</Text>
+          <View style={styles.accomplishmentsBox1}>
+            <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
+              Bungee Jumping
+            </Text>
+          </View>
+          <View style={[styles.accomplishmentsBox2, {marginTop: 50}]}>
+            <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
+              Moving to Berkeley
+            </Text>
+          </View>
+          <View style={[styles.accomplishmentsBox3, {marginTop: 100}]}>
+            <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
+              Buying my first car
+            </Text>
+          </View>
+          <View style={[styles.accomplishmentsBox4, {marginTop: 150}]}>
+            <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
+              Getting a cat
+            </Text>
+          </View>
         </View>
 
       </View>
@@ -198,16 +186,56 @@ const styles = StyleSheet.create({
   },
   accomplishmentsContainer: {
     flex: 1,
-    marginTop: 200,
+    marginTop: 170,
     width: width,
   },  
-  accomplishmentsBox: {
+  accomplishmentsBox1: {
+    position: "absolute",
     backgroundColor: "#EEEEEE",
     height: 270,
+    width: width,
+    top: 40,
     padding: 10,
-    borderRadius:20,
+    borderRadius: 20,
+    borderWidth: 3,
+    borderColor: "#BEFF9E",
+    zIndex: 1,
+  },
+  accomplishmentsBox2: {
+    position: "absolute",
+    backgroundColor: "#EEEEEE",
+    height: 270,
+    width: width,
+    top: 40,
+    padding: 10,
+    borderRadius: 20,
     borderWidth: 3,
     borderColor: "#58BDFF",
+    zIndex: 2,
+  },
+  accomplishmentsBox3: {
+    position: "absolute",
+    backgroundColor: "#EEEEEE",
+    height: 270,
+    width: width,
+    top: 40,
+    padding: 10,
+    borderRadius: 20,
+    borderWidth: 3,
+    borderColor: "#FF5242",
+    zIndex: 3,
+  },
+  accomplishmentsBox4: {
+    position: "absolute",
+    backgroundColor: "#EEEEEE",
+    height: 270,
+    width: width,
+    top: 40,
+    padding: 10,
+    borderRadius: 20,
+    borderWidth: 3,
+    borderColor: "#FFFF47",
+    zIndex: 4,
   },
   modalView: {
     marginTop: -20,
