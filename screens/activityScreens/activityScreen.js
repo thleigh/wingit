@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ActivitiesFlex = () => {
+const ActivityScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.rowOne}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ActivitiesFlex;
+export default ActivityScreen;

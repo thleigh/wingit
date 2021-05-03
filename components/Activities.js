@@ -10,7 +10,7 @@ const ActivitiesFlex = (navigation) => {
       <View style={styles.rowOne}>
         <TouchableOpacity 
           style={[{backgroundColor: "violet"}, styles.gridBox]}
-          onPress={()=> navigation.navigate("activityScreen")}
+          onPress={()=> navigation.navigate("ActivityScreen")}
         >
           <View style={styles.boxOne}>
             <Icon name="home-outline" size={70} color="white"/>

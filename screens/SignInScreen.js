@@ -14,7 +14,6 @@ import {
     Image
 } from "react-native";
 
-import * as Animatable from 'react-native-animatable';
 import Feather from "react-native-vector-icons/Feather";
 import { AuthContext } from "../components/context.js"
 import Users from '../model/users.js';

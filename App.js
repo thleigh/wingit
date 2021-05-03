@@ -1,8 +1,7 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { View, Text, Button, SafeAreaView, StyleSheet, StatusBar, ScrollView, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 
 import { DrawerContent } from "./screens/DrawerContent";
 
