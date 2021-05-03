@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ActivityScreen = ({navigation}) => {
+
+const HousingScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
         <View style={[styles.rowOne, {top: 150}]}>
@@ -12,8 +13,8 @@ const ActivityScreen = ({navigation}) => {
                 onPress={()=> navigation.goBack()}
                 >
                 <View style={styles.boxOne}>
-                    <Icon name="bicycle-outline" size={40} color="white"/>
-                    <Text style={styles.boxText}>Activities</Text>
+                    <Icon name="home-outline" size={40} color="white"/>
+                    <Text style={styles.boxText}>Housing</Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -23,28 +24,21 @@ const ActivityScreen = ({navigation}) => {
                 onPress={()=> {}}
             >
                 <View style={styles.boxOne}>
-                    <Text style={styles.subBoxText}>Surfing</Text>
+                    <Text style={styles.subBoxText}>Storage</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.subBox, styles.gridBox]}
                 onPress={()=> {}}
             >
                 <View style={styles.boxOne}>
-                    <Text style={styles.subBoxText}>Snowboarding</Text>
+                    <Text style={styles.subBoxText}>Housemates</Text>
                     </View>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.subBox, styles.gridBox]}
                 onPress={()=> {}}
             >
                 <View style={styles.boxOne}>
-                    <Text style={styles.subBoxText}>Weightlifting</Text>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.subBox, styles.gridBox]}
-                onPress={()=> {}}
-            >
-                <View style={styles.boxOne}>
-                    <Text style={styles.subBoxText}>Biking</Text>
+                    <Text style={styles.subBoxText}>Recommendations</Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -59,7 +53,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   topBox: {
-    backgroundColor: "#6BE27D", 
+    backgroundColor: "violet", 
   },
   rowOne: {
     position: "absolute",
@@ -83,7 +77,7 @@ const styles = StyleSheet.create({
   },
   subBox: {
     borderWidth: 2,
-    borderColor: "#6BE27D",
+    borderColor: "violet",
     marginTop: 2,
   }, 
   gridBox: {
@@ -104,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ActivityScreen;
+export default HousingScreen;
