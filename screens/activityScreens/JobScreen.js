@@ -1,10 +1,12 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import * as React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, Picker } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const FoodScreen = ({navigation}) => {
+  const [selectedValue, setSelectedValue] = useState("nursing")
+
   return (
     <View style={styles.container}>
         <View style={[styles.rowOne, {top: 150}]}>
@@ -17,8 +19,16 @@ const FoodScreen = ({navigation}) => {
                 </View>
             </TouchableOpacity>
         </View>
-
-
+        <View style={styles.pickerBox}>            
+            <Picker
+                selectedValue={selectedValue}
+                style={{height: 50, width: 200}}
+                onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                >
+                <Picker.Item label="Nursing" value="nursing" />
+                <Picker.Item label="Law" value="Law" />
+            </Picker>
+        </View>
 
         <View style={[styles.rowOne, {top: 380}]}>
             <TouchableOpacity style={[styles.subBox, styles.gridBox]}
@@ -90,6 +100,12 @@ const styles = StyleSheet.create({
     padding: 10,
     color: "#fff",
   },
+  pickerBox: {
+    position: "absolute",
+    justifyContent: "center",
+    alignItems: "center",
+    top: 190
+  }, 
 });
 
 export default FoodScreen;
