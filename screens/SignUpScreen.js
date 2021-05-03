@@ -3,19 +3,14 @@ import {
     View,
     Text,
     TouchableOpacity,
-    Dimensions,
     TextInput,
     Platform,
     Button,
     StyleSheet,
     StatusBar,
-    TouchableOpacityBase,
     Image
 } from "react-native";
 
-import * as Animatable from 'react-native-animatable';
-import { LinearGradient } from "expo-linear-gradient";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
 
 const SignUpScreen = ({navigation}) => {

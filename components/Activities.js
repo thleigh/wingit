@@ -3,18 +3,18 @@ import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ActivitiesFlex = () => {
+const ActivitiesFlex = (navigation) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>You can pick more than one!</Text>
+      {/* <Text style={styles.headerText}>You can pick more than one!</Text> */}
       <View style={styles.rowOne}>
         <TouchableOpacity 
           style={[{backgroundColor: "violet"}, styles.gridBox]}
-          onPress={()=> {}}
+          onPress={()=> navigation.navigate("activityScreen")}
         >
           <View style={styles.boxOne}>
-            <Icon name="image-outline" size={70} color="white"/>
-            <Text style={styles.boxText}>Moving</Text>
+            <Icon name="home-outline" size={70} color="white"/>
+            <Text style={styles.boxText}>Housing</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={[{backgroundColor: "lightgreen"}, styles.gridBox]}
@@ -33,20 +33,20 @@ const ActivitiesFlex = () => {
         >
           <View style={styles.boxOne}>
             <Icon name="fast-food-outline" size={70} color="white"/>
-            <Text style={styles.boxText}>Dining</Text>
+            <Text style={styles.boxText}>Food</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={[{backgroundColor: "gold"}, styles.gridBox]}
           onPress={()=> {}}
         >
           <View style={styles.boxOne}>
-            <Icon name="color-palette-outline" size={70} color="white"/>
-            <Text style={styles.boxText}>Art</Text>
+            <Icon name="briefcase-outline" size={70} color="white"/>
+            <Text style={styles.boxText}>Jobs</Text>
           </View>
         </TouchableOpacity>
       </View>
 
-      <View style={styles.rowThree}>
+      {/* <View style={styles.rowThree}>
         <TouchableOpacity style={[{backgroundColor: "coral"}, styles.gridBox]}
           onPress={()=> {}}
         >
@@ -63,13 +63,14 @@ const ActivitiesFlex = () => {
             <Text style={styles.boxText}>Golf</Text>
           </View>
         </TouchableOpacity>
-      </View>
+      </View> */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: -20
   },
   headerText: {
     textAlign: "center",
