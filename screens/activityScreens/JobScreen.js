@@ -1,11 +1,23 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Picker } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from "react-native-vector-icons/Ionicons";
+
+import DropDownPicker from "react-native-dropdown-picker"
 
 const FoodScreen = ({navigation}) => {
-  const [selectedValue, setSelectedValue] = useState("nursing")
+    const [selectedValue, setSelectedValue] = useState("")
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState(null);
+    const [items, setItems] = useState([
+        {label: "Nursing", value: "Nursing"},
+        {label: "Law", value: "Law"},
+        {label: "Software Engineering", value: "SoftwareEngineering"},
+        {label: "Medical School", value: "MedicalSchool"},
+        {label: "Start Ups", value: "StartUps"},
+        {label: "Entrepreneurship", value: "Entrepreneurship"},
+    ]);
 
   return (
     <View style={styles.container}>
@@ -19,15 +31,20 @@ const FoodScreen = ({navigation}) => {
                 </View>
             </TouchableOpacity>
         </View>
+
         <View style={styles.pickerBox}>            
-            <Picker
-                selectedValue={selectedValue}
-                style={{height: 50, width: 200}}
-                onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-                >
-                <Picker.Item label="Nursing" value="nursing" />
-                <Picker.Item label="Law" value="Law" />
-            </Picker>
+            <DropDownPicker
+                open={open}
+                value={value}
+                items={items}
+                setValue={setValue}
+                setItems={setItems}
+                setOpen={setOpen}
+                placeholder="Which Field?"
+                
+                containerStyle={{height: 40, width: 300}}
+                onChangeItem={item => setSelectedValue(item)}
+            />
         </View>
 
         <View style={[styles.rowOne, {top: 380}]}>
@@ -104,7 +121,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     justifyContent: "center",
     alignItems: "center",
-    top: 190
+    top: 305,
+    height: 40,
+    width: 300,
+    zIndex: 1,
   }, 
 });
 

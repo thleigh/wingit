@@ -51,7 +51,7 @@ const ActivitiesFlex = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: -20,
+    marginTop: 20,
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
