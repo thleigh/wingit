@@ -1,7 +1,7 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { View, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator, StatusBar } from "react-native";
 
 import { DrawerContent } from "./screens/DrawerContent";
 
@@ -127,7 +127,9 @@ const App = () => {
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
         { loginState.userToken !== null ? (
-          <Drawer.Navigator drawerContent={props => <DrawerContent { ...props} /> } initialRouteName="Home">
+          <Drawer.Navigator drawerContent={props => <DrawerContent { ...props} /> } initialRouteName="Home"
+            screenOptions={{cardStyle: {backgroundColor: "white"}}}
+          >
             <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
             <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
           </Drawer.Navigator>

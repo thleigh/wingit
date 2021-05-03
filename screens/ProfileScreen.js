@@ -152,8 +152,8 @@ const height = Dimensions.get("window").height - 100; //full height
 const styles = StyleSheet.create({
   modalContainer: {
     flex: 1, 
-    alignItems: 'center', 
-    justifyContent: 'center',
+    alignItems: "center", 
+    justifyContent: "center",
   },
   screen: {
     marginTop: 50,
@@ -212,7 +212,6 @@ const styles = StyleSheet.create({
   },  
   accomplishmentsBox1: {
     position: "absolute",
-    backgroundColor: "#EEEEEE",
     height: 270,
     width: width,
     top: 40,
@@ -224,7 +223,6 @@ const styles = StyleSheet.create({
   },
   accomplishmentsBox2: {
     position: "absolute",
-    backgroundColor: "#EEEEEE",
     height: 270,
     width: width,
     top: 40,
@@ -236,7 +234,6 @@ const styles = StyleSheet.create({
   },
   accomplishmentsBox3: {
     position: "absolute",
-    backgroundColor: "#EEEEEE",
     height: 270,
     width: width,
     top: 40,
@@ -248,7 +245,6 @@ const styles = StyleSheet.create({
   },
   accomplishmentsBox4: {
     position: "absolute",
-    backgroundColor: "#EEEEEE",
     height: 270,
     width: width,
     top: 40,

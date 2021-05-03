@@ -77,6 +77,7 @@ const HomeStackScreen = ({ navigation }) => (
       headerTitleStyle: {
         fontWeight: "bold"
       },
+      cardStyle: {backgroundColor: "white"}
     }} 
     >
       <HomeStack.Screen name="Activities" component={ActivitiesScreen} options={{
@@ -94,6 +95,7 @@ const ConnectStackScreen = ({ navigation }) => (
       headerStyle: { 
         // backgroundColor: "transparent",
       },
+      cardStyle: {backgroundColor: "white"}
     }}
     >
       <ConnectStack.Screen name=" " component={ConnectScreen} options={{
@@ -109,6 +111,7 @@ const NotificationStackScreen = ({ navigation }) => (
       headerTransparent: true,
       headerStyle: { 
       },
+      cardStyle: {backgroundColor: "white"}
     }}
     >
       <NotificationStack.Screen name="Notification" component={NotificationScreen} options={{
@@ -128,6 +131,7 @@ const ProfileStackScreen = ({ navigation }) => (
       headerTitleStyle: {
         fontWeight: "bold"
       },
+      cardStyle: {backgroundColor: "white"}
     }}
     >
       <ProfileStack.Screen name=" " component={ProfileScreen} options={{

@@ -64,41 +64,20 @@ export function DrawerContent(props) {
                         /> */}
                         <DrawerItem
                             style={{marginLeft: 20}}
-                            labelStyle={{color: "black", marginLeft: -10}}
-                            icon={({color, size}) => (
-                                <Icon 
-                                    name="car-outline" 
-                                    color="black"
-                                    size={size}
-                                />
-                            )}
-                            label="Reserve a driveway"
+                            labelStyle={{color: "black", marginLeft: 10, fontSize: 20}}
+                            label="Edit Profile"
                             onPress={() => {}}
                         />
                         <DrawerItem
                             style={{marginLeft: 20}}
-                            labelStyle={{color: "black", marginLeft: -10}}
-                            icon={({color, size}) => (
-                                <Icon 
-                                    name="notifications-outline" 
-                                    color="black"
-                                    size={size}
-                                />
-                            )}
-                            label="Notifications"
-                            onPress={() => {props.navigation.navigate("Notifications")}}
+                            labelStyle={{color: "black", marginLeft: 10, fontSize: 20}}
+                            label="Help"
+                            onPress={() => {}}
                         />
                         <DrawerItem
                             style={{marginLeft: 20}}
-                            labelStyle={{color: "black", marginLeft: -10}}
-                            icon={({color, size}) => (
-                                <Icon 
-                                    name="gift-outline" 
-                                    color="black"
-                                    size={size}
-                                />
-                            )}
-                            label="Get $5 free"
+                            labelStyle={{color: "black", marginLeft: 10, fontSize: 20}}
+                            label="Settings"
                             onPress={() => {}}
                         />
                         {/* <DrawerItem 
@@ -135,6 +114,7 @@ export function DrawerContent(props) {
                         size={size}
                         />
                     )}
+                    labelStyle={{fontSize: 15}}
                     label="Sign Out"
                     onPress={() => {signOut()}}
                 />

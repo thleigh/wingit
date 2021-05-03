@@ -8,6 +8,7 @@ const ConnectForYouScreen = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return connectForYouData.map((element) => {
       return (
+        <View style={{backgroundColor: "white"}}>
         <View key={element.key} style={[styles.container, {margin: 20}]}>
           <Image 
             source={element.pp}
@@ -89,6 +90,7 @@ const ConnectForYouScreen = ({navigation}) => {
             </Modal>
           </View>
         </View>
+        </View>
       );
     });
   };
@@ -103,6 +105,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center", 
     top: 10,
+    backgroundColor: "white",
   },
   recommend: {
     backgroundColor: "lightgreen",
