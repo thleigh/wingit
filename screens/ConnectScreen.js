@@ -20,34 +20,34 @@ const ConnectScreen = ({navigation}) => {
                   <Text>I need to find a new housemate @ Berkeley</Text>
                 </View>
         </View>
-        <View style={styles.buttonTop}>      
 
-        <Tab.Navigator
-          scrollEnabled="true"
-          initialRouteName="Recommend"
-          shifting={true}
-          tabBarOptions={{
-            renderIndicator: () => null,
-            activeTintColor: "#000",
-            style: {
-              backgroundColor: "transparent",
-              indicatorStyle: {
-                opacity: 0
-              },
-              // borderRightWidth: 1,
-            }
-          }}
-        >
-          <Tab.Screen
-            name="Recommend"
-            component={ConnectRecommend}
-          />
-          <Tab.Screen
-            name="Explore"
-            component={ConnectExplore}
-            style={{borderLeftWidth: 1}}
+        <View style={styles.buttonTop}>      
+          <Tab.Navigator
+            scrollEnabled="true"
+            initialRouteName="Recommend"
+            shifting={true}
+            tabBarOptions={{
+              renderIndicator: () => null,
+              activeTintColor: "#000",
+              style: {
+                backgroundColor: "transparent",
+                indicatorStyle: {
+                  opacity: 0
+                },
+                // borderRightWidth: 1,
+              }
+            }}
+          >
+            <Tab.Screen
+              name="Recommend"
+              component={ConnectRecommend}
             />
-        </Tab.Navigator>
+            <Tab.Screen
+              name="Explore"
+              component={ConnectExplore}
+              style={{borderLeftWidth: 1}}
+              />
+          </Tab.Navigator>
         </View>
       </View>
     );
@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "white",
   },
   containerTop: {
     flexDirection:"row",
