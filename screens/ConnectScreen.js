@@ -10,7 +10,7 @@ const Tab = createMaterialTopTabNavigator();
 const ConnectScreen = ({navigation}) => {
     return (
       <View style={styles.screen}>
-        <View style={styles.containerTop}>
+        {/* <View style={styles.containerTop}>
               <Image 
                 source={require("../assets/amy.png")}
                 style={{width : 100, height : 100, marginLeft: 9}}
@@ -19,7 +19,7 @@ const ConnectScreen = ({navigation}) => {
                   <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Amy.</Text></Text>
                   <Text>I need to find a new housemate @ Berkeley</Text>
                 </View>
-        </View>
+        </View> */}
 
         <View style={styles.buttonTop}>      
           <Tab.Navigator
@@ -78,6 +78,6 @@ const styles = StyleSheet.create({
   buttonTop: {
     flexDirection: "row",
     position: "absolute",
-    top: 170,
+    top: 50,
   },
 });

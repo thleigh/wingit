@@ -1,12 +1,10 @@
-import * as React from "react";
+import React, { PureComponent } from "react";
 import { View, Text, Button, StyleSheet, Image, ScrollView } from "react-native";
 
 const ActivityExploreScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
-        <ScrollView>
 
-        </ScrollView>
       </View>
     );
 };

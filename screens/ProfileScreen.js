@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Dimensions } from "react-native";
 import { View, Text, StyleSheet, Image, ScrollView, Modal, Pressable } from "react-native";
 import { TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const ProfileScreen = () => {
   const [kapitalVisible, setkapitalVisible] = useState(false);
@@ -24,27 +25,44 @@ const ProfileScreen = () => {
           />
           <View style={{marginLeft:30, marginRight: 76}}>
             <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Amy.</Text></Text>
+            <Text>I want to go hiking.</Text>
+            <View style={{flexDirection: "row", marginLeft: -5}}>
+              <Icon name="location-outline" size={20} color="#979797"/> 
+              <Text style={{color: "#979797", marginTop: 3}}> Los Angeles, CA</Text>
+            </View>
           </View>
         </View>
 
         <View style={styles.helpContainer}>
-          <Text style={styles.header2Text}>I need help with</Text>
-          <Text style={styles.bodyText}>Finding a new roomate and finding good coffee shops in LA!</Text>
+          <Text style={styles.header2Text}>Favorites</Text>
+          {/* <Text style={styles.bodyText}>Finding a new roomate and finding good coffee shops in LA!</Text> */}
           <View style={styles.helpPhotos}> 
             <ScrollView horizontal={true}>
               <Pressable onPress={() => setkapitalVisible(true)}>
                 <View style={styles.photoBox} >
                   <Image style={styles.photoBoxPhoto} source={require("../assets/kapital.png")}/>
+                  <View style={{alignSelf: "flex-start"}}>
+                    <Text style={{textAlign: "left", marginTop: 10, color: "#979797"}}>Los Angeles, CA</Text>
+                    <Text style={styles.bodyText}>A new sweater vest I got!</Text>
+                  </View>
                 </View>
               </Pressable>
               <Pressable onPress={() => setpizzaVisible(true)}>
                 <View style={styles.photoBox} >
                   <Image style={styles.photoBoxPhoto} source={require("../assets/pizza.png")}/>
+                  <View style={{alignSelf: "flex-start"}}>
+                    <Text style={{textAlign: "left", marginTop: 10, color: "#979797"}}>Los Angeles, CA</Text>
+                    <Text style={styles.bodyText}>My favorite pizza</Text>
+                  </View>
                 </View>
               </Pressable>
               <Pressable onPress={() => setcoffeeVisible(true)}>
                 <View style={styles.photoBox} >
                   <Image style={styles.photoBoxPhoto} source={require("../assets/coffee.png")}/>
+                  <View  style={{alignSelf: "flex-start"}}>
+                    <Text style={{textAlign: "left", marginTop: 10, color: "#979797"}}>Los Angeles, CA</Text>
+                    <Text style={styles.bodyText}>My favorite coffee shop</Text>
+                  </View>
                 </View>
               </Pressable>
 
@@ -105,7 +123,7 @@ const ProfileScreen = () => {
         </View>
 
         <View style={styles.accomplishmentsContainer}>
-          <Text style={[styles.header2Text, {marginLeft: 15}]}>Accomplishments</Text>
+          <Text style={[styles.header2Text, {marginLeft: 15}]}>Connections Album</Text>
         </View>
         </ScrollView>
       </View>
@@ -171,7 +189,8 @@ const styles = StyleSheet.create({
   bodyText: {
     fontWeight: "bold",
     fontSize: 15,
-    marginTop: 15,
+    marginTop: 5,
+    textAlign: "left"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
   },
   accomplishmentsContainer: {
     flex: 1,
