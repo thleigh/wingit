@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import ActivitiesScreen from "./ActivitiesScreen";
+import ActivitiesScreen from "./ActivityStackScreen";
 import ConnectScreen from "./ConnectScreen";
 import ProfileScreen from "./ProfileScreen";
 import NotificationScreen from "./NotificationScreen";

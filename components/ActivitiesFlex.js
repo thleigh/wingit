@@ -29,7 +29,7 @@ const ActivitiesFlex = ({navigation}) => {
 
       <View style={styles.rowTwo}>
         <TouchableOpacity style={[{backgroundColor: "skyblue"}, styles.gridBox]}
-          onPress={()=> {}}
+          onPress={()=> navigation.navigate("FoodScreen")}
           >
           <View style={styles.boxOne}>
             <Icon name="fast-food-outline" size={70} color="white"/>
@@ -37,7 +37,7 @@ const ActivitiesFlex = ({navigation}) => {
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={[{backgroundColor: "gold"}, styles.gridBox]}
-          onPress={()=> {}}
+          onPress={()=> navigation.navigate("JobScreen")}
           >
           <View style={styles.boxOne}>
             <Icon name="briefcase-outline" size={70} color="white"/>
