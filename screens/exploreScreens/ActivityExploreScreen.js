@@ -5,10 +5,7 @@ const ActivityExploreScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Text>Connect Others Screen</Text>
-          <View>
 
-          </View>
         </ScrollView>
       </View>
     );
@@ -22,5 +19,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "white",
   },
-  
+  buttonTop: {
+    flexDirection: "row",
+    position: "absolute",
+    top: -5,
+  },
 });

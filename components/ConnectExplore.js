@@ -1,6 +1,7 @@
 import * as React from "react";
 import { View, Text, Button, StyleSheet, Image, ScrollView, TouchableOpacity } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs"
+
 import ActivityExploreScreen from "../screens/exploreScreens/ActivityExploreScreen";
 import HousingExploreScreen from "../screens/exploreScreens/HousingExploreScreen";
 import JobsExploreScreen from "../screens/exploreScreens/JobsExploreScreen";
@@ -17,13 +18,25 @@ const ConnectExplore = ({navigation}) => {
             initialRouteName="Activity"
             shifting={true}
             tabBarOptions={{
-              renderIndicator: () => null,
-              activeTintColor: "#000",
+              activeTintColor: "black",
+              indicatorStyle: {backgroundColor: "#6BE27D"},
+              inactiveTintColor: "black",
+              labelStyle: {
+                backgroundColor: "#EEE",
+                width: 80,
+                height: 30,
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 5,
+                padding: 7
+              },
               style: {
-                backgroundColor: "transparent",
-                indicatorStyle: {
-                  opacity: 0
-                },
+                margin: 30,
+                marginTop: 0,
+                borderRadius: 20,
+              },
+              tabStyle: {
+                borderRadius: 15
               }
             }}
           >

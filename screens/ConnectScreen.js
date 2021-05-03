@@ -13,9 +13,9 @@ const ConnectScreen = ({navigation}) => {
         <View style={styles.containerTop}>
               <Image 
                 source={require("../assets/amy.png")}
-                style={{width : 100, height : 100}}
+                style={{width : 100, height : 100, marginLeft: 9}}
               />
-                <View style={{marginLeft:30}}>
+                <View style={{marginLeft:25}}>
                   <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Amy.</Text></Text>
                   <Text>I need to find a new housemate @ Berkeley</Text>
                 </View>
