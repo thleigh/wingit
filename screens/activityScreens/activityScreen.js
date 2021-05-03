@@ -1,3 +1,4 @@
+import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
 import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -19,6 +20,8 @@ const ActivityScreen = () => {
     </View>
   );
 };
+
+
 
 const styles = StyleSheet.create({
   container: {

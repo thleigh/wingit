@@ -1,28 +1,27 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import React from "react";
+import { View, Text, StyleSheet, Image } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack"
 
-import ActivitesFlex from '../components/Activities'
+import ActivityScreen from "./activityScreens/ActivityScreen";
+import ActivitiesFlex from "../components/ActivitiesFlex";
+
+const ActivityStack = createStackNavigator();
 
 const ActivitesScreen = ({navigation}) => {
-  const { colors } = useTheme();
-    return (
-      <View style={styles.container}>
-          <ActivitesFlex />
-        {/* <View style={styles.container}>
-          <StatusBar />
-          <Text style={{color: colors.text}}>Activities Screen</Text>
-        </View> */}
-      </View>
-    );
+  return (
+    <ActivityStack.Navigator headerMode="none">
+      <ActivityStack.Screen name="ActivitesFlex" component={ActivitiesFlex}/>
+      <ActivityStack.Screen name="ActivityScreen" component={ActivityScreen}/>
+    </ActivityStack.Navigator>
+  )
 };
+
 export default ActivitesScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 80,
-    flex: 1, 
-    alignItems: 'center', 
-    justifyContent: 'center',
+  screen: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

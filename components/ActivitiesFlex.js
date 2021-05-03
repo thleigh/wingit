@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ActivitiesFlex = (navigation) => {
+const ActivitiesFlex = ({navigation}) => {
   return (
     <View style={styles.container}>
       {/* <Text style={styles.headerText}>You can pick more than one!</Text> */}
@@ -11,15 +11,15 @@ const ActivitiesFlex = (navigation) => {
         <TouchableOpacity 
           style={[{backgroundColor: "violet"}, styles.gridBox]}
           onPress={()=> navigation.navigate("ActivityScreen")}
-        >
+          >
           <View style={styles.boxOne}>
             <Icon name="home-outline" size={70} color="white"/>
             <Text style={styles.boxText}>Housing</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={[{backgroundColor: "lightgreen"}, styles.gridBox]}
-          onPress={()=> {}}
-        >
+          onPress={()=> navigation.navigate("ActivityScreen")}
+          >
           <View style={styles.boxOne}>
             <Icon name="bicycle-outline" size={70} color="white"/>
             <Text style={styles.boxText}>Activity</Text>
@@ -30,7 +30,7 @@ const ActivitiesFlex = (navigation) => {
       <View style={styles.rowTwo}>
         <TouchableOpacity style={[{backgroundColor: "skyblue"}, styles.gridBox]}
           onPress={()=> {}}
-        >
+          >
           <View style={styles.boxOne}>
             <Icon name="fast-food-outline" size={70} color="white"/>
             <Text style={styles.boxText}>Food</Text>
@@ -38,39 +38,23 @@ const ActivitiesFlex = (navigation) => {
         </TouchableOpacity>
         <TouchableOpacity style={[{backgroundColor: "gold"}, styles.gridBox]}
           onPress={()=> {}}
-        >
+          >
           <View style={styles.boxOne}>
             <Icon name="briefcase-outline" size={70} color="white"/>
             <Text style={styles.boxText}>Jobs</Text>
           </View>
         </TouchableOpacity>
       </View>
-
-      {/* <View style={styles.rowThree}>
-        <TouchableOpacity style={[{backgroundColor: "coral"}, styles.gridBox]}
-          onPress={()=> {}}
-        >
-          <View style={styles.boxOne}>
-            <Icon name="pricetag-outline" size={70} color="white"/>
-            <Text style={styles.boxText}>Selling</Text>
-          </View> 
-        </TouchableOpacity>
-        <TouchableOpacity style={[{backgroundColor: "red"}, styles.gridBox]}
-          onPress={()=> {}}
-        >
-          <View style={styles.boxOne}>
-            <Icon name="golf-outline" size={70} color="white"/>
-            <Text style={styles.boxText}>Golf</Text>
-          </View>
-        </TouchableOpacity>
-      </View> */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: -20
+    marginTop: -20,
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
   headerText: {
     textAlign: "center",
