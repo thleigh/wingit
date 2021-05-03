@@ -13,7 +13,7 @@ const ActivityStack = createStackNavigator();
 
 const ActivitesScreen = ({navigation}) => {
   return (
-    <ActivityStack.Navigator headerMode="none">
+    <ActivityStack.Navigator drawerContent={props => <DrawerContent { ...props} /> } headerMode="none" screenOptions={{cardStyle: {backgroundColor: "white"}}}>
       <ActivityStack.Screen name="ActivitesFlex" component={ActivitiesFlex}/>
       <ActivityStack.Screen name="ActivityScreen" component={ActivityScreen}/>
       <ActivityStack.Screen name="HousingScreen" component={HousingScreen}/>
@@ -30,5 +30,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "white",
   },
 });

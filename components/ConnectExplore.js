@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text, Button, StyleSheet, Image, ScrollView } from "react-native";
 
-const ConnectOthersScreen = ({navigation}) => {
+const ConnectExplore = ({navigation}) => {
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -13,7 +13,7 @@ const ConnectOthersScreen = ({navigation}) => {
       </View>
     );
 };
-export default ConnectOthersScreen;
+export default ConnectExplore;
 
 const styles = StyleSheet.create({
   container: {

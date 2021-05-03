@@ -106,38 +106,6 @@ const ProfileScreen = () => {
 
         <View style={styles.accomplishmentsContainer}>
           <Text style={[styles.header2Text, {marginLeft: 15}]}>Accomplishments</Text>
-
-          <Pressable onPress={() => {}}>
-            <View style={[styles.accomplishmentsBox1, {marginTop: -30}]}>
-              <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-                Bungee Jumping
-              </Text>
-            </View>
-          </Pressable>
-
-          <Pressable>
-            <View style={[styles.accomplishmentsBox2, {marginTop: 20}]}>
-              <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-                Moving to Berkeley
-              </Text>
-            </View>
-          </Pressable>
-
-          <Pressable>
-            <View style={[styles.accomplishmentsBox3, {marginTop: 70}]}>
-              <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-                Buying my first car
-              </Text>
-            </View>
-          </Pressable>
-
-          <Pressable>
-            <View style={[styles.accomplishmentsBox4, {marginTop: 120}]}>
-              <Text style={{marginBottom: 10, fontSize: 20, marginLeft: 10}}>
-                Getting a cat
-              </Text>
-            </View>
-          </Pressable>
         </View>
         </ScrollView>
       </View>

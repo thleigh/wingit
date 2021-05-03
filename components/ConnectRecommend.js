@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Modal, Pre
 import connectForYouData from "../connectForYouData.js";  
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ConnectForYouScreen = ({navigation}) => {
+const ConnectRecommend = ({navigation}) => {
   const list = () => {
     const [modalVisible, setModalVisible] = useState(false);
     return connectForYouData.map((element) => {
@@ -97,7 +97,7 @@ const ConnectForYouScreen = ({navigation}) => {
   return <ScrollView>{list()}</ScrollView>;
 };
 
-export default ConnectForYouScreen;
+export default ConnectRecommend;
 
 const styles = StyleSheet.create({
   container: {

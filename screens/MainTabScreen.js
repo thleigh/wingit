@@ -112,8 +112,7 @@ const NotificationStackScreen = ({ navigation }) => (
       headerStyle: { 
       },
       cardStyle: {backgroundColor: "white"}
-    }}
-    >
+    }}>
       <NotificationStack.Screen name="Notification" component={NotificationScreen} options={{
         headerLeft: () => (
           <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="transparent" onPress={() => navigation.openDrawer()}></Icon.Button>
@@ -131,9 +130,8 @@ const ProfileStackScreen = ({ navigation }) => (
       headerTitleStyle: {
         fontWeight: "bold"
       },
-      cardStyle: {backgroundColor: "white"}
-    }}
-    >
+      cardStyle: { backgroundColor: "white" }
+    }}>
       <ProfileStack.Screen name=" " component={ProfileScreen} options={{
         headerLeft: () => (
           <Icon.Button name="ios-menu" size={25} color="#000" backgroundColor="transparent" onPress={() => navigation.openDrawer()}></Icon.Button>

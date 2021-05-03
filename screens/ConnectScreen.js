@@ -2,8 +2,8 @@ import * as React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs"
 
-import ConnectForYou from "../components/ConnectForYou";
-import ConnectOthers from "../components/ConnectOthers";
+import ConnectRecommend from "../components/ConnectRecommend";
+import ConnectExplore from "../components/ConnectExplore";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -24,7 +24,7 @@ const ConnectScreen = ({navigation}) => {
 
         <Tab.Navigator
           scrollEnabled="true"
-          initialRouteName="ForYou"
+          initialRouteName="Recommend"
           shifting={true}
           tabBarOptions={{
             renderIndicator: () => null,
@@ -39,12 +39,12 @@ const ConnectScreen = ({navigation}) => {
           }}
         >
           <Tab.Screen
-            name="For You"
-            component={ConnectForYou}
+            name="Recommend"
+            component={ConnectRecommend}
           />
           <Tab.Screen
-            name="Others"
-            component={ConnectOthers}
+            name="Explore"
+            component={ConnectExplore}
             style={{borderLeftWidth: 1}}
             />
         </Tab.Navigator>
