@@ -1,18 +1,18 @@
-import * as React from "react";
+import React, { PureComponent } from "react";
 import { View, Text, Button, StyleSheet, Image, ScrollView } from "react-native";
 
-const FoodExploreScreen = ({navigation}) => {
+const ActivityRecommendScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <ScrollView>
           <Text>
-            Food
+            Activity
           </Text>
         </ScrollView>
       </View>
     );
 };
-export default FoodExploreScreen;
+export default ActivityRecommendScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -21,5 +21,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "white",
   },
-  
+  buttonTop: {
+    flexDirection: "row",
+    position: "absolute",
+    top: -5,
+  },
 });

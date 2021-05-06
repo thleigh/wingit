@@ -5,10 +5,9 @@ const HousingExploreScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Text>Connect Others Screen</Text>
-          <View>
-
-          </View>
+          <Text>
+            Housing
+          </Text>
         </ScrollView>
       </View>
     );

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text, Button, StyleSheet, Image, ScrollView } from "react-native";
 
-const FoodExploreScreen = ({navigation}) => {
+const FoodRecommendScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -12,7 +12,7 @@ const FoodExploreScreen = ({navigation}) => {
       </View>
     );
 };
-export default FoodExploreScreen;
+export default FoodRecommendScreen;
 
 const styles = StyleSheet.create({
   container: {

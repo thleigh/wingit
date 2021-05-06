@@ -1,18 +1,18 @@
 import * as React from "react";
 import { View, Text, Button, StyleSheet, Image, ScrollView } from "react-native";
 
-const FoodExploreScreen = ({navigation}) => {
+const HousingRecommendScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <ScrollView>
           <Text>
-            Food
+            Housing
           </Text>
         </ScrollView>
       </View>
     );
 };
-export default FoodExploreScreen;
+export default HousingRecommendScreen;
 
 const styles = StyleSheet.create({
   container: {

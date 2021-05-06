@@ -7,14 +7,14 @@ import HousingExploreScreen from "../screens/exploreScreens/HousingExploreScreen
 import JobsExploreScreen from "../screens/exploreScreens/JobsExploreScreen";
 import FoodExploreScreen from "../screens/exploreScreens/FoodExploreScreen";
 
-const Tab = createMaterialTopTabNavigator();
+const TabExplore = createMaterialTopTabNavigator();
 
 const ConnectExplore = ({navigation}) => {
     return (
       <View style={styles.container}>
         <View style={styles.buttonTop}>
-          <Tab.Navigator
-            scrollEnabled="true"
+          <TabExplore.Navigator
+            scrollEnabled="false"
             initialRouteName="Activity"
             shifting={true}
             tabBarOptions={{
@@ -40,29 +40,24 @@ const ConnectExplore = ({navigation}) => {
               }
             }}
           >
-            <Tab.Screen
+            <TabExplore.Screen
               name="Activity"
               component={ActivityExploreScreen}
             />
-            <Tab.Screen
+            <TabExplore.Screen
               name="Housing"
               component={HousingExploreScreen}
             />
-            <Tab.Screen
+            <TabExplore.Screen
               name="Jobs"
               component={JobsExploreScreen}
             />
-            <Tab.Screen
+            <TabExplore.Screen
               name="Food"
               component={FoodExploreScreen}
             />
-          </Tab.Navigator>
+          </TabExplore.Navigator>
         </View>
-        <ScrollView>
-          <View>
-
-          </View>
-        </ScrollView>
       </View>
     );
 };
@@ -77,7 +72,7 @@ const styles = StyleSheet.create({
   },
   buttonTop: {
     flexDirection: "row",
-    position: "absolute",
+    // position: "absolute",
     top: -5,
   },
 });

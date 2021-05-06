@@ -1,18 +1,18 @@
 import * as React from "react";
 import { View, Text, Button, StyleSheet, Image, ScrollView } from "react-native";
 
-const FoodExploreScreen = ({navigation}) => {
+const JobRecommendScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <ScrollView>
           <Text>
-            Food
+            Jobs
           </Text>
         </ScrollView>
       </View>
     );
 };
-export default FoodExploreScreen;
+export default JobRecommendScreen;
 
 const styles = StyleSheet.create({
   container: {

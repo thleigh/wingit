@@ -4,7 +4,11 @@ import { View, Text, Button, StyleSheet, Image, ScrollView } from "react-native"
 const ActivityExploreScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
-
+        <ScrollView>
+          <Text>
+            Activity
+          </Text>
+        </ScrollView>
       </View>
     );
 };

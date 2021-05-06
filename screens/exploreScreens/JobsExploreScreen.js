@@ -5,10 +5,9 @@ const JobExploreScreen = ({navigation}) => {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Text>Connect Others Screen</Text>
-          <View>
-
-          </View>
+          <Text>
+            Jobs
+          </Text>
         </ScrollView>
       </View>
     );

@@ -5,24 +5,13 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import ConnectRecommend from "../components/ConnectRecommend";
 import ConnectExplore from "../components/ConnectExplore";
 
-const Tab = createMaterialTopTabNavigator();
+const TabConnect = createMaterialTopTabNavigator();
 
 const ConnectScreen = ({navigation}) => {
     return (
       <View style={styles.screen}>
-        {/* <View style={styles.containerTop}>
-              <Image 
-                source={require("../assets/amy.png")}
-                style={{width : 100, height : 100, marginLeft: 9}}
-              />
-                <View style={{marginLeft:25}}>
-                  <Text style={styles.welcomeText}>Hi, I'm <Text style={{fontWeight:"bold"}}>Amy.</Text></Text>
-                  <Text>I need to find a new housemate @ Berkeley</Text>
-                </View>
-        </View> */}
-
         <View style={styles.buttonTop}>      
-          <Tab.Navigator
+          <TabConnect.Navigator
             scrollEnabled="true"
             initialRouteName="Recommend"
             shifting={true}
@@ -38,16 +27,17 @@ const ConnectScreen = ({navigation}) => {
               }
             }}
           >
-            <Tab.Screen
+            <TabConnect.Screen
               name="Recommend"
               component={ConnectRecommend}
+              // style={{borderLeftWidth: 1}}
             />
-            <Tab.Screen
+            <TabConnect.Screen
               name="Explore"
               component={ConnectExplore}
-              style={{borderLeftWidth: 1}}
+              // style={{borderLeftWidth: 1}}
               />
-          </Tab.Navigator>
+          </TabConnect.Navigator>
         </View>
       </View>
     );
