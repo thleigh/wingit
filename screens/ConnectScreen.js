@@ -1,7 +1,6 @@
 import * as React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs"
-
+import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import ConnectRecommend from "../components/ConnectRecommend";
 import ConnectExplore from "../components/ConnectExplore";
 
