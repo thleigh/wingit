@@ -7,11 +7,14 @@ import HousingRecommendScreen from "../screens/recommendScreens/HousingRecommend
 import JobsRecommendScreen from "../screens/recommendScreens/JobsRecommendScreen";
 import FoodRecommendScreen from "../screens/recommendScreens/FoodRecommendScreen";
 
+import RecommendCarousel from "./RecommendCarousel";
+
 const TabRecommend = createMaterialTopTabNavigator();
 
 const ConnectRecommend = ({navigation}) => {
     return (
       <View style={styles.container}>
+        <RecommendCarousel style={{marginTop: -100}}/>
         <View style={styles.buttonTop}>
           <TabRecommend.Navigator
             scrollEnabled="false"
