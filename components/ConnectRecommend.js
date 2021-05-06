@@ -14,7 +14,7 @@ const TabRecommend = createMaterialTopTabNavigator();
 const ConnectRecommend = ({navigation}) => {
     return (
       <View style={styles.container}>
-        <RecommendCarousel style={{marginTop: -100}}/>
+        <RecommendCarousel />
         <View style={styles.buttonTop}>
           <TabRecommend.Navigator
             scrollEnabled="false"
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   buttonTop: {
     flexDirection: "row",
-    // position: "absolute",
-    top: -5,
+    position: "absolute",
+    top: 150,
   },
 });

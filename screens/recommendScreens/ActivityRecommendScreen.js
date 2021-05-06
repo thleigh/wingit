@@ -6,7 +6,7 @@ const ActivityRecommendScreen = ({navigation}) => {
       <View style={styles.container}>
         <ScrollView>
           <Text>
-            Activity
+            Activity Recommend
           </Text>
         </ScrollView>
       </View>

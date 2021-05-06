@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   buttonTop: {
     flexDirection: "row",
-    // position: "absolute",
+    position: "absolute",
     top: -5,
   },
 });
