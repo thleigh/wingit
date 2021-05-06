@@ -1,4 +1,4 @@
-import React, { useCallback, memo, useRef, useState } from "react";
+import React, { useCallback, memo, useRef, useState, } from "react";
 import {
   FlatList,
   View,
@@ -16,17 +16,25 @@ const windowHeight = Dimensions.get("window").height; //full height
 const slideList = Array.from({ length: 30 }).map((_, i) => {
     return {
       id: i,
-      image: `https://picsum.photos/1440/2842?random=${i}`,
-      title: `This is the title ${i + 1}!`,
-      subtitle: `This is the subtitle ${i + 1}!`,
+      image: require("../assets/jennie.png"),
+      title: `Jennie Kim`,
+      time: `2h ago`,
+      subtitle: `Hi, I'm new to LA, I'm looking for some new girl friends and maybe even a new boyfriend ;).`,
     };
   });
   const Slide = memo(function Slide({ data }) {
     return (
       <View style={styles.slide}>
-        <Image source={{ uri: data.image }} style={styles.slideImage}></Image>
-        <Text style={styles.slideTitle}>{data.title}</Text>
-        <Text style={styles.slideSubtitle}>{data.subtitle}</Text>
+        <View style={{flexDirection: "row"}}>
+            <Text style={styles.time}>{data.time}</Text>
+            <Image source={data.image} style={styles.slideImage}></Image>
+            <View style={styles.body}>
+                <Text> 
+                    <Text style={styles.slideName}>{data.title} </Text>
+                    <Text style={styles.slideSubtitle}>"{data.subtitle}"</Text>
+                </Text>
+            </View>
+        </View>
       </View>
     );
   });
@@ -106,19 +114,30 @@ const slideList = Array.from({ length: 30 }).map((_, i) => {
 const styles = StyleSheet.create({
     slide: {
       height: windowHeight,
-      width: windowWidth,
-    //   justifyContent: "center",
+      width: windowWidth,  
+    top: 20,
       alignItems: "center",
     },
     slideImage: { 
-        width: 100, 
-        height: 100,
+        width: 80, 
+        height: 80,
     },
-    slideTitle: { 
-        fontSize: 24 
+    body: {
+        marginLeft: 10,
+        width: 200,
+    },
+    slideName: { 
+        fontSize: 16,
+        fontWeight: "bold",
     },
     slideSubtitle: { 
-        fontSize: 18 
+        fontSize: 15,
+    },
+    time: {
+        color: "lightgrey",
+        position: "absolute",
+        marginTop: -20,
+        marginLeft: 15,
     },
     pagination: {
       position: "absolute",

@@ -76,6 +76,6 @@ const styles = StyleSheet.create({
   buttonTop: {
     flexDirection: "row",
     position: "absolute",
-    top: 150,
+    top: 120,
   },
 });
